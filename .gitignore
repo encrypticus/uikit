@@ -1,0 +1,7 @@
+.idea/
+node_modules/
+native\ code/
+package-lock.json
+createBlock.js
+config.js
+dist/
