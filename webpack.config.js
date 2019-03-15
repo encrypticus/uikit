@@ -19,11 +19,11 @@ module.exports = (env, args) => {
   let isDev = mode === args.mode; //флаг, указывающий режим сборки
 
   const config = {
-    entry: './src/index.js',// точка входа
+    entry: "./src/index.js",// точка входа
 
     output: {// точка выхода
-      filename: 'scripts.js', // имя выходного js-файла
-      path: path.resolve(__dirname, 'dist'),// директория, в которой будет лежать выходной файл
+      filename: "scripts.js", // имя выходного js-файла
+      path: path.resolve(__dirname, "dist"),// директория, в которой будет лежать выходной файл
     },
 
     optimization: {// минификация css и js в prod-режиме
@@ -39,8 +39,17 @@ module.exports = (env, args) => {
       ]
     },
 
+    watch: true,// отслеживать файлы в директории src для горячей пересборки
+
     module: {// модули, обрабатывающие файлы с указанным расширением
       rules: [
+
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader"
+        },
+
         {
           test: /\.pug$/,
           loaders: [
@@ -48,12 +57,41 @@ module.exports = (env, args) => {
             // минифицировать или нет index.html в зависимости от режима сборки
             `pug-html-loader?{"pretty": ${isDev ? true : false}, "exports": false}`
           ]
+        },
+
+        {
+          test: /\.(scss|sass)$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            // генерация sourcemap в зависимости от режима сборки; для того чтобы карта сгенерировалась обязательно
+            // нужно у обоих лоадеров: sass-loader и css-loader установить параметр sourceMap=true + прописать
+            // свойство сборщика "devtool: 'source-map'"
+            `css-loader?sourceMap=${isDev ? true : false}`,
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: () => [autoprefixer()]
+              }
+            },
+            `sass-loader?sourceMap=${isDev ? true : false}`
+          ]
+        },
+
+        {// обработка шрифтов
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          loader: 'file-loader?name=./fonts/[name].[ext]',
+        },
+
+        {// обработка svg-шрифтов
+          test: /\.svg$/,
+          exclude: [/img/],
+          loader: 'file-loader?name=./fonts/[name].[ext]'
         }
       ]
     },
 
     plugins: [
-      // преобразует uikit.pug в index.html и кладет в папку dist
+      // преобразует uikit.pug в uikit.html и кладет в папку dist
       new HtmlWebpackPlugin({
         filename: "uikit.html",
         template: "src/pages/uikit.pug"
@@ -63,8 +101,19 @@ module.exports = (env, args) => {
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "src/pages/index.pug"
+      }),
+
+      // извлекает файл стилей и кладет в папку dist
+      new MiniCssExtractPlugin({
+        filename: "styles.css",
+        chunkFilename: "[id].css"
       })
     ]
+  };
+
+  if (!isDev) { // в режиме продакшн
+    // очищать папку dist перед сборкой
+    config.plugins.push(new CleanWebpackPlugin(['dist'])) // в параметре директория, подлежащая очистке
   }
 
   return config;
