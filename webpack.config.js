@@ -16,7 +16,7 @@ module.exports = (env, args) => {
   }
 
   let mode = "development";
-  let isDev = mode === args.mode;
+  let isDev = mode === args.mode; //флаг, указывающий режим сборки
 
   const config = {
     entry: './src/index.js',// точка входа
@@ -53,10 +53,16 @@ module.exports = (env, args) => {
     },
 
     plugins: [
+      // преобразует uikit.pug в index.html и кладет в папку dist
+      new HtmlWebpackPlugin({
+        filename: "uikit.html",
+        template: "src/pages/uikit.pug"
+      }),
+
       // преобразует index.pug в index.html и кладет в папку dist
       new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: 'src/index.pug'
+        filename: "index.html",
+        template: "src/pages/index.pug"
       })
     ]
   }
