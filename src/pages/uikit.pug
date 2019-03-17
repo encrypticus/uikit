@@ -1,4 +1,5 @@
 extends  ../blocks/block.templates/index.template.pug
+include includes
 
 block keywords
   meta(name="keywords", content="")
@@ -11,5 +12,4 @@ block title
 
 block content
   main.content
-    h1 Набор элементов интерфейса
-    a(href="index.html") На главную
+    +standard-buttons("small, big, medium")

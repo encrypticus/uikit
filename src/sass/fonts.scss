@@ -1,0 +1,27 @@
+// Шрифты проекта
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Lato.woff") format("woff"),
+  url("./fonts/Lato.ttf") format("truetype"),
+  url("./fonts/Lato.svg") format("svg");
+}
+
+@font-face {
+  font-family: "Lato Black";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Lato-Black.woff") format("woff"),
+  url("./fonts/Lato-Black.ttf") format("truetype"),
+  url("./fonts/Lato-Black.svg") format("svg");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/SourceSansPro.woff") format("woff"),
+  url("./fonts/SourceSansPro.ttf") format("truetype"),
+  url("./fonts/SourceSansPro.svg") format("svg");
+}

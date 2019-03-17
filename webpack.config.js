@@ -111,6 +111,11 @@ module.exports = (env, args) => {
     ]
   };
 
+  if (isDev) {
+    // генерировать карту кода
+    config.devtool = "source-map";
+  }
+
   if (!isDev) { // в режиме продакшн
     // очищать папку dist перед сборкой
     config.plugins.push(new CleanWebpackPlugin(['dist'])) // в параметре директория, подлежащая очистке

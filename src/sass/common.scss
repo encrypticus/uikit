@@ -1,0 +1,9 @@
+@include load-font($src:"./fonts/Lato", $family: "Lato");
+@include load-font($src:"./fonts/Lato-Black", $family: "Lato Black");
+@include load-font($src:"./fonts/SourceSansPro", $family: "Source Sans Pro");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro";
+}
