@@ -20,7 +20,6 @@ module.exports = function (loadMap) {
             // генерация sourcemap в зависимости от режима сборки; для того чтобы карта сгенерировалась обязательно
             // нужно у обоих лоадеров: sass-loader и css-loader установить параметр sourceMap=true + прописать
             // свойство сборщика "devtool: 'source-map'"
-            // `css-loader?sourceMap=${loadMap ? true : false}`,
             {
               loader: "css-loader",
               options: {
@@ -39,7 +38,6 @@ module.exports = function (loadMap) {
                 sourceMap: loadMap ? true : false
               }
             }
-            // `sass-loader?sourceMap=${loadMap ? true : false}`
           ]
         }
       ]
