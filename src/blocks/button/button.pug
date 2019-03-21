@@ -1,6 +1,6 @@
 //- Создает кнопку
 
-mixin button(text, mods)
+mixin button({text = "Button", size = "", theme = "", noOutline = false} = {})
 
   //- Принимает:
   //-   text    {string} - текст
@@ -10,13 +10,19 @@ mixin button(text, mods)
 
   -
     // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' button_' + modsList[i].trim();
-      }
+    var modifiers = "";
+
+    if (typeof(size) !== "undefined" && size) {
+      modifiers += ` button_size_${size}`;
     }
 
-  button.button(class=allMods)&attributes(attributes)= text
+    if (typeof (theme) !== "undefined" && theme) {
+      modifiers += ` button_theme_${theme}`;
+    }
+
+    if (noOutline === true) {
+      modifiers += ` button_no-outline`;
+    }
+
+  button.button(class = modifiers)&attributes(attributes)= text
     block

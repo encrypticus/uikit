@@ -1,0 +1,17 @@
+.buttons-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}
+

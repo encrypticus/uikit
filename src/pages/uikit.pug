@@ -14,7 +14,29 @@ block content
   main.content
     section
       +title("Standard buttons")
-      +button("Button")
+      .buttons-block
+        +button({size: "sm", theme: "green"})(class="buttons-block__button")
+        +button({theme: "green"})(class="buttons-block__button")
+
+        +button({
+          size: "lg", theme: "green",
+          noOutline: true
+        })(class="buttons-block__button")
+
+        +button({theme: "green"})(class="buttons-block__button")
+        +button({size: "sm", theme: "green"})(class="buttons-block__button")
+
+      .buttons-block
+        +button({size: "sm", theme: "red"})(class="buttons-block__button")
+        +button({theme: "red"})(class="buttons-block__button")
+
+        +button({
+          size: "lg", theme: "red",
+          noOutline: true
+        })(class="buttons-block__button")
+
+        +button({theme: "red"})(class="buttons-block__button")
+        +button({size: "sm", theme: "red"})(class="buttons-block__button")
 
 
 
