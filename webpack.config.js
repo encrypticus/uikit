@@ -48,8 +48,8 @@ module.exports = (env, args) => {
       font(),
       pug(isDev),
       sass(isDev),
-      htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug"}),
-      htmlWebpackPlugin({filename: "index.html", template: "src/pages/index.pug"}),
+      htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug", inject: false}),
+      htmlWebpackPlugin({filename: "index.html", template: "src/pages/index.pug", inject: false}),
       styleLintPlugin(),
       env.browserSync === "open" ? browserSync() : {}
   );
@@ -57,6 +57,7 @@ module.exports = (env, args) => {
   if (isDev) {// в режиме разработки
     return merge(
         config,
+        cleanWebpackPlugin(),
         sourceMap()
     );
   }

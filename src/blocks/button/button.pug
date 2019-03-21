@@ -1,0 +1,22 @@
+//- Создает кнопку
+
+mixin button(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +button("Текст", "some-mod")
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' button_' + modsList[i].trim();
+      }
+    }
+
+  button.button(class=allMods)&attributes(attributes)= text
+    block

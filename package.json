@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --env.browserSync=open",
-    "prod": "webpack --mode production",
+    "prod": "webpack --mode production --env.browserSync=doNotOpen",
     "server": "webpack-dev-server --mode development --progress --open --env.browserSync=doNotOpen"
   },
   "keywords": [],
