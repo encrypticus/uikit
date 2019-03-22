@@ -34,25 +34,25 @@
     letter-spacing: .6px;
   }
 
-  &_theme_green {
-    color: $button-green-color;
-    border: 1px solid $button-green-color;
-    box-shadow: 0 2px $button-green-shadow-color;
+  &_theme_blue {
+    color: $fountain-blue;
+    border: 1px solid $fountain-blue;
+    box-shadow: 0 2px $jungle-green;
 
     &:hover {
       color: $white;
-      background-color: $button-green-color;
+      background-color: $fountain-blue;
     }
   }
 
-  &_theme_red {
-    color: $button-red-color;
-    border: 1px solid $button-red-color;
-    box-shadow: 0 2px $button-red-shadow-color;
+  &_theme_cinnabar {
+    color: $cinnabar;
+    border: 1px solid $cinnabar;
+    box-shadow: 0 2px $thunderbird;
 
     &:hover {
       color: $white;
-      background-color: $button-red-color;
+      background-color: $cinnabar;
     }
   }
 
