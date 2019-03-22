@@ -1,12 +1,22 @@
-//- Создает кнопку
+//- Создает элемент кнопки
 
-mixin button({text = "Button", size = "", theme = "", noOutline = false} = {})
+mixin button({text = "Button", size = "", theme = "", noOutline = false, animate = false} = {})
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-   object.text    {string}  - надпись кнопки
+  //-   object.size    {string}  - класс-модификатор размера кнопки
+  //-   object.theme   {string}  - класс-модификатор цветовой темы кнопки
+  //-   object.theme   {boolean} - булево значение, от которого зависит, будет ли к элементу кнопки добавлен
+  //-   класс-модификатор, убирающий дефолтный outline в активном состоянии последней
   //- Вызов:
-        +button("Текст", "some-mod")
+        +button                                                     - белая кнопка среднего размера
+        +button({size: "small", theme: "blue"})                     - маленькая кнопка синего цвета
+        +button({size: "sm", theme: "blue"})                        - маленькая кнопка синего цвета
+        +button({theme: "cinnabar"})(class="buttons-block__button") - кнопка среднего размера цвета "cinnabar". К кнопке
+        примиксован класс элемента buttons-block__button блока buttons-block для задания ей внешней геометрии.
+        +button({size: "lg", theme: "cinnabar", noOutline: true})   - большая кнопка цвета "cinnabar" с убранной обводкой
+                                                                      в нажатом состоянии кнопки
+        +button({size: "large", theme: "blue"})                     - большая кнопка синего цвета
 
   -
     // список модификаторов
@@ -22,6 +32,10 @@ mixin button({text = "Button", size = "", theme = "", noOutline = false} = {})
 
     if (noOutline === true) {
       modifiers += ` button_no-outline`;
+    }
+
+    if (animate === true) {
+      modifiers += ` button_animate`;
     }
 
   button.button(class = modifiers)&attributes(attributes)= text

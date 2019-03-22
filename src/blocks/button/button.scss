@@ -4,6 +4,7 @@
   padding: 8px 32px;
   font-size: 12px;
   font-family: "Lato Black";
+  color: #000;
 
   border-radius: 3px;
   background-color: $white;
@@ -58,5 +59,9 @@
 
   &_no-outline {
     outline: none;
+  }
+
+  &_animate {
+    transition: background-color, color .5s;
   }
 }
