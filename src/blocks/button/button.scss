@@ -1,11 +1,14 @@
 // Стили для кнопки
 
+@import "assets/animations";
+
 .button {
+  position: relative;
   padding: 8px 32px;
   font-size: 12px;
   font-family: "Lato Black";
-  color: #000;
 
+  color: #000;
   border-radius: 3px;
   background-color: $white;
   font-weight: 400;
@@ -13,28 +16,31 @@
   text-transform: uppercase;
   letter-spacing: .6px;
   cursor: pointer;
-
   user-select: none;
+
+  overflow: hidden;
 
   &:active {
     box-shadow: none;
     transform: translateY(2px);
   }
 
-  &_size_sm, /* псевдоним для small */
+  // Размеры кнопки
+  &_size_sm, // псевдоним для small
   &_size_small {
     padding: 4px 16px;
     font-size: 10px;
     letter-spacing: .5px;
   }
 
-  &_size_lg, /* псевдоним для large */
+  &_size_lg, // псевдоним для large
   &_size_large {
     padding: 10px 40px;
     font-size: 16px;
     letter-spacing: .6px;
   }
 
+  // Цветовые темы кнопки
   &_theme_blue {
     color: $fountain-blue;
     border: 1px solid $fountain-blue;
@@ -57,11 +63,23 @@
     }
   }
 
+  // Убирает дефолтную обводку кнопки, появляющуся в состоянии active последней
   &_no-outline {
     outline: none;
   }
 
+  // Анимация кнопки
   &_animate {
     transition: background-color, color .5s;
+  }
+
+  &__ripple {
+    position: absolute;
+    border-radius: 50%;
+    opacity: .5;
+
+    background-color: $white;
+    transform: scale(0);
+    animation: ripple .7s ease-out;
   }
 }
