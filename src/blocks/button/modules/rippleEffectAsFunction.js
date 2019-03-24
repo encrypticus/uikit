@@ -1,13 +1,16 @@
+/** Создает и "вешает" ripple-effect на кнопки */
+
 export default function rippleEffect() {
   var buttons = document.querySelectorAll(".button");
 
+  /** "Вешает" ripple-effect на кнопки */
   Array.prototype.forEach.call(buttons, function (button) {
     button.addEventListener("click", addRipple);
   });
 
   /**
-   *
-   * @param event
+   * Создает и добавляет ripple-effect к кнопке
+   * @param {object} event объект события
    */
   function addRipple(event) {
     var ripple = document.createElement("div"),
