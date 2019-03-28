@@ -40,7 +40,79 @@ block content
 
     section
       +title("Arrow buttons")
+      .buttons-block
+        +button-wrapper("15.85714285714286%")
+          +arrow-button({
+            noOutline: true,
+            size: "45%",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
+          +arrow-button({
+            size: "45%",
+            noOutline: true,
+            direction: "right",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
+        +button-wrapper("18.71428571428571%")
+          +arrow-button({
+            noOutline: true,
+            size: "45%",
+            theme: "cinnabar",
+            disable: true
+          })
+          +arrow-button({
+            noOutline: true, direction: "right",
+            size: "45%",
+            theme: "cinnabar",
+            disable: true
+          })
+        +button-wrapper("24.42857142857143%")
+          +arrow-button({
+            noOutline: true,
+            size: "45%",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
+          +arrow-button({
+            noOutline: true, direction: "right",
+            size: "45%",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
 
+        +button-wrapper("18.71428571428571%")
+          +arrow-button({
+            noOutline: true,
+            size: "45%",
+            theme: "cinnabar"
+          })
+          +arrow-button({
+            noOutline: true, direction: "right",
+            size: "45%",
+            theme: "cinnabar"
+          })
+
+        +button-wrapper("15.85714285714286%")
+          +arrow-button({
+            noOutline: true,
+            size: "45%",
+            theme: "blue",
+            direction: "up",
+            ripple: true
+          })
+          +arrow-button({
+            size: "45%",
+            noOutline: true,
+            direction: "down",
+            theme: "blue",
+            ripple: true
+          })
 
 
   script(src="scripts.js")

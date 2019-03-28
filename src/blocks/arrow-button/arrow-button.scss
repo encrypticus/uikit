@@ -1,0 +1,108 @@
+.arrow-button {
+  position: relative;
+  padding: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+
+  &__arrow {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 27%;
+      width: 38%;
+      height: 8%;
+      background-color: $black;
+    }
+
+    &::before {
+      top: 34%;
+      border-radius: 0 1px 1px 1px;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      top: 56%;
+      border-radius: 1px 1px 1px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:disabled {
+    background-color: $grey;
+    border-color: $grey;
+    cursor: not-allowed;
+  }
+
+  &:disabled &__arrow::before,
+  &:disabled &__arrow::after {
+    background-color: $white;
+  }
+
+  &_direction_right &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &_direction_down &__arrow {
+    transform: rotate(-90deg);
+  }
+
+  &_direction_up &__arrow {
+    transform: rotate(90deg);
+  }
+
+  &_no-outline {
+    outline: none;
+  }
+
+  &_theme_blue {
+    border: 3px solid $fountain-blue;
+  }
+
+  &_theme_cinnabar {
+    border: 3px solid $cinnabar;
+  }
+
+  &_theme_blue &__arrow::before,
+  &_theme_blue &__arrow::after {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_blue:hover:not(:disabled) {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_blue:hover &__arrow::before,
+  &_theme_blue:hover &__arrow::after {
+    background-color: $white;
+  }
+
+  &_theme_cinnabar &__arrow::before,
+  &_theme_cinnabar &__arrow::after {
+    background-color: $cinnabar;
+  }
+
+  &_theme_cinnabar:hover:not(:disabled) {
+    background-color: $cinnabar;
+  }
+
+  &_theme_cinnabar:hover &__arrow::before,
+  &_theme_cinnabar:hover &__arrow::after {
+    background-color: $white;
+  }
+
+  // Анимация кнопки
+  &_animate:not(:disabled),
+  &_animate &__arrow::before,
+  &_animate &__arrow::after {
+    transition: background-color .5s;
+  }
+}

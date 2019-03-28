@@ -4,7 +4,6 @@
 export default class RippleEffect {
   /**
    * @constructor
-   * @param {string} button селектор элементов, на которые будет "навешан" эффект
    */
   constructor(button = ".button") {
     this.buttons = document.querySelectorAll(button);
@@ -51,7 +50,6 @@ export default class RippleEffect {
     style.width = style.height = this.getButtonSize(button) + "px";
     style.left = posX - this.getBoundingRect(button).left - this.getButtonSize(button) / 2 + "px";
     style.top = posY - this.getBoundingRect(button).top - this.getButtonSize(button) / 2 + "px";
-    style.zIndex = 100;
 
     ripple.classList.add("button__ripple");
     this.appendRipple(ripple, button);

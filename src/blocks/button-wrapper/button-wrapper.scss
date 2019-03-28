@@ -1,0 +1,9 @@
+// В этом файле должны быть стили для БЭМ-блока button-wrapper, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}

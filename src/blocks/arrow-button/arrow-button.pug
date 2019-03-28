@@ -1,0 +1,63 @@
+//-
+
+mixin arrow-button({size = "50px", theme = "", direction = "", noOutline = false, animate = false, ripple = false, disable = false} = {})
+
+  //- Принимает:
+    //-   object.size        {string}  - строка со значением ширины кнопки и единицами измерения
+    //-   object.theme       {string}  - класс-модификатор цветовой темы кнопки
+    //-   object.direction   {string}  - класс-модификатор направления стрелки: влево, вправо, вверх, вниз
+    //-   object.noOutline   {boolean} - булево значение, от которого зависит, будет ли к элементу кнопки
+                                         добавлен класс-модификатор, убирающий дефолтный outline в активном
+                                         состоянии последней
+    //-   object.animate     {boolean} - булево значение, от которого зависит, будет ли анимироваться изменение
+                                         цвета кнопки
+    //-   object.ripple      {boolean} - булево значение, от которого зависит, будет ли на кнопке воспроизводиться
+                                         ripple-effect
+    //-   object.disable     {boolean} - булево значение, блокирующее доступ и изменение кнопки
+
+    //- Вызов:
+          +arrow-button       - дефолтная кнопка белого цвета размером 50х50 пикселей
+
+          +arrow-button({     - кнопка голубого цвета, с размером в 45% от родительского блока, с отключенной
+            noOutline: true,    обводкой, анимацией изменения цвета и воспроизведением ripple-effect при клике
+            size: "45%",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
+
+          +arrow-button({
+            size: "45%",
+            noOutline: true,
+            direction: "right",
+            theme: "blue",
+            animate: true,
+            ripple: true
+          })
+
+  -
+    // список модификаторов
+    var modifiers = "";
+
+    if (typeof (theme) !== "undefined" && theme) {
+      modifiers += ` arrow-button_theme_${theme}`;
+    }
+
+    if (typeof (direction) !== "undefined" && direction) {
+      modifiers += ` arrow-button_direction_${direction}`;
+    }
+
+    if (noOutline === true) {
+      modifiers += ` arrow-button_no-outline`;
+    }
+
+    if (animate === true) {
+      modifiers += ` arrow-button_animate`;
+    }
+
+    if (ripple === true) {
+      modifiers += ` arrow-button_ripple`;
+    }
+
+  button.arrow-button(class = modifiers, style = `width: ${size}`, disabled = disable)&attributes(attributes)
+    span.arrow-button__arrow

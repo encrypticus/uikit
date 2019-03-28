@@ -1,0 +1,12 @@
+//- Создает блок-обертку для кнопок круглых кнопок.
+
+mixin button-wrapper(width = "100%")
+
+  //- Принимает:
+  //-   width    {string} - строка со значением ширины блока с единицами измерения
+  //- Вызов:
+        +button-wrapper("18.71428571428571%")
+        +button-wrapper("300px")
+
+  .button-wrapper(style = `width: ${width}`)&attributes(attributes)
+    block
