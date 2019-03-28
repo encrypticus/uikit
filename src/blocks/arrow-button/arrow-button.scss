@@ -1,20 +1,24 @@
+// Стили для arrow-button
+
 .arrow-button {
   position: relative;
   padding: 0;
   border-radius: 50%;
+
   box-sizing: border-box;
   background-color: white;
   cursor: pointer;
-  overflow: hidden;
 
-  &__arrow {
+  overflow: hidden; // для ripple-effect
+
+  &__arrow {// стрелка внутри кнопки
     position: relative;
     display: block;
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: 100%; // хак для установки высоты блока, равной его ширине
 
     &::before,
-    &::after {
+    &::after { // верхняя и нижняя части стрелки
       content: "";
       position: absolute;
       left: 27%;
@@ -23,13 +27,13 @@
       background-color: $black;
     }
 
-    &::before {
+    &::before { // верхняя часть стрелки
       top: 34%;
       border-radius: 0 1px 1px 1px;
       transform: rotate(-45deg);
     }
 
-    &::after {
+    &::after { // нижняя часть стрелки
       top: 56%;
       border-radius: 1px 1px 1px 0;
       transform: rotate(45deg);
@@ -42,11 +46,13 @@
     cursor: not-allowed;
   }
 
+  // Переопределение цвета у отключенной стрелки
   &:disabled &__arrow::before,
   &:disabled &__arrow::after {
     background-color: $white;
   }
 
+  // Направления стрелки
   &_direction_right &__arrow {
     transform: rotate(180deg);
   }
@@ -63,6 +69,7 @@
     outline: none;
   }
 
+  // Цветовые темы
   &_theme_blue {
     border: 3px solid $fountain-blue;
   }
