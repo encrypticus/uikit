@@ -14,33 +14,33 @@ block content
   main.content
     section
       +title("Standard buttons")
-      .buttons-block
-        +button({size: "sm", theme: "blue"})(class="buttons-block__button")
-        +button({theme: "blue"})(class="buttons-block__button")
+      .elements-block
+        +button({size: "sm", theme: "blue"})(class="elements-block__button")
+        +button({theme: "blue"})(class="elements-block__button")
 
         +button({
           size: "lg", theme: "blue",
           noOutline: true, animate: true
-        })(class="buttons-block__button")
+        })(class="elements-block__button")
 
-        +button({theme: "blue"})(class="buttons-block__button")
-        +button({size: "sm", theme: "blue"})(class="buttons-block__button")
+        +button({theme: "blue"})(class="elements-block__button")
+        +button({size: "sm", theme: "blue"})(class="elements-block__button")
 
-      .buttons-block
-        +button({size: "sm", theme: "cinnabar"})(class="buttons-block__button")
-        +button({theme: "cinnabar"})(class="buttons-block__button")
+      .elements-block
+        +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
+        +button({theme: "cinnabar"})(class="elements-block__button")
 
         +button({
           size: "lg", theme: "cinnabar",
           noOutline: true, animate: true
-        })(class="buttons-block__button")
+        })(class="elements-block__button")
 
-        +button({theme: "cinnabar"})(class="buttons-block__button")
-        +button({size: "sm", theme: "cinnabar"})(class="buttons-block__button")
+        +button({theme: "cinnabar"})(class="elements-block__button")
+        +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
 
     section
       +title("Arrow buttons")
-      .buttons-block
+      .elements-block
         +button-wrapper("15.85714285714286%")
           +arrow-button({
             noOutline: true,
@@ -115,4 +115,17 @@ block content
           })
 
 
+    section
+      +title("Percentage/pie chart")
+      .elements-block
+        +percentage-chart({theme: "cinnabar", size: "14.28571428571429%"})
+        +percentage-chart({percent: 38, theme: "cinnabar", size: "14.28571428571429%"})
+        +percentage-chart({percent: 62, theme: "blue", size: "14.28571428571429%"})
+        +percentage-chart({percent: 89, theme: "cinnabar", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 25, theme: "blue", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 100, theme: "cinnabar", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 10, theme: "blue", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 105, theme: "blue", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 888, theme: "blue", size: "14.28571428571429%"})
+        //+percentage-chart({percent: 95, theme: "cinnabar", size: "10%"})
   script(src="scripts.js")

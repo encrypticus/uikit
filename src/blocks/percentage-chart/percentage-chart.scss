@@ -1,0 +1,40 @@
+// Стили для percentage-chart
+
+.percentage-chart {
+
+  &__wrapper { // обертка
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  &__img { // svg-элемент
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__value { // элементе circle
+    stroke: $black;
+
+    // Цветовые темы
+    &_theme_blue {
+      stroke: $fountain-blue;
+    }
+
+    &_theme_cinnabar {
+      stroke: $cinnabar;
+    }
+  }
+
+  &__text { // элемент text внутри svg
+    font-size: .9rem;
+    font-family: "Lato Light", sans-serif;
+    fill: #a9a9a9;
+
+    text-anchor: middle;
+    letter-spacing: -1px;
+  }
+}

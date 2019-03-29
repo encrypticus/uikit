@@ -4,6 +4,12 @@
 
 @include load-font($src:"./fonts/SourceSansPro", $family: "Source Sans Pro");
 
+@include load-font($src:"./fonts/Lato-Light", $family: "Lato Light");
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,0 +1,42 @@
+//-
+
+mixin percentage-chart({size = "100px", percent = 0, theme = ""} = {})
+
+  //- Принимает:
+  //-   object.size       {string} - размер элемента в % или px
+  //-   object.percent    {number} - число процентов от 0 до 100
+  //-   object.theme      {string} - цветовая тема чарта
+  //- Вызов:
+        +percentage-chart({percent: 89, theme: "cinnabar", size: "14%"}) - чарт  со значением 89%, размером 14% от
+                                                                           родительского блока, темой cinnabar
+        +percentage-chart({percent: 50, theme: "blue"})                  - чарт  со значением 50%, размером 100px, темой blue
+
+  -
+    var valueFull = 100;
+
+    //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
+    //- соответствует указанному шаблону, иначе false.
+    function validArg(arg) {
+      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(arg))) return true;
+      return false;
+    }
+
+    if (typeof percent !== "number") percent = 0;
+    if (percent < 0 ) percent = 0;
+    if (percent > valueFull) percent = 100;
+    if (!validArg(size)) size = "100px";
+
+    valueEmpty = valueFull - percent,
+    // список модификаторов
+    modifiers = "";
+
+    if (typeof (theme) !== "undefined" && theme) {
+      modifiers += ` percentage-chart__value_theme_${theme}`;
+    }
+
+  .percentage-chart(style=`width: ${size}`)&attributes(attributes)
+    .percentage-chart__wrapper
+      svg.percentage-chart__img(viewBox="0 0 36 36", fille="none")
+        circle.percentage-chart__value(class=modifiers, r="15.9155", cx="50%", cy="50%",
+        fill="none", stroke-width="1.6", stroke-dasharray=percent + "," + valueEmpty, stroke-dashoffset="25")
+        text.percentage-chart__text(x="18", y="23.35")= percent
