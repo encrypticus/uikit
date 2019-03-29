@@ -1,0 +1,54 @@
+//-
+
+mixin pie-chart({size = "100px", grey = 33, red = 33, blue = 34} = {})
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pie-chart("Текст", "some-mod")
+
+  -
+    var fullValue = 100;
+
+    //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
+    //- соответствует указанному шаблону, иначе false.
+    function validArg(arg) {
+      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(arg))) return true;
+      return false;
+    }
+
+    if (typeof grey !== "number") grey = 33;
+    if (typeof red !== "number") red = 33;
+    if (typeof blue !== "number") blue = 34;
+
+    if (grey < 0) grey = 0;
+    if (red < 0) red = 0;
+    if (blue < 0) blue = 0;
+
+    if (grey > fullValue) grey = fullValue;
+    if (red > fullValue) red = fullValue;
+    if (blue > fullValue) blue = fullValue;
+
+    if ((grey + red + blue) > 100) {
+      grey = 33;
+      red = 33;
+      blue = 34;
+    }
+
+    if (!validArg(size)) size = "100px";
+
+    var greyGap = fullValue - grey,
+        redGap = fullValue - red,
+        blueGap = fullValue - blue,
+        redOffset = fullValue - grey + 25,
+        blueOffset = fullValue - grey - red + 25;
+
+
+  .pie-chart(style=`width: ${size}`)&attributes(attributes)
+    .pie-chart__wrapper
+      svg.pie-chart__img(viewBox="0 0 41 41", fill="none")
+        circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%", stroke="#e5e5e5", stroke-width="7")
+        circle.pie-chart__grey(r="15.9155", cx="50%", cy="50%", stroke="#747474", stroke-width="7", stroke-dasharray=grey+","+greyGap, stroke-dashoffset="25")
+        circle.pie-chart__red(r="15.9155", cx="50%", cy="50%", stroke="#e75735", stroke-width="7", stroke-dasharray=red+","+redGap, stroke-dashoffset=redOffset)
+        circle.pie-chart__blue(r="15.9155", cx="50%", cy="50%", stroke="#4eb7a8", stroke-width="7", stroke-dasharray=blue+","+blueGap, stroke-dashoffset=blueOffset)

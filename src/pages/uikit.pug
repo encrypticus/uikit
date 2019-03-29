@@ -122,10 +122,13 @@ block content
         +percentage-chart({percent: 38, theme: "cinnabar", size: "14.28571428571429%"})
         +percentage-chart({percent: 62, theme: "blue", size: "14.28571428571429%"})
         +percentage-chart({percent: 89, theme: "cinnabar", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 25, theme: "blue", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 100, theme: "cinnabar", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 10, theme: "blue", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 105, theme: "blue", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 888, theme: "blue", size: "14.28571428571429%"})
-        //+percentage-chart({percent: 95, theme: "cinnabar", size: "10%"})
+      .elements-block
+        +pie-chart({size:"14.28571428571429%", grey: 11, red: 26, blue: 30})
+        +pie-chart({size:"17%", grey: 33, red: 48, blue: 15})
+        +pie-chart({size:"10%", grey: 15, red: 10, blue: 55})
+        +pie-chart({size:"14.28571428571429%", grey: 25, red: 25, blue: 50})
+
+
+
+
   script(src="scripts.js")
