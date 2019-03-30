@@ -1,6 +1,7 @@
 // Стили для pie-chart
 
 .pie-chart {
+  fill: none;
 
   &__wrapper { // обертка
     position: relative;
@@ -14,5 +15,25 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &__empty { // элемент circle внутри svg - "пустой" сегмент чарта
+    stroke: #e5e5e5;
+    stroke-width: 7;
+  }
+
+  &__grey { // элемент circle внутри svg - серый сегмент чарта
+    stroke: #747474;
+    stroke-width: 7;
+  }
+
+  &__red { // элемент circle внутри svg - красный сегмент чарта
+    stroke: #e75735;
+    stroke-width: 7;
+  }
+
+  &__blue { // элемент circle внутри svg - голубой сегмент чарта
+    stroke: #4eb7a8;
+    stroke-width: 7;
   }
 }

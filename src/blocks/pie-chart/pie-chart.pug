@@ -1,15 +1,19 @@
 //-
 
-mixin pie-chart({size = "100px", grey = 33, red = 33, blue = 34} = {})
+mixin pie-chart({size = "100px", greySlice = 33, redSlice = 33, blueSlice = 34} = {})
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-   object.size       {string} - размер элемента в % или px
+  //-   object.greySlice  {number} - число от 0 до 100, размер серого сегмента чарта
+  //-   object.redSlice   {number} - число от 0 до 100, размер красного сегмента чарта
+  //-   object.blueSlice  {number} - число от 0 до 100, размер голубого сегмента чарта
+
   //- Вызов:
-        +pie-chart("Текст", "some-mod")
+        +pie-chart({size: "67%", greySlice: 45, redSlice: 24, blueSlice: 11})
 
   -
-    var fullValue = 100;
+    //- Общий размер чарта
+    var whole = 100;
 
     //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
     //- соответствует указанному шаблону, иначе false.
@@ -18,37 +22,40 @@ mixin pie-chart({size = "100px", grey = 33, red = 33, blue = 34} = {})
       return false;
     }
 
-    if (typeof grey !== "number") grey = 33;
-    if (typeof red !== "number") red = 33;
-    if (typeof blue !== "number") blue = 34;
+    // Провека на соответсвие типа переданных значений размеров
+    if (typeof greySlice !== "number") greySlice = 33;
+    if (typeof redSlice !== "number") redSlice = 33;
+    if (typeof blueSlice !== "number") blueSlice = 34;
 
-    if (grey < 0) grey = 0;
-    if (red < 0) red = 0;
-    if (blue < 0) blue = 0;
+    // Проверка на корректность диапазона переданных значений размеров
+    if (greySlice < 0) greySlice = 0;
+    if (redSlice < 0) redSlice = 0;
+    if (blueSlice < 0) blueSlice = 0;
 
-    if (grey > fullValue) grey = fullValue;
-    if (red > fullValue) red = fullValue;
-    if (blue > fullValue) blue = fullValue;
+    if (greySlice > whole) greySlice = whole;
+    if (redSlice > whole) redSlice = whole;
+    if (blueSlice > whole) blueSlice = whole;
 
-    if ((grey + red + blue) > 100) {
-      grey = 33;
-      red = 33;
-      blue = 34;
+    // Проверка на выход суммы размеров всех сегментов за пределы общего размера чарта
+    if ((greySlice + redSlice + blueSlice) > 100) {
+      greySlice = 33;
+      redSlice = 33;
+      blueSlice = 34;
     }
 
     if (!validArg(size)) size = "100px";
 
-    var greyGap = fullValue - grey,
-        redGap = fullValue - red,
-        blueGap = fullValue - blue,
-        redOffset = fullValue - grey + 25,
-        blueOffset = fullValue - grey - red + 25;
+    var greySliceGap = whole - greySlice, // промежуточный интервал для stroke-dasharray серого сегмента чарта
+        redSliceGap = whole - redSlice, // промежуточный интервал для stroke-dasharray красного сегмента чарта
+        blueSliceGap = whole - blueSlice, // промежуточный интервал для stroke-dasharray голубого сегмента чарта
+        redSliceOffset = whole - greySlice + 25, // смещение относительно заданной по умолчанию системы координат красного сегмента чарта
+        blueSliceOffset = whole - greySlice - redSlice + 25; // смещение относительно заданной по умолчанию системы координат голубого сегмента чарта
 
 
   .pie-chart(style=`width: ${size}`)&attributes(attributes)
     .pie-chart__wrapper
-      svg.pie-chart__img(viewBox="0 0 41 41", fill="none")
-        circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%", stroke="#e5e5e5", stroke-width="7")
-        circle.pie-chart__grey(r="15.9155", cx="50%", cy="50%", stroke="#747474", stroke-width="7", stroke-dasharray=grey+","+greyGap, stroke-dashoffset="25")
-        circle.pie-chart__red(r="15.9155", cx="50%", cy="50%", stroke="#e75735", stroke-width="7", stroke-dasharray=red+","+redGap, stroke-dashoffset=redOffset)
-        circle.pie-chart__blue(r="15.9155", cx="50%", cy="50%", stroke="#4eb7a8", stroke-width="7", stroke-dasharray=blue+","+blueGap, stroke-dashoffset=blueOffset)
+      svg.pie-chart__img(viewBox="0 0 41 41")
+        circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%")
+        circle.pie-chart__grey(r="15.9155", cx="50%", cy="50%", stroke-dasharray=greySlice+","+greySliceGap, stroke-dashoffset="25")
+        circle.pie-chart__red(r="15.9155", cx="50%", cy="50%", stroke-dasharray=redSlice+","+redSliceGap, stroke-dashoffset=redSliceOffset)
+        circle.pie-chart__blue(r="15.9155", cx="50%", cy="50%", stroke-dasharray=blueSlice+","+blueSliceGap, stroke-dashoffset=blueSliceOffset)
