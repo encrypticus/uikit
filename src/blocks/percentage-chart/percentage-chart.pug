@@ -39,5 +39,5 @@ mixin percentage-chart({size = "100px", percent = 0, theme = ""} = {})
     .percentage-chart__wrapper
       svg.percentage-chart__img(viewBox="0 0 36 36", fille="none")
         circle.percentage-chart__value(class=modifiers, r="15.9155", cx="50%", cy="50%",
-        fill="none", stroke-width="1.6", stroke-dasharray=percent + "," + valueEmpty, stroke-dashoffset="25")
+        fill="none", stroke-width="1.6", stroke-dasharray=`${percent}, ${valueEmpty}`, stroke-dashoffset="25")
         text.percentage-chart__text(x="18", y="23.35")= percent
