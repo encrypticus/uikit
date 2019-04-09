@@ -1,0 +1,165 @@
+// Стили для компонента slider
+.slider {
+  position: relative;
+  //height: 20px;
+
+  &__range {
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    margin: 0;
+
+    padding: 0;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 5px;
+      //margin: 0;
+
+      //padding: 0;
+      border-radius: 10px;
+      background-color: $grey;
+    }
+
+    &::-moz-range-track {
+      appearance: none;
+      width: 100%;
+      height: 5px;
+      margin: 0;
+
+      padding: 0;
+      border-radius: 10px;
+      background-color: $grey;
+    }
+
+    &::-webkit-slider-thumb {
+      position: relative;
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 50%;
+      margin-top: -7.5px;
+
+      appearance: none;
+      background-color: $black;
+      cursor: pointer;
+      //box-shadow: -100vw 0 0 100vw dodgerblue;
+    }
+
+    &::-moz-range-thumb {
+      z-index: 20;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 50%;
+
+      appearance: none;
+      background-color: $black;
+      cursor: pointer;
+    }
+
+    &_no-outline {
+      outline: none;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -35px;
+    display: inline-block;
+    width: 35px;
+
+    padding: 4px 0;
+    font-size: 13px;
+    font-family: "Lato";
+    color: #fff;
+
+    text-align: center;
+    border-radius: 5px;
+    background-color: $grey;
+    font-weight: 400;
+
+    letter-spacing: .65px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 4px 0 4px;
+
+      border-color: $grey transparent transparent transparent;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__progress {
+    position: absolute;
+    top: 7.5px;
+    left: 0;
+    height: 5px;
+    border-radius: 10px 0 0 10px;
+    background-color: $black;
+  }
+
+  &_theme_blue &__progress {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_cinnabar &__progress {
+    background-color: $cinnabar;
+  }
+
+  &_theme_blue &__range::-webkit-slider-thumb {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_blue &__range::-moz-range-thumb {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_blue &__label {
+    background-color: $fountain-blue;
+  }
+
+  &_theme_cinnabar &__range::-webkit-slider-thumb {
+    background-color: $cinnabar;
+  }
+
+  &_theme_cinnabar &__range::-moz-range-thumb {
+    background-color: $cinnabar;
+  }
+
+  &_theme_cinnabar &__label {
+    background-color: $cinnabar;
+  }
+
+  &_theme_cinnabar &__label::after {
+    border-color: $cinnabar transparent transparent transparent;
+  }
+
+  &_theme_blue &__label::after {
+    border-color: $fountain-blue transparent transparent transparent;
+  }
+
+  &__output {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: space-around;
+
+    & li {
+      position: absolute;
+      display: inline-block;
+    }
+  }
+
+}
+

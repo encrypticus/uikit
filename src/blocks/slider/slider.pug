@@ -1,0 +1,52 @@
+//-
+
+mixin slider({min = "0", max = "100", step = "1", value = "50", width = "260px", noOutline = false, theme = "", progress = false, label = false, output = false} = {})
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +slider("Текст", "some-mod")
+
+  -
+    // список модификаторов
+    var rangeMods = "",
+        sliderMods = "";
+
+    if (noOutline === true) {
+      rangeMods += ` slider__range_no-outline`;
+    }
+
+    if (typeof (theme) !== "undefined" && theme) {
+      sliderMods += ` slider_theme_${theme}`;
+    }
+
+    if (label === true) {
+      rangeMods += " slider__range_label";
+    }
+
+    if (progress === true) {
+      rangeMods += " slider__range_progress";
+    }
+
+    if (output === true) {
+      sliderMods += " slider_output";
+    }
+
+  .slider(class=sliderMods, style=`width: ${width}`)&attributes(attributes)
+    input.slider__range(
+      class=rangeMods,
+      id="slider-range"
+      type="range",
+      min=min,
+      max=max,
+      value=value,
+      step=step
+    )
+    - if (label === true)
+        label.slider__label(for="slider-range")
+    - if (progress === true)
+        .slider__progress
+
+
+
