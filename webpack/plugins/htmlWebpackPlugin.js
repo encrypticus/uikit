@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");// генерирует html-файл в папке назначения
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // генерирует html-файл в папке назначения
 
 /**
  * Генерирует html-файл в папке назначения

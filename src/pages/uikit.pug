@@ -132,68 +132,17 @@ block content
       +title("Sliders")
       .elements-block
         +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "100%",
-          max: 1000,
-          progress: true,
-          label: true,
-          output: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
           theme: "cinnabar",
-          width: "100%",
-          max: 100,
-          value: 40,
-          progress: true,
-          label: true
+          tooltip: "always",
+          width: "37%"
         })(class="elements-block__slider")
 
         +slider({
-          noOutline: true,
           theme: "blue",
-          width: "40%",
-          max: 100,
-          value: 40,
-          progress: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
-          theme: "cinnabar",
-          width: "40%",
-          max: 100,
-          value: 80,
-          label: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
-          theme: "cinnabar",
-          width: "45%",
-          max: 200,
-          value: 30,
-          progress: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "50%",
-          max: 300,
-          value: 90,
-          progress: true,
-          label: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "80%",
-          max: 3000,
-          value: 90
+          ticks:[0, 25, 50, 75, 100],
+          step: 25,
+          selection: "before",
+          width: "37%"
         })(class="elements-block__slider")
 
 

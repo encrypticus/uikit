@@ -12,6 +12,8 @@ const htmlWebpackPlugin = require("./webpack/plugins/htmlWebpackPlugin");// мо
 const cleanWebpackPlugin = require("./webpack/plugins/cleanWebpackPlugin"); // модуль очищает папку сборки перед пересборкой
 const styleLintPlugin = require("./webpack/plugins/styleLintPlugin"); // линтер стилевых файлов
 const browserSync = require("./webpack/plugins/browserSyncPlugin"); // в комментариях не нуждается
+const jquery = require("./webpack/plugins/jquery"); // плагин, добавляющий jquery в проект
+const css = require("./webpack/loaders/css"); // модуль обработки css-файлов
 
 // функция вторым аргументом принимает args.mode от прописанных в package.json скриптов: args.mode = development или args.mode = production
 module.exports = (env, args) => {
@@ -21,17 +23,17 @@ module.exports = (env, args) => {
   }
 
   let mode = "development";
-  let isDev = mode === args.mode; //флаг, указывающий режим сборки
+  let isDev = mode === args.mode; // флаг, указывающий режим сборки
 
   const config = merge({
-        entry: "./src/index.js",// точка входа
+        entry: "./src/index.js", // точка входа
 
-        output: {// точка выхода
+        output: { // точка выхода
           filename: "scripts.js", // имя выходного js-файла
-          path: path.resolve(__dirname, "dist"),// директория, в которой будет лежать выходной файл
+          path: path.resolve(__dirname, "dist"), // директория, в которой будет лежать выходной файл
         },
 
-        module: {// модули, обрабатывающие файлы с указанным расширением
+        module: { // модули, обрабатывающие файлы с указанным расширением
           rules: [
 
             {
@@ -51,10 +53,11 @@ module.exports = (env, args) => {
       htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug", inject: false}),
       htmlWebpackPlugin({filename: "index.html", template: "src/pages/index.pug", inject: false}),
       styleLintPlugin(),
-      env.browserSync === "open" ? browserSync() : {}
+      env.browserSync === "open" ? browserSync() : {},
+      jquery()
   );
 
-  if (isDev) {// в режиме разработки
+  if (isDev) { // в режиме разработки
     return merge(
         config,
         cleanWebpackPlugin(),
