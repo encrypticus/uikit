@@ -4,8 +4,8 @@
 
 .button {
   position: relative;
-  padding: 8px 32px;
-  font-size: 12px;
+  padding: 8px 4.571428571428571%;
+  font-size: .75rem;
   font-family: "Lato Black";
 
   color: #000;
@@ -28,15 +28,15 @@
   // Размеры кнопки
   &_size_sm, // псевдоним для small
   &_size_small {
-    padding: 4px 16px;
-    font-size: 10px;
+    padding: 4px 2.285714285714286%;
+    font-size: .625rem;
     letter-spacing: .5px;
   }
 
   &_size_lg, // псевдоним для large
   &_size_large {
-    padding: 10px 40px;
-    font-size: 16px;
+    padding: 10px 5.714285714285714%;
+    font-size: 1rem;
     letter-spacing: .6px;
   }
 
@@ -73,6 +73,7 @@
     transition: background-color, color .5s;
   }
 
+  // Стиль для ripple-эффекта
   &__ripple {
     position: absolute;
     border-radius: 50%;
