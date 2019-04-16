@@ -1,0 +1,38 @@
+//-
+
+mixin stages({stages = 5, completed = 3, theme = "", width = "595px"} = {})
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +stages("Текст", "some-mod")
+
+  -
+    // список модификаторов
+    var modifiers = "",
+        steps = stages - 1,
+        fillPoint = completed,
+        emptyPoint = stages - completed,
+        completed = completed - 1,
+        incomlete = steps - completed;
+
+    if (typeof (theme) !== "undefined" && theme) {
+      modifiers += ` stages_theme_${theme}`;
+    }
+
+  .stages(class=modifiers, style=`width: ${width}`)&attributes(attributes)
+    .stages__wrapper
+      .stages__steps
+        - for (var i = 0; i < completed; i++)
+            .stages__step.stages__step_completed
+        - for (var i = 0; i < incomlete; i++)
+            .stages__step.stages__step_incomplete
+
+      .stages__points
+         - for (var i = 0; i < fillPoint; i++)
+            .stages__point-wrapper
+              .stages__point.stages__point_fill
+         - for (var i = 0; i < emptyPoint; i++)
+            .stages__point-wrapper
+              .stages__point.stages__point_empty
