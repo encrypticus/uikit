@@ -1,7 +1,7 @@
 
 .stages {
 
-  &__wrapper {
+  &__inner {
     position: relative;
     padding-bottom: .8403361344537815%;
   }
@@ -38,11 +38,33 @@
   }
 
   &__point {
+    position: relative;
     width: 100%;
-    padding-bottom: 100%;
-    //height: 29px;
     border-radius: 50%;
-    //transform: translateY(-50%);
+    padding-bottom: 100%;
+  }
+
+  &__value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    font-size: .875rem;
+    font-family: "Lato";
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    letter-spacing: .7px;
+
+    &_fill {
+      color: $white;
+    }
+
+    &_empty {
+      color: $dark-grey;
+    }
   }
 
   &__point_empty {
