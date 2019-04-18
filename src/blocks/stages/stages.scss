@@ -1,22 +1,22 @@
-
 .stages {
 
-  &__inner {
+  &__inner { // внутренний блок-обертка
     position: relative;
     padding-bottom: .8403361344537815%;
   }
   
-  &__steps {
+  &__steps { // контейнер для шагов компонента
     position: absolute;
     right: 1%;
     left: 1%;
     display: flex;
+
     height: 100%;
     margin: 0 auto;
   }
 
   &__step_completed,
-  &__step_incomplete {
+  &__step_incomplete { // пройденные и непройденные пункты
     flex-grow: 1;
   }
 
@@ -24,6 +24,7 @@
     background-color: $grey;
   }
 
+  // Цветовые темы для шагов
   &_theme_cinnabar &__step_completed {
     background-color: $cinnabar;
   }
@@ -32,45 +33,52 @@
     background-color: $fountain-blue;
   }
 
-  &__point-wrapper {
+  &__point-wrapper { // обертка для пунктов
     width: 4.873949579831933%;
     margin-top: -2.016806722689076%;
   }
 
-  &__point {
+  &__point { // пункт компонента
     position: relative;
     width: 100%;
     border-radius: 50%;
     padding-bottom: 100%;
   }
 
-  &__value {
+  &__value { // цифровое значение пункта
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+
     display: flex;
-    font-size: .875rem;
+    //font-size: .875rem;
     font-family: "Lato";
     justify-content: center;
+
     align-items: center;
     font-weight: 400;
     letter-spacing: .7px;
 
-    &_fill {
+    @media (max-width: 600px) {
+      font-size: .6rem !important;
+    }
+
+    &_fill { // значение для пройденного пункта
       color: $white;
     }
 
-    &_empty {
+    &_empty { // значение для непройденного пункта
       color: $dark-grey;
     }
   }
 
-  &__point_empty {
+  &__point_empty { // непройденный пункт
     background-color: $grey;
   }
 
+  // Цветовые темы для пунктов
   &_theme_cinnabar &__point_fill {
     background-color: $cinnabar;
   }
@@ -79,11 +87,12 @@
     background-color: $fountain-blue;
   }
 
-  &__points {
+  &__points { // контейнер для пунктов
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 100%;
+
     height: inherit;
   }
 }
