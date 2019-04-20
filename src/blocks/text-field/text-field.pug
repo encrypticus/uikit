@@ -1,0 +1,25 @@
+//- Создает текстовое поле
+
+mixin text-field(options)
+
+  //- Принимает:
+  //-   options.placeholder    {string} - текст-заполнитель внутри текстого поля
+  //-   options.width          {string} - ширина текстового поля с единицами измерения
+  //- Вызов:
+        +text-field("Текст", "some-mod")
+
+  //- Объект настроек текстового поля по умолчанию
+  -
+    var settings = {
+      placeholder: "",
+      width: "208px"
+    },
+    options = options || settings,
+    placeholder = options.placeholder || settings.placeholder,
+    width = options.width || settings.width;
+
+  input.text-field(
+    style=`width: ${width}`,
+    type="text",
+    placeholder=`${placeholder}`
+  )&attributes(attributes)

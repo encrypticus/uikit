@@ -1,0 +1,16 @@
+.text-field {
+  font-size: .875rem;
+  font-family: "Source Sans Pro";
+  color: $dark-grey;
+  border: none;
+
+  background-color: $grey;
+  font-weight: 400;
+  letter-spacing: .14px;
+  padding-top: 5px;
+
+  padding-bottom: 5px;
+  padding-left: 14px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
