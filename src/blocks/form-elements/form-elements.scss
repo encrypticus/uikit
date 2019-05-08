@@ -1,0 +1,27 @@
+.form-elements {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 700px) {
+      flex-direction: row;
+    }
+  }
+
+  &__left-col {
+    @media (min-width: 700px) {
+      width: 50%;
+    }
+  }
+
+  &__right-col {
+    @media (min-width: 700px) {
+      width: 50%;
+    }
+  }
+
+  &__text-field {
+    margin-bottom: 12px;
+  }
+}

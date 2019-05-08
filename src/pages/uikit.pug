@@ -49,6 +49,7 @@ block content
             animate: true,
             ripple: true
           })
+
           +arrow-button({
             size: "45%",
             noOutline: true,
@@ -57,6 +58,7 @@ block content
             animate: true,
             ripple: true
           })
+
         +button-wrapper("18.71428571428571%")
           +arrow-button({
             noOutline: true,
@@ -64,12 +66,14 @@ block content
             theme: "cinnabar",
             disable: true
           })
+
           +arrow-button({
             noOutline: true, direction: "right",
             size: "45%",
             theme: "cinnabar",
             disable: true
           })
+
         +button-wrapper("24.42857142857143%")
           +arrow-button({
             noOutline: true,
@@ -78,6 +82,7 @@ block content
             animate: true,
             ripple: true
           })
+
           +arrow-button({
             noOutline: true, direction: "right",
             size: "45%",
@@ -92,6 +97,7 @@ block content
             size: "45%",
             theme: "cinnabar"
           })
+
           +arrow-button({
             noOutline: true, direction: "right",
             size: "45%",
@@ -106,6 +112,7 @@ block content
             direction: "up",
             ripple: true
           })
+
           +arrow-button({
             size: "45%",
             noOutline: true,
@@ -122,6 +129,7 @@ block content
         +percentage-chart({percent: 38, theme: "cinnabar", size: "14.28571428571429%"})
         +percentage-chart({percent: 62, theme: "blue", size: "14.28571428571429%"})
         +percentage-chart({percent: 89, theme: "cinnabar", size: "14.28571428571429%"})
+
       .elements-block
         +pie-chart({size:"14.28571428571429%", greySlice: 11, redSlice: 26, blueSlice: 30})
         +pie-chart({size:"17%", greySlice: 33, redSlice: 48, blueSlice: 15})
@@ -132,69 +140,58 @@ block content
       +title("Sliders")
       .elements-block
         +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "100%",
-          max: 1000,
-          progress: true,
-          label: true,
-          output: true
-        })(class="elements-block__slider")
-
-        +slider({
-          noOutline: true,
           theme: "cinnabar",
-          width: "100%",
-          max: 100,
-          value: 40,
-          progress: true,
-          label: true
+          tooltip: "always",
+          width: "37%"
         })(class="elements-block__slider")
 
         +slider({
-          noOutline: true,
           theme: "blue",
-          width: "40%",
-          max: 100,
-          value: 40,
-          progress: true
+          ticks:[0, 25, 50, 75, 100],
+          step: 25,
+          selection: "before",
+          width: "37%"
         })(class="elements-block__slider")
 
-        +slider({
-          noOutline: true,
-          theme: "cinnabar",
-          width: "40%",
-          max: 100,
-          value: 80,
-          label: true
-        })(class="elements-block__slider")
+    section
+      +title("Stages")
+      +stages({
+        stages: 5,
+        completed: 3,
+        theme: "cinnabar",
+        width: "85%"
+      })(style="margin-bottom: 80px;", class="elements-block__stages")
 
-        +slider({
-          noOutline: true,
-          theme: "cinnabar",
-          width: "45%",
-          max: 200,
-          value: 30,
-          progress: true
-        })(class="elements-block__slider")
+      +stages({
+        stages: 7,
+        completed: 5,
+        theme: "blue",
+        width: "70%",
+        fontSize: ".75rem"
+      })(class="elements-block__stages")
 
-        +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "50%",
-          max: 300,
-          value: 90,
-          progress: true,
-          label: true
-        })(class="elements-block__slider")
+    section.form-elements
+      +title("Form elements")
+      .form-elements__inner
+        .form-elements__left-col
+          +text-field({
+            placeholder: "Your Name",
+            width: "59.42857142857143%"
+          })(class="form-elements__text-field")
 
-        +slider({
-          noOutline: true,
-          theme: "blue",
-          width: "80%",
-          max: 3000,
-          value: 90
-        })(class="elements-block__slider")
+          +form-tooltip({
+            type: "error",
+            width: "21.71428571428571%"
+          })(class="form-elements__tooltip")
+
+          +text-field({
+            placeholder: "Your Email",
+            width: "59.42857142857143%"
+          })
+          +form-tooltip({width: "21.71428571428571%"})(class="form-elements__tooltip")
+
+        .form-elements__right-col
+
 
 
 

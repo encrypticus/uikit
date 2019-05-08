@@ -1,4 +1,3 @@
-//@import "sass/fonts";
 @import "sass/mixins";
 
 @import "sass/variables";
@@ -7,7 +6,7 @@
 
 @import "blocks/content/content";
 
-@import "blocks/buttons-block/buttons-block.scss";
+@import "blocks/elements-block/elements-block.scss";
 
 @import "blocks/title/title";
 
@@ -22,3 +21,11 @@
 @import "blocks/pie-chart/pie-chart";
 
 @import "blocks/slider/slider";
+
+@import "blocks/stages/stages";
+
+@import "blocks/form-tooltip/form-tooltip";
+
+@import "blocks/form-elements/form-elements";
+
+@import "blocks/text-field/text-field";

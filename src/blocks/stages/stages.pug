@@ -1,0 +1,79 @@
+//-
+
+mixin stages({stages = 5, completed = 3, theme = "", width = "595px", fontSize = ".875rem"} = {})
+
+  //- Принимает:
+  //-   stages       {number} - общее количество шагов
+  //-   completed    {number} - количество завершенных шагов
+  //-   theme        {string} - цветовая тема
+  //-   width        {string} - строка со значением ширины слайдера и единицами измерения
+
+  //- Вызов:
+        +stages({             - элемент с количеством шагов 5, количеством завершенных шагов 3,
+          stages: 5,          голубого цвета, шириной 50% ширины родительского элемента
+          completed: 3,
+          theme: "blue",
+          width: "50%"
+        })
+
+  -
+    if (!isValidArg(stages)) stages = 5;
+    if (!isValidElementSize(width)) width = "595px";
+    if (!isValidFontSize(fontSize)) fontSize = ".875rem";
+
+    // список модификаторов
+    var modifiers = "",
+        fullSteps = stages - 1, // общее количество шагов между пунктами (всегда на один меньше количества пунктов)
+        completedSteps = completed - 1, // количество пройденных шагов
+        incompleteSteps = fullSteps - completedSteps, // количество оставшихся непройденных шагов
+        fillPoint = completed, // количество пройденных пунктов
+        emptyPoint = stages - completed; // количество оставшихся непройденных пунктов
+
+  //- Провереяет на допустимость переданное значение количества шагов
+     Принимает:
+      arg {number} - проверяемое число
+     Возвращает:
+      true | false
+  -
+    function isValidArg(arg) {
+      if (arg < 2 || typeof arg != "number") return false;
+      return true;
+    }
+
+  //- Проверяет на корректность значение аргумента width - ширины блока элемента. Возвращает true, если значение
+  //- соответствует указанному шаблону, иначе false.
+  -
+    function isValidElementSize(size) {
+      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(size))) return true;
+      return false;
+    }
+
+  //- Проверяет на корректность значение аргумента fontSize - размера шрифта элемента. Возвращает true, если значение
+  //- соответствует указанному шаблону, иначе false.
+  -
+    function isValidFontSize(size) {
+      if ((/^((\d+)?\.?)\d+(px|rem)$/i.test(size))) return true;
+      return false;
+    }
+
+
+    if (typeof (theme) !== "undefined" && theme)
+      modifiers += ` stages_theme_${theme}`;
+
+  .stages(class=modifiers, style=`width: ${width}`)&attributes(attributes)
+    .stages__inner
+      .stages__steps
+        - for (var i = 0; i < completedSteps; i++)
+            .stages__step.stages__step_completed
+        - for (var i = 0; i < incompleteSteps; i++)
+            .stages__step.stages__step_incomplete
+
+      .stages__points
+        - for (var i = 0; i < stages; i++)
+            .stages__point-wrapper
+              - if (i < fillPoint)
+                  .stages__point.stages__point_fill
+                    span.stages__value.stages__value_fill(style=`font-size: ${fontSize}`)= i + 1
+              - else
+                  .stages__point.stages__point_empty
+                    span.stages__value.stages__value_empty(style=`font-size: ${fontSize}`)= i + 1

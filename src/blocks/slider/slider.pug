@@ -1,52 +1,76 @@
-//-
-
-mixin slider({min = "0", max = "100", step = "1", value = "50", width = "260px", noOutline = false, theme = "", progress = false, label = false, output = false} = {})
+mixin slider(options)
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
-  //- Вызов:
-        +slider("Текст", "some-mod")
+    //-   options.width       {string}  -  строка со значением ширины слайдера и единицами измерения
+    //-   options.theme       {string}  -  класс-модификатор цветвой темы слайдера
+    //-   options.min         {number}  -  минимальное значение слайдера
+    //-   options.max         {number}  -  максимальное значение слайдера
+    //-   options.value       {number}  -  начальное значение по умолчанию
+    //-   options.step        {number}  -  интервал шага изменения значения,
+    //-   options.selection   {string}  -  строковое значение, от которого зависит, будет ли отображаться выделение заполения
+                                           слайдера. Если передано значение "none", то выделение не будет отображаться. Если
+                                           передано значение "before" - выделение будет отображаться.
+    //-   options.tooltip     {string}  -  стрковое значение, от которого зависит, будет ли отображаться метка с текущим
+                                           значением над бегунком слайдера. Если "hide" - метка не будет отображаться.
+                                           Если "always" - метка будет отображаться.
+    //-   options.name        {string}  -  атрибут name элемента input
+    //-   options.ticks       {array}   -  массив чисел, значения которых указывают, где под слайдером будут располагаться
+                                           числовые метки
 
+    //- Вызов:                          -  слайдер голубого цвета, шириной 100%, со всплывающей меткой над бегунком, с
+        +slider({                          отображением числовых меток, отображением выделения, шагом 25
+            theme: "cinnabar",
+            width: "100%",
+            tooltip: "always",
+            ticks:[0, 25, 50, 75, 100],
+            step: 25,
+            selection: "before"
+          })
+
+  //- Объект настроек слайдера по умолчанию
   -
-    // список модификаторов
-    var rangeMods = "",
-        sliderMods = "";
+    var settings = {
+    width: "260px",
+    theme: "",
+    min: 0,
+    max: 100,
+    value: 0,
+    step: 1,
+    selection: "none",
+    tooltip: "hide",
+    name: "slider",
+    ticks: ""
+    },
 
-    if (noOutline === true) {
-      rangeMods += ` slider__range_no-outline`;
-    }
+    options = options || settings,
+    width = options.width || settings.width,
+    theme = options.theme || settings.theme,
+    min = options.min || settings.min,
+    max = options.max || settings.max,
+    value = options.value || settings.value,
+    step = options.step || settings.step,
+    selection = options.selection || settings.selection,
+    tooltip = options.tooltip || settings.tooltip,
+    name = options.name || settings.name,
+    ticks = options.ticks || settings.ticks
+    // список модификаторов
+    modifiers = "";
 
     if (typeof (theme) !== "undefined" && theme) {
-      sliderMods += ` slider_theme_${theme}`;
+    modifiers += ` slider-wrapper_theme_${theme}`;
     }
 
-    if (label === true) {
-      rangeMods += " slider__range_label";
-    }
-
-    if (progress === true) {
-      rangeMods += " slider__range_progress";
-    }
-
-    if (output === true) {
-      sliderMods += " slider_output";
-    }
-
-  .slider(class=sliderMods, style=`width: ${width}`)&attributes(attributes)
-    input.slider__range(
-      class=rangeMods,
-      id="slider-range"
-      type="range",
-      min=min,
-      max=max,
-      value=value,
-      step=step
+  .slider-wrapper(class=modifiers, style=`width:${width}`)&attributes(attributes)
+    input(
+      type="text"
+      name=name
+      data-provide="slider"
+      data-slider-min=min,
+      data-slider-max=max,
+      data-slider-value=value,
+      data-slider-step=step,
+      data-slider-selection=selection,
+      data-slider-tooltip=tooltip,
+      data-slider-ticks=Array.isArray(ticks) ? ticks : "",
+      data-slider-ticks-labels=Array.isArray(ticks) ? ticks : ""
     )
-    - if (label === true)
-        label.slider__label(for="slider-range")
-    - if (progress === true)
-        .slider__progress
-
-
-

@@ -1,4 +1,4 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // обрабатывает scss|sass
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // обрабатывает css
 const autoprefixer = require("autoprefixer");
 
 /**
@@ -7,14 +7,13 @@ const autoprefixer = require("autoprefixer");
  * @returns {{module: {rules: [null]}}} конфиг лоадера
  */
 module.exports = function (loadMap) {
-
   return {
 
     module: {
 
       rules: [
         {
-          test: /\.(scss|sass)$/,
+          test: /\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
             // генерация sourcemap в зависимости от режима сборки; для того чтобы карта сгенерировалась обязательно
@@ -31,18 +30,10 @@ module.exports = function (loadMap) {
               options: {
                 plugins: () => [autoprefixer()]
               }
-            },
-            {
-              loader: "sass-loader",
-              options: {
-                sourceMap: loadMap ? true : false
-              }
             }
           ]
         }
       ]
-
     }
   }
-
-};
+}
