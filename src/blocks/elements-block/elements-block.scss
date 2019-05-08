@@ -7,7 +7,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  @media (min-width: 700px) {
+  @include for-tablet-portrait-up () {
     flex-direction: row;
     justify-content: space-between;
   }

@@ -30,7 +30,6 @@ mixin slider(options)
   //- Объект настроек слайдера по умолчанию
   -
     var settings = {
-    width: "260px",
     theme: "",
     min: 0,
     max: 100,
@@ -43,7 +42,7 @@ mixin slider(options)
     },
 
     options = options || settings,
-    width = options.width || settings.width,
+    width = options.width,
     theme = options.theme || settings.theme,
     min = options.min || settings.min,
     max = options.max || settings.max,
@@ -60,7 +59,7 @@ mixin slider(options)
     modifiers += ` slider-wrapper_theme_${theme}`;
     }
 
-  .slider-wrapper(class=modifiers, style=`width:${width}`)&attributes(attributes)
+  .slider-wrapper(class=modifiers, style=options.width != undefined ? `width:${width}` : "")&attributes(attributes)
     input(
       type="text"
       name=name
