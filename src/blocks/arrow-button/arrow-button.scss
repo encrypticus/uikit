@@ -6,9 +6,16 @@
   border-radius: 50%;
   box-sizing: border-box;
 
+  border-style: solid;
+  border-width: 3px;
   background-color: white;
   cursor: pointer;
+
   overflow: hidden; // для ripple-effect
+
+  @media (max-width: 500px) {
+    border-width: 2px;
+  }
 
   &__arrow { // стрелка внутри кнопки
     position: relative;
@@ -71,11 +78,11 @@
 
   // Цветовые темы
   &_theme_blue {
-    border: 3px solid $fountain-blue;
+    border-color: $fountain-blue;
   }
 
   &_theme_cinnabar {
-    border: 3px solid $cinnabar;
+    border-color: $cinnabar;
   }
 
   &_theme_blue &__arrow::before,
