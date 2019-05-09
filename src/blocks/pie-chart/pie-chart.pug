@@ -1,4 +1,4 @@
-mixin pie-chart({size = "100px", greySlice = 33, redSlice = 33, blueSlice = 34} = {})
+mixin pie-chart({size = "", greySlice = 33, redSlice = 33, blueSlice = 34} = {})
 
   //- Принимает:
   //-   object.size       {string} - размер элемента в % или px
@@ -41,7 +41,8 @@ mixin pie-chart({size = "100px", greySlice = 33, redSlice = 33, blueSlice = 34} 
       blueSlice = 34;
     }
 
-    if (!validArg(size)) size = "100px";
+    if (size != "")
+      if (!validArg(size)) size = "100px";
 
     var greySliceGap = whole - greySlice, // промежуточный интервал для stroke-dasharray серого сегмента чарта
         redSliceGap = whole - redSlice, // промежуточный интервал для stroke-dasharray красного сегмента чарта
@@ -50,7 +51,7 @@ mixin pie-chart({size = "100px", greySlice = 33, redSlice = 33, blueSlice = 34} 
         blueSliceOffset = whole - greySlice - redSlice + 25; // смещение относительно заданной по умолчанию системы координат голубого сегмента чарта
 
 
-  .pie-chart(style=`width: ${size}`)&attributes(attributes)
+  .pie-chart(style=size != "" ? `width: ${size}` : "")&attributes(attributes)
     .pie-chart__wrapper
       svg.pie-chart__img(viewBox="0 0 41 41")
         circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%")

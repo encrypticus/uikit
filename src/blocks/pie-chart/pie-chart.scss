@@ -2,6 +2,12 @@
 
 .pie-chart {
   fill: none;
+  width: 14.28571428571429%;
+  max-width: 100px;
+
+  @include for-small-phone-only() {
+    width: 25%;
+  }
 
   &__wrapper { // обертка
     position: relative;
