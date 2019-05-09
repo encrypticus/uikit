@@ -20,6 +20,12 @@
   }
 }
 
+@mixin for-middle-phone-only() {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
 @mixin for-phone-only() {
   @media (max-width: 480px) {
     @content;
