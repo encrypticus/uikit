@@ -1,16 +1,22 @@
 .text-field {
+  width: 208px;
   font-size: .875rem;
   font-family: "Source Sans Pro";
   color: $dark-grey;
-  border: none;
 
+  border: none;
+  border-radius: 3px;
   background-color: $grey;
   font-weight: 400;
+
   letter-spacing: .14px;
   padding-top: 5px;
-
   padding-bottom: 5px;
   padding-left: 14px;
-  border-radius: 3px;
+
   box-sizing: border-box;
+
+  @include for-small-phone-only() {
+    width: 150px;
+  }
 }

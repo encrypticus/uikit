@@ -6,20 +6,19 @@ mixin text-field(options)
   //-   options.placeholder    {string} - текст-заполнитель внутри текстого поля
   //-   options.width          {string} - ширина текстового поля с единицами измерения
   //- Вызов:
-        +text-field("Текст", "some-mod")
+        +text-field({placeholder: "Yout email", width: "20%"})
 
   //- Объект настроек текстового поля по умолчанию
   -
     var settings = {
-      placeholder: "",
-      width: "208px"
+      placeholder: ""
     },
     options = options || settings,
     placeholder = options.placeholder || settings.placeholder,
-    width = options.width || settings.width;
+    width = options.width;
 
   input.text-field(
-    style=`width: ${width}`,
+    style=width != undefined ? `width: ${width}` : "",
     type="text",
     placeholder=`${placeholder}`
   )&attributes(attributes)
