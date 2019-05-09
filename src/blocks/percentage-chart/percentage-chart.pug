@@ -1,4 +1,4 @@
-mixin percentage-chart({size = "100px", percent = 0, theme = ""} = {})
+mixin percentage-chart({size = "", percent = 0, theme = ""} = {})
 
   //- Принимает:
   //-   object.size       {string} - размер элемента в % или px
@@ -23,7 +23,9 @@ mixin percentage-chart({size = "100px", percent = 0, theme = ""} = {})
     if (typeof percent !== "number") percent = 0;
     if (percent < 0 ) percent = 0;
     if (percent > valueFull) percent = 100;
-    if (!validArg(size)) size = "100px";
+    if (size != "")
+      if (!validArg(size)) size = "100px";
+
 
     valueEmpty = valueFull - percent,
     // список модификаторов
@@ -33,7 +35,7 @@ mixin percentage-chart({size = "100px", percent = 0, theme = ""} = {})
       modifiers += ` percentage-chart__value_theme_${theme}`;
     }
 
-  .percentage-chart(style=`width: ${size}`)&attributes(attributes)
+  .percentage-chart(style=size != "" ? `width: ${size}`: "")&attributes(attributes)
     .percentage-chart__wrapper
       svg.percentage-chart__img(viewBox="0 0 36 36", fille="none")
         circle.percentage-chart__value(class=modifiers, r="15.9155", cx="50%", cy="50%",

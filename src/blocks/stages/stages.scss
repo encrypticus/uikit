@@ -1,4 +1,10 @@
 .stages {
+  width: 85%;
+  max-width: 595px;
+
+  @include for-phone-only() {
+    width: 100%;
+  }
 
   &__inner { // внутренний блок-обертка
     position: relative;

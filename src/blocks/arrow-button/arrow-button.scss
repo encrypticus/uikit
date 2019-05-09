@@ -18,7 +18,7 @@
   }
 
   @include for-small-phone-only() {
-    border-widht: 1px;
+    border-width: 1px;
   }
 
   &__arrow { // стрелка внутри кнопки
