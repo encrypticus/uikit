@@ -17,6 +17,10 @@
     border-width: 2px;
   }
 
+  @include for-small-phone-only() {
+    border-widht: 1px;
+  }
+
   &__arrow { // стрелка внутри кнопки
     position: relative;
     display: block;
