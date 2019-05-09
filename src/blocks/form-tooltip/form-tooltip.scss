@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   width: 72px;
+  max-width: 72px;
 
   &_type_success &__inner {
     background-color: $fountain-blue;
