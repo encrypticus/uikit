@@ -1,6 +1,6 @@
 //-
 
-mixin stages({stages = 5, completed = 3, theme = "", width = "595px", fontSize = ".875rem"} = {})
+mixin stages({stages = 5, completed = 3, theme = "", width = "", fontSize = ".875rem"} = {})
 
   //- Принимает:
   //-   stages       {number} - общее количество шагов
@@ -18,7 +18,8 @@ mixin stages({stages = 5, completed = 3, theme = "", width = "595px", fontSize =
 
   -
     if (!isValidArg(stages)) stages = 5;
-    if (!isValidElementSize(width)) width = "595px";
+    if (width != "")
+      if (!isValidElementSize(width)) width = "595px";
     if (!isValidFontSize(fontSize)) fontSize = ".875rem";
 
     // список модификаторов
@@ -60,7 +61,7 @@ mixin stages({stages = 5, completed = 3, theme = "", width = "595px", fontSize =
     if (typeof (theme) !== "undefined" && theme)
       modifiers += ` stages_theme_${theme}`;
 
-  .stages(class=modifiers, style=`width: ${width}`)&attributes(attributes)
+  .stages(class=modifiers, style=width != "" ? `width: ${width}` : "")&attributes(attributes)
     .stages__inner
       .stages__steps
         - for (var i = 0; i < completedSteps; i++)
