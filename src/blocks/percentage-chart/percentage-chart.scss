@@ -1,6 +1,12 @@
 // Стили для percentage-chart
 
 .percentage-chart {
+  width: 14.28571428571429%;
+  max-width: 100px;
+
+  @include for-middle-phone-only() {
+    width: 25%;
+  }
 
   &__wrapper { // обертка
     position: relative;
