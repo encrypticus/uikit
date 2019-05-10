@@ -11,10 +11,11 @@ mixin form-tooltip(options)
   -
     // Объект настроек элемента по умолчанию
     var settings = {
-      type: "success"
+      type: "success",
+      width: "72px"
     },
     options = options || settings,
-    width = options.width,
+    width = options.width || settings.width,
     type = options.type || settings.type,
     // Список модификаторов
     modifiers = "";
@@ -22,7 +23,7 @@ mixin form-tooltip(options)
     if (typeof type != "undefined" && type)
       modifiers += ` form-tooltip_type_${type}`;
 
-  .form-tooltip(class=modifiers, style=width != undefined ? `width: ${width}` : "")&attributes(attributes)
+  .form-tooltip(class=modifiers, style=`width: ${width}`)&attributes(attributes)
     svg.form-tooltip__triangle(width="4", height="8", xmlns="http://www.w3.org/2000/svg")
       polygon(points="0,4 4,0 4,8")
     .form-tooltip__inner= type === "success" ? "thanks!" : "error"

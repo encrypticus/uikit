@@ -177,14 +177,15 @@ block content
           })(class="form-elements__text-field")
 
           +form-tooltip({
-            type: "error"
+            type: "error",
+            width: "20.57142857142857%"
           })(class="form-elements__tooltip")
 
           +text-field({
             placeholder: "Your Email",
             width: "59.42857142857143100%"
           })
-          +form-tooltip()(class="form-elements__tooltip")
+          +form-tooltip({width: "20.57142857142857%"})(class="form-elements__tooltip")
 
         .form-elements__right-col
 
