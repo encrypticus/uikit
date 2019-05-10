@@ -1,0 +1,23 @@
+//- Создает поле ввода
+
+mixin textarea(options)
+	//- Принимает:
+	//-   options.placeholder    {string} - текст-заполнитель внутри текстого поля
+	//-   options.width          {string} - ширина поля ввода с единицами измерения
+	//- Вызов:
+				+textarea({placeholder: "Your message", width: "20%"})
+
+	//- Объект настроек по умолчанию
+	-
+		var settings = {
+			placeholder: "Your Message",
+			width: "288px"
+		},
+		options = options || settings,
+		placeholder = options.placeholder || settings.placeholder,
+		width = options.width || settings.width;
+
+	textarea.textarea(
+		placeholder= placeholder,
+		style=`width: ${width}`
+	)&attributes(attributes)

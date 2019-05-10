@@ -1,0 +1,15 @@
+.textarea {
+  max-width: 288px;
+  height: 88px;
+  padding: 10px 0 0 14px;
+  font-size: .875rem;
+
+  font-family: "Source Sans Pro", sans-serif;
+  color: $dark-grey;
+  letter-spacing: .14px;
+  box-sizing: border-box;
+
+  background-color: $grey;
+  border-width: 0;
+  border-radius: 4px;
+}
