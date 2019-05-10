@@ -11,14 +11,15 @@ mixin text-field(options)
   //- Объект настроек текстового поля по умолчанию
   -
     var settings = {
-      placeholder: ""
+      placeholder: "",
+      width: "208px"
     },
     options = options || settings,
     placeholder = options.placeholder || settings.placeholder,
-    width = options.width;
+    width = options.width || settings.width;
 
   input.text-field(
-    style=width != undefined ? `width: ${width}` : "",
+    style=`width: ${width}`,
     type="text",
     placeholder=`${placeholder}`
   )&attributes(attributes)
