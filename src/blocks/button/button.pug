@@ -1,6 +1,6 @@
 //- Создает элемент кнопки
 
-mixin button({text = "Button", size = "", theme = "", noOutline = false, animate = false} = {})
+mixin button({text = "Button", size = "", theme = "", noOutline = false, animate = false, form = false} = {})
 
   //- Принимает:
   //-   object.text        {string}      - надпись кнопки
@@ -40,6 +40,10 @@ mixin button({text = "Button", size = "", theme = "", noOutline = false, animate
 
     if (animate === true) {
       modifiers += ` button_animate`;
+    }
+
+    if (form === true) {
+        modifiers += ` button_form`;
     }
 
   button.button(class=modifiers)&attributes(attributes)= text
