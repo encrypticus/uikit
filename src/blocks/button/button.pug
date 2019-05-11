@@ -1,6 +1,6 @@
 //- Создает элемент кнопки
 
-mixin button({text = "Button", size = "", theme = "", noOutline = false, animate = false, form = false} = {})
+mixin button(options)
 
   //- Принимает:
   //-   object.text        {string}      - надпись кнопки
@@ -23,28 +23,42 @@ mixin button({text = "Button", size = "", theme = "", noOutline = false, animate
         +button({size: "large", theme: "blue"})                     - большая кнопка синего цвета
 
   -
-    // список модификаторов
-    var modifiers = "";
+    // Список модификаторов
+    var modifiers = "",
 
-    if (typeof(size) !== "undefined" && size) {
+    // Объект настроек по умолчанию
+    settings = {
+      text: "Button",
+      size: "",
+      theme: "",
+      noOutline: false,
+      animate: false,
+      form: false
+    },
+    options = options || settings,
+    text = options.text || settings.text,
+    size = options.size || settings.size,
+    theme = options.theme || settings.theme,
+    noOutline = options.noOutline || settings.noOutline,
+    animate = options.animate || settings.animate,
+    form = options.form || settings.form;
+
+    if (typeof(size) !== "undefined" && size)
       modifiers += ` button_size_${size}`;
-    }
 
-    if (typeof (theme) !== "undefined" && theme) {
+    if (typeof (theme) !== "undefined" && theme)
       modifiers += ` button_theme_${theme}`;
-    }
 
-    if (noOutline === true) {
+    if (noOutline === true)
       modifiers += ` button_no-outline`;
-    }
 
-    if (animate === true) {
+    if (animate === true)
       modifiers += ` button_animate`;
-    }
 
-    if (form === true) {
+    if (form === true)
         modifiers += ` button_form`;
-    }
 
-  button.button(class=modifiers)&attributes(attributes)= text
-    block
+  button.button(
+    class=modifiers,
+    style=options.paddings != undefined ? style=`padding-left: ${options.paddings}; padding-right: ${options.paddings}` : ""
+  )&attributes(attributes)= text

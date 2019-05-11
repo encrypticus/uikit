@@ -16,26 +16,26 @@ block content
       +title("Standard buttons")
       .elements-block
         +button({size: "sm", theme: "blue"})(class="elements-block__button")
-        +button({theme: "blue"})(class="elements-block__button")
+        +button({theme: "blue", paddings: "4.571428571428571%"})(class="elements-block__button")
 
         +button({
           size: "lg", theme: "blue",
           noOutline: true, animate: true
         })(class="elements-block__button")
 
-        +button({theme: "blue"})(class="elements-block__button")
+        +button({theme: "blue", paddings: "4.571428571428571%"})(class="elements-block__button")
         +button({size: "sm", theme: "blue"})(class="elements-block__button")
 
       .elements-block
         +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
-        +button({theme: "cinnabar"})(class="elements-block__button")
+        +button({theme: "cinnabar", paddings: "4.571428571428571%"})(class="elements-block__button")
 
         +button({
           size: "lg", theme: "cinnabar",
           noOutline: true, animate: true
         })(class="elements-block__button")
 
-        +button({theme: "cinnabar"})(class="elements-block__button")
+        +button({theme: "cinnabar", paddings: "4.571428571428571%"})(class="elements-block__button")
         +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
 
     section
@@ -188,7 +188,11 @@ block content
           +form-tooltip({width: "20.57142857142857%"})(class="form-elements__tooltip")
 
           +textarea({width: "82.28571428571429%"})
-
+          +button({
+            text: "Submit",
+            form: true,
+            paddings: "9.714285714285714%"
+          })
         .form-elements__right-col
 
 
