@@ -4,7 +4,12 @@
 
 .button {
   position: relative;
-  padding: 8px 32px;
+  width: 118px;
+  max-width: 118px;
+  min-width: 92px;
+
+  height: 33px;
+  padding: 0;
   font-size: .75rem;
   font-family: "Lato", sans-serif;
 
@@ -19,7 +24,6 @@
   user-select: none;
 
   overflow: hidden;
-  max-width: 118px;
 
   &:active {
     box-shadow: none;
@@ -36,18 +40,24 @@
   // Размеры кнопки
   &_size_sm, // псевдоним для small
   &_size_small {
-    padding: 4px 2.285714285714286%;
+    width: 77px;
+    max-width: 77px;
+    min-width: 60px;
+    height: 22px;
+
     font-size: .625rem;
     letter-spacing: .5px;
-    max-width: 77px;
   }
 
   &_size_lg, // псевдоним для large
   &_size_large {
-    padding: 10px 5.714285714285714%;
+    width: 150px;
+    height: 40px;
     font-size: 1rem;
     letter-spacing: .6px;
+
     max-width: 150px;
+    min-width: 118px;
   }
 
   // Цветовые темы кнопки

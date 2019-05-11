@@ -15,28 +15,50 @@ block content
     section
       +title("Standard buttons")
       .elements-block
-        +button({size: "sm", theme: "blue"})(class="elements-block__button")
-        +button({theme: "blue", paddings: "4.571428571428571%"})(class="elements-block__button")
-
         +button({
-          size: "lg", theme: "blue",
-          noOutline: true, animate: true
+          size: "sm",
+          width: "11%",
+          theme: "blue"
         })(class="elements-block__button")
 
-        +button({theme: "blue", paddings: "4.571428571428571%"})(class="elements-block__button")
-        +button({size: "sm", theme: "blue"})(class="elements-block__button")
+        +button({theme: "blue", width: "16.85714285714286%"})(class="elements-block__button")
+
+        +button({
+          size: "lg", width: "21.42857142857143%",
+          noOutline: true, animate: true,
+          theme: "blue"
+        })(class="elements-block__button")
+
+        +button({theme: "blue", width: "16.85714285714286%"})(class="elements-block__button")
+
+        +button({
+          size: "sm",
+          width: "11%",
+          theme: "blue"
+        })(class="elements-block__button")
 
       .elements-block
-        +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
-        +button({theme: "cinnabar", paddings: "4.571428571428571%"})(class="elements-block__button")
+        +button({
+          size: "sm",
+          width: "11%",
+          theme: "cinnabar"
+        })(class="elements-block__button")
+
+        +button({theme: "cinnabar", width: "16.85714285714286%"})(class="elements-block__button")
 
         +button({
-          size: "lg", theme: "cinnabar",
+          size: "lg", width: "21.42857142857143%",
+          theme: "cinnabar",
           noOutline: true, animate: true
         })(class="elements-block__button")
 
-        +button({theme: "cinnabar", paddings: "4.571428571428571%"})(class="elements-block__button")
-        +button({size: "sm", theme: "cinnabar"})(class="elements-block__button")
+        +button({theme: "cinnabar", width: "16.85714285714286%"})(class="elements-block__button")
+
+        +button({
+          size: "sm",
+          width: "11%",
+          theme: "cinnabar"
+        })(class="elements-block__button")
 
     section
       +title("Arrow buttons")
@@ -171,28 +193,33 @@ block content
       +title("Form elements")
       .form-elements__inner
         .form-elements__left-col
-          +text-field({
-            placeholder: "Your Name",
-            width: "59.42857142857143100%"
-          })(class="form-elements__text-field")
+          div
+            +text-field({
+              placeholder: "Your Name",
+              width: "59.42857142857143100%"
+            })(class="form-elements__text-field")
 
-          +form-tooltip({
-            type: "error",
-            width: "20.57142857142857%"
-          })(class="form-elements__tooltip")
+            +form-tooltip({
+              type: "error",
+              width: "20.57142857142857%"
+            })(class="form-elements__tooltip")
 
-          +text-field({
-            placeholder: "Your Email",
-            width: "59.42857142857143100%"
-          })(class="form-elements__text-field")
-          +form-tooltip({width: "20.57142857142857%"})(class="form-elements__tooltip")
+          div
+            +text-field({
+              placeholder: "Your Email",
+              width: "59.42857142857143100%"
+            })(class="form-elements__text-field")
+            +form-tooltip({width: "20.57142857142857%"})(class="form-elements__tooltip")
 
-          +textarea({width: "82.28571428571429%"})
-          +button({
-            text: "Submit",
-            form: true,
-            paddings: "9.714285714285714%"
-          })
+          div
+            +textarea({width: "82.28571428571429%"})
+
+          div
+            +button({
+              text: "Submit",
+              form: true,
+              width: "33.71428571428571%"
+            })
         .form-elements__right-col
 
 

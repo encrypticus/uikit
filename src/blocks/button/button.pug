@@ -3,12 +3,16 @@
 mixin button(options)
 
   //- Принимает:
-  //-   object.text        {string}      - надпись кнопки
-  //-   object.size        {string}      - класс-модификатор размера кнопки
-  //-   object.theme       {string}      - класс-модификатор цветовой темы кнопки
-  //-   object.noOutline   {boolean}     - булево значение, от которого зависит, будет ли к элементу кнопки добавлен
-                                           класс-модификатор, убирающий дефолтный outline в активном состоянии
-                                           последней
+  //-   options.text        {string}      - надпись кнопки
+  //-   options.size        {string}      - класс-модификатор размера кнопки
+  //-   options.theme       {string}      - класс-модификатор цветовой темы кнопки
+  //-   options.noOutline   {boolean}     - булево значение, от которого зависит, будет ли к элементу кнопки добавлен
+                                            класс-модификатор, убирающий дефолтный outline в активном состоянии
+                                            последней
+  //- options.animate       {boolean}     - булево значение, от которого зависит, будет ли анимироваться изменение цвета
+                                            кнопки при наведении
+  //- options.form          {boolean}     - булево значение, добавляющее кнопке модификатор принадлежности ее к форме
+  //- options.width         {string}      - ширина кнопки в с указанием единиц измерения
   //- Вызов:
         +button                                                     - белая кнопка среднего размера
         +button({size: "small", theme: "blue"})                     - маленькая кнопка синего цвета
@@ -33,7 +37,8 @@ mixin button(options)
       theme: "",
       noOutline: false,
       animate: false,
-      form: false
+      form: false,
+      width: ""
     },
     options = options || settings,
     text = options.text || settings.text,
@@ -41,7 +46,8 @@ mixin button(options)
     theme = options.theme || settings.theme,
     noOutline = options.noOutline || settings.noOutline,
     animate = options.animate || settings.animate,
-    form = options.form || settings.form;
+    form = options.form || settings.form,
+    width = options.width || settings.width;
 
     if (typeof(size) !== "undefined" && size)
       modifiers += ` button_size_${size}`;
@@ -60,5 +66,5 @@ mixin button(options)
 
   button.button(
     class=modifiers,
-    style=options.paddings != undefined ? style=`padding-left: ${options.paddings}; padding-right: ${options.paddings}` : ""
+    style=width != "" ? `width: ${width}` : ""
   )&attributes(attributes)= text
