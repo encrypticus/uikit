@@ -131,10 +131,25 @@ block content
         +percentage-chart({percent: 89, theme: "cinnabar"})
 
       .elements-block
-        +pie-chart({greySlice: 11, redSlice: 26, blueSlice: 30})
-        +pie-chart({greySlice: 33, redSlice: 48, blueSlice: 15})
-        +pie-chart({size:"10%", greySlice: 15, redSlice: 10, blueSlice: 55})
-        +pie-chart({greySlice: 25, redSlice: 25, blueSlice: 50})
+        +pie-chart({
+            size: "14.28571428571429%", greySlice: 11,
+            redSlice: 26, blueSlice: 30
+        })
+
+        +pie-chart({
+            size: "18%", greySlice: 33,
+            redSlice: 48, blueSlice: 15
+        })
+
+        +pie-chart({
+            size:"10%", greySlice: 15,
+            redSlice: 10, blueSlice: 55
+        })
+
+        +pie-chart({
+            size: "14.28571428571429%",greySlice: 25,
+            redSlice: 25, blueSlice: 50
+        })
 
     section
       +title("Sliders")
