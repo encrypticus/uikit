@@ -4,25 +4,21 @@
 
 .button {
   position: relative;
-  width: 118px;
-  max-width: 118px;
-  min-width: 92px;
-
-  height: 33px;
-  padding: 0;
+  padding: .5625rem 2rem;
   font-size: .75rem;
   font-family: "Lato", sans-serif;
 
+  line-height: .75rem;
   color: #000;
   border-radius: 3px;
   background-color: $white;
-  font-weight: 400;
 
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .6px;
   cursor: pointer;
-  user-select: none;
 
+  user-select: none;
   overflow: hidden;
 
   &:active {
@@ -31,8 +27,8 @@
   }
 
   &_form {
-    background-color: $fountain-blue;
     color: $white;
+    background-color: $fountain-blue;
     box-shadow: 0 2px $jungle-green;
     border-width: 0;
   }
@@ -40,24 +36,17 @@
   // Размеры кнопки
   &_size_sm, // псевдоним для small
   &_size_small {
-    width: 77px;
-    max-width: 77px;
-    min-width: 60px;
-    height: 22px;
-
+    padding: .3125rem 1.0625rem;
     font-size: .625rem;
+    line-height: .625rem;
     letter-spacing: .5px;
   }
 
   &_size_lg, // псевдоним для large
   &_size_large {
-    width: 150px;
-    height: 40px;
+    padding: 1rem 2.5rem;
     font-size: 1rem;
     letter-spacing: .6px;
-
-    max-width: 150px;
-    min-width: 118px;
   }
 
   // Цветовые темы кнопки
