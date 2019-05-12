@@ -1,18 +1,19 @@
 .text-field {
-  max-width: 208px;
   font-size: .875rem;
   font-family: "Source Sans Pro";
+  line-height: .875rem;
   color: $dark-grey;
 
   border: none;
   border-radius: 3px;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+
+  padding-left: .875rem;
+  max-width: 208px;
   background-color: $grey;
   font-weight: 400;
 
   letter-spacing: .14px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 14px;
-
   box-sizing: border-box;
 }
