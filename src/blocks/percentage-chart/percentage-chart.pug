@@ -1,9 +1,9 @@
-mixin percentage-chart({size = "", percent = 0, theme = ""} = {})
+mixin percentage-chart(options)
 
   //- Принимает:
-  //-   object.size       {string} - размер элемента в % или px
-  //-   object.percent    {number} - число процентов от 0 до 100
-  //-   object.theme      {string} - цветовая тема чарта
+  //-   options.size       {string} - размер элемента в % или px
+  //-   options.percent    {number} - число процентов от 0 до 100
+  //-   options.theme      {string} - цветовая тема чарта
 
   //- Вызов:
         +percentage-chart({percent: 89, theme: "cinnabar", size: "14%"}) - чарт  со значением 89%, размером 14% от
@@ -11,7 +11,18 @@ mixin percentage-chart({size = "", percent = 0, theme = ""} = {})
         +percentage-chart({percent: 50, theme: "blue"})                  - чарт  со значением 50%, размером 100px, темой blue
 
   -
-    var valueFull = 100;
+    var valueFull = 100,
+
+    //- Объект с настройками по умолчанию
+    settings = {
+      size: "",
+      percent: 0,
+      theme: ""
+    },
+    options = options || settings,
+    size = options.size || settings.size,
+    percent = options.percent || settings.percent,
+    theme = options.theme || settings.theme
 
     //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
     //- соответствует указанному шаблону, иначе false.
@@ -31,9 +42,8 @@ mixin percentage-chart({size = "", percent = 0, theme = ""} = {})
     // список модификаторов
     modifiers = "";
 
-    if (typeof (theme) !== "undefined" && theme) {
+    if (typeof (theme) !== "undefined" && theme)
       modifiers += ` percentage-chart__value_theme_${theme}`;
-    }
 
   .percentage-chart(style=size != "" ? `width: ${size}`: "")&attributes(attributes)
     .percentage-chart__wrapper
