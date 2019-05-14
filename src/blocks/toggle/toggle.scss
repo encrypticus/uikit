@@ -1,0 +1,44 @@
+.toggle {
+  display: none;
+
+  &:checked + &__label {
+    background-color: $fountain-blue;
+    padding: .25rem 1.8125rem .3125rem .75rem;
+  }
+
+  &:checked + &__label:before {
+    right: .1875rem;
+    left: unset;
+  }
+
+  &__label {
+    max-width: 60px;
+    position: relative;
+    padding: .25rem .75rem .3125rem 1.8125rem;
+    font-size: .75rem;
+    font-family: "Lato", sans-serif;
+    line-height: .75rem;
+    color: $white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    background-color: $grey;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: .1875rem;
+      right: unset;
+      left: .1875rem;
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 50%;
+      background-color: $white;
+    }
+  }
+
+}
