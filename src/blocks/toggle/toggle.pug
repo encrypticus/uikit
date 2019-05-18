@@ -1,3 +1,12 @@
 mixin toggle(options)
-  input.toggle(type="checkbox", id="toggle", checked)
-  label.toggle__label(for="toggle") On
+  //- Объект настроек по умолчанию
+  -
+    var settings = {
+      checked: true,
+      id: ""
+    },
+    options = options || settings,
+    id = options.id || settings.id,
+    checked = options.checked || settings.checked;
+  input.toggle(type="checkbox", id=id, checked=checked)
+  label.toggle__label(for=id) On
