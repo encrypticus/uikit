@@ -1,12 +1,20 @@
 mixin toggle(options)
+  //- Принимает:
+    //-   options.check    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
+    //-   options.type     {string} - id элемента чекбокса
+
+    //- Вызов:
+          +form-tooltip({check: true, id: "toggle1"})
+
   //- Объект настроек по умолчанию
   -
     var settings = {
-      checked: true,
+      check: false,
       id: ""
     },
     options = options || settings,
     id = options.id || settings.id,
-    checked = options.checked || settings.checked;
-  input.toggle(type="checkbox", id=id, checked=checked)
+    check = options.check || settings.check;
+
+  input.toggle(type="checkbox", id=id, checked = check === false ? false : true )
   label.toggle__label(for=id) On
