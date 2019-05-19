@@ -7,7 +7,11 @@
   color: $color-title;
   text-align: center;
   font-weight: 400;
-  text-transform: uppercase;
 
+  text-transform: uppercase;
   letter-spacing: 2px;
+
+  @include for-tablet-landscape-down() {
+    margin-top: 68px;
+  }
 }

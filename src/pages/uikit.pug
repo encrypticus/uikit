@@ -216,6 +216,12 @@ block content
               text: "Submit",
               form: true
             })
+
+          +title("Search / Drop down")(style="margin-top: 68px")
+          +search-field({placeholder: "Search", width: "82.28571428571429%"})
+          +search-field({placeholder: "Search", width: "82.28571428571429%",
+            error: true})(style="margin-top: 10px")
+
         .form-elements__right-col
           +title("Toggles")
           +toggle({id: "toggle1"})

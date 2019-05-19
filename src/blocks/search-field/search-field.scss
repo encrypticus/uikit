@@ -1,0 +1,42 @@
+.search-field {
+  width: 100%;
+  padding: .3125rem 2.0625rem .3125rem .875rem;
+  font-size: .875rem;
+  font-family: "Source Sans Pro";
+
+  line-height: .875rem;
+  color: $dark-grey;
+  border: none;
+  border-radius: 3px;
+
+  background-color: $grey;
+  font-weight: 400;
+  letter-spacing: .14px;
+  box-sizing: border-box;
+
+  &_error {
+    background-color: $cinnabar;
+    color: $white;
+  }
+
+  &-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+
+    width: 2.0625rem;
+    height: 100%;
+    border-radius: 0 3px 3px 0;
+    background-color: $cinnabar;
+
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+}

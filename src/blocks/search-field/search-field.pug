@@ -1,0 +1,39 @@
+//- Создает поле поиска
+
+mixin search-field(options)
+
+  //- Принимает:
+    //-   options.placeholder    {string} - текст-заполнитель внутри текстового поля
+    //-   options.width          {string} - ширина текстового поля с единицами измерения
+    //- Вызов:
+          +text-field({placeholder: "Your email", width: "20%"})
+
+  -
+    //- Список модификаторов
+    var modifiers = "",
+
+    //- Объект настроек текстового поля по умолчанию
+    settings = {
+      placeholder: "",
+      width: "288px",
+      error: false
+    },
+
+    options = options || settings,
+    placeholder = options.placeholder || settings.placeholder,
+    width = options.width || settings.width,
+    error = options.error || settings.error;
+
+    if (error === true)
+      modifiers += "_error";
+
+  div.search-field-wrapper(style=`width: ${width}`)&attributes(attributes)
+    input.search-field(
+      class= error === true ? "search-field_error" : ""
+      type="text",
+      placeholder=`${placeholder}`
+    )
+    a.search-field__button
+      svg(xmlns="http://www.w3.org/2000/svg", width="0.875rem", height="0.875rem", viewBox="0 0 14 14")
+        g
+          path(fill="#fff", d="M1.731 2.03a5.079 5.079 0 0 1 8.146 5.843l3.597 3.598c.549.548.467 1.52-.082 2.068a1.404 1.404 0 0 1-1.986 0l-3.527-3.527A5.081 5.081 0 0 1 1.73 2.03zm1.283 5.9A3.265 3.265 0 1 0 7.63 3.312 3.265 3.265 0 0 0 3.014 7.93z")
