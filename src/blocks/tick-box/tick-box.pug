@@ -1,0 +1,25 @@
+//- Создает кастомный чекбокс
+
+mixin tick-box(options)
+  //- Принимает:
+      //-   options.check    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
+      //-   options.type     {string} - id элемента чекбокса
+
+      //- Вызов:
+            +form-tooltip({check: true, id: "toggle1"})
+
+  //- Объект настроек по умолчанию
+  -
+    var settings = {
+    check: false,
+    id: ""
+    },
+    options = options || settings,
+    id = options.id || settings.id,
+    check = options.check || settings.check;
+
+  input.tick-box(type="checkbox", id=id, checked = check === false ? false : true )
+  label.tick-box__label(for=id)
+    svg(xmlns="http://www.w3.org/2000/svg", width="0.8125rem", height="0.625rem", viewBox="0 0 13 10")
+      g
+        path(class="tick-box__tick", d="M11.043.012l1.41 1.405-7.758 7.726-.025-.025-.318.316L0 5.099 1.41 3.694 4.378 6.65z")

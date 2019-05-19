@@ -16,6 +16,8 @@
   }
 
   &__right-col {
+    text-align: center;
+
     @media (min-width: 700px) {
       width: 50%;
     }
