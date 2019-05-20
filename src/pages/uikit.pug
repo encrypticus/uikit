@@ -222,6 +222,12 @@ block content
           +search-field({placeholder: "Search", width: "82.28571428571429%",
             error: true})(style="margin-top: 10px")
 
+          +drop-down({
+            width: "82.28571428571429%",
+            options: ["option1", "option2", "option3", "option4", "option5", "option6"],
+            noOutline: true
+          })(class="form-elements__drop-down")
+
         .form-elements__right-col
           +title("Toggles")
           +toggle({id: "toggle1"})

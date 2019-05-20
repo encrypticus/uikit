@@ -14,6 +14,7 @@ const styleLintPlugin = require("./webpack/plugins/styleLintPlugin"); // лин�
 const browserSync = require("./webpack/plugins/browserSyncPlugin"); // в комментариях не нуждается
 const jquery = require("./webpack/plugins/jquery"); // плагин, добавляющий jquery в проект
 const css = require("./webpack/loaders/css"); // модуль обработки css-файлов
+const image = require("./webpack/loaders/image"); // модуль обработки файлов изображений
 
 // функция вторым аргументом принимает args.mode от прописанных в package.json скриптов: args.mode = development или args.mode = production
 module.exports = (env, args) => {
@@ -48,6 +49,7 @@ module.exports = (env, args) => {
       optimization(),
       watch(),
       font(),
+      image(),
       pug(isDev),
       sass(isDev),
       htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug", inject: false}),
