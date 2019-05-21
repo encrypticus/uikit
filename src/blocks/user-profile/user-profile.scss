@@ -1,0 +1,46 @@
+.user-profile {
+  display: flex;
+
+  &__avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.875rem;
+    height: 5.875rem;
+    border-radius: 50%;
+    background-color: $grey;
+  }
+
+  &__avatar {
+    width: 100%;
+    max-width: 5.25rem;
+  }
+
+  &__info {
+    width: 10.1875rem;
+    height: 5.8125rem;
+    background-color: $grey;
+    border-radius: 7px;
+
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: .3125rem;
+    }
+  }
+
+  &__triangle {
+    fill: $grey;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 1.125rem;
+    font-family: Lato, sans-serif;
+    line-height: 2.4375rem;
+    color: $cinnabar;
+    font-weight: 400;
+  }
+
+}
