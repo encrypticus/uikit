@@ -3,10 +3,16 @@
 mixin user-profile(options)
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-   options.avatar    {string} - путь до файла с фото пользователя
+  //-   name              {string} - имя пользователя
+  //-   job               {string} - профессия пользователя
   //- Вызов:
-        +user-profile("Текст", "some-mod")
+        +user-profile({
+          name: "Vasya Pupkin",
+          job: "developer",
+          avatar: "../blocks/user-profile/img/avatar2.png",
+          themeBlue: true
+        })
 
   -
     // Объект настроек по умолчанию
@@ -19,20 +25,32 @@ mixin user-profile(options)
     options = options || settings,
     avatar = options.avatar || settings.avatar,
     name = options.name || settings.name,
-    job = options.job || settings.job;
+    job = options.job || settings.job,
 
-  .user-profile(class=allMods)&attributes(attributes)
+    //- Список модификаторов
+    modifiers = "";
+
+    if (options.themeBlue === true)
+      modifiers += "user-profile_themeBlue";
+
+  .user-profile(class=modifiers)&attributes(attributes)
     .user-profile__avatar-wrapper
       img.user-profile__avatar(src=avatar, alt="avatar")
     .user-profile__info-wrapper
-      svg.user-profile__triangle(width="6", height="13", xmlns="http://www.w3.org/2000/svg",viewBox="0 0 6 13")
+      svg.user-profile__triangle(width="0.375rem", height="0.8125rem", xmlns="http://www.w3.org/2000/svg",viewBox="0 0 6 13")
         polygon(points="0,6.5 6,0 6,13")
       .user-profile__info
         h2.user-profile__name= name
         h3.user-profile__job= job
+        .user-profile__socials
+          svg.icon-edge(width="0.625rem", height="1.3125rem")
+            use(xlink:href="#icon-fb")
+          svg.icon-center(width="1.5625rem", height="1.25rem")
+            use(xlink:href="#icon-tw")
+          svg.icon-edge(width="1.3125rem", height="1.3125rem")
+            use(xlink:href="#icon-dr")
 
-
-  <svg xmlns="http://www.w3.org/2000/svg">
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-fb" viewBox="0 0 22.45 48.31" width="10" height="21">
   <path d="M22.45,15.64H14.8v-5a2,2,0,0,1,2.13-2.32h5.39V0L14.89,0C6.65,0,4.77,6.17,4.77,10.12v5.52H0v8.53H4.77V48.31h10V24.17h6.77Z"/>
   </symbol>

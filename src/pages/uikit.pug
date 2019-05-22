@@ -238,7 +238,13 @@ block content
           +tick-box({id: "tick2"})
 
           +title("User profile")(style="margin-top: 87px")
-          +user-profile()
+          +user-profile({job: "ux designer"})(style="margin-bottom: 10px")
+          +user-profile({
+            name: "Sarah Brown",
+            job: "developer",
+            avatar: "../blocks/user-profile/img/avatar2.png",
+            themeBlue: true
+          })
 
 
 

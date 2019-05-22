@@ -1,11 +1,30 @@
 .user-profile {
   display: flex;
 
+  &_themeBlue &__info {
+    background-color: $fountain-blue;
+  }
+
+  &_themeBlue &__triangle {
+    fill: $fountain-blue;
+  }
+
+  &_themeBlue &__name,
+  &_themeBlue &__job {
+    color: $white;
+  }
+
+  &_themeBlue .icon-center,
+  &_themeBlue .icon-edge {
+    fill: $white;
+  }
+
   &__avatar-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5.875rem;
+
     height: 5.875rem;
     border-radius: 50%;
     background-color: $grey;
@@ -18,9 +37,14 @@
 
   &__info {
     width: 10.1875rem;
-    height: 5.8125rem;
+    padding-top: 10px;
+    padding-top: .625rem;
+    padding-bottom: .9375rem;
+
     background-color: $grey;
     border-radius: 7px;
+    box-sizing: border-box;
+
 
     &-wrapper {
       display: flex;
@@ -36,11 +60,40 @@
 
   &__name {
     margin: 0;
+    margin-bottom: .3125rem;
     font-size: 1.125rem;
     font-family: Lato, sans-serif;
-    line-height: 2.4375rem;
+
+    line-height: 1.125rem;
     color: $cinnabar;
     font-weight: 400;
   }
 
+  &__job {
+    margin: 0;
+    margin-bottom: .8125rem;
+    font-size: .6875rem;
+    font-family: "Lato", sans-serif;
+
+    line-height: .6875rem;
+    color: $color-title;
+    text-transform: uppercase;
+    letter-spacing: .55px;
+  }
+
+  &__socials {
+    display: flex;
+    width: 58.28220858895706%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+}
+
+.icon-edge {
+  fill: $color-socials;
+}
+
+.icon-center {
+  fill: $cinnabar;
 }
