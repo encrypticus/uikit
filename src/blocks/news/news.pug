@@ -1,0 +1,29 @@
+//- Создает компонент новостей
+
+mixin news(options)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +news("Текст", "some-mod")
+
+  //- Объект настроек по умолчанию
+  -
+    var settings = {
+      width: ""
+    },
+
+    options = options || settings,
+    width = options.width || settings.width;
+
+  .news(style=width != "" ? `width: ${width}` : "")&attributes(attributes)
+    .news__img-wrapper
+      img.news__img(src="../blocks/news/img/news.png", alt="news")
+    .news__inner-wrapper
+      .news__text-block
+        h2.news__title It’s all going downhill
+        h2.news__date 24  AUGUST  2013
+        p.news__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.
+
+
