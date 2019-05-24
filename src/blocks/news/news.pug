@@ -11,13 +11,22 @@ mixin news(options)
   //- Объект настроек по умолчанию
   -
     var settings = {
-      width: ""
+      width: "",
+      themeBlue: false
     },
 
     options = options || settings,
-    width = options.width || settings.width;
+    width = options.width || settings.width,
 
-  .news(style=width != "" ? `width: ${width}` : "")&attributes(attributes)
+    modifiers = "";
+
+    if (options.theme === "blue")
+      modifiers += " news_theme_blue";
+
+    if (options.theme === "cinnabar")
+      modifiers += "news_theme_cinnabar";
+
+  .news(class=modifiers, style=width != "" ? `width: ${width}` : "")&attributes(attributes)
     .news__img-wrapper
       img.news__img(src="../blocks/news/img/news.png", alt="news")
     .news__inner-wrapper
