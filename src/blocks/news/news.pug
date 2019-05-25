@@ -1,38 +1,74 @@
-//- Создает компонент новостей
+//- Создает компонент новостей и событий
 
 mixin news(options)
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-   options.width      {string}         - ширина компонента с указанием единиц измерения
+  //-   options.title      {string}         - текст заголовка
+  //-   options.date       {string}         - текст блока с датой
+  //-   options.text       {string}         - непосредственн текст новости
+  //-   options.day        {string|number}  - день месяца
+  //-   options.month      {string|number}  - месяц
+  //-   options.src        {string}         - путь до изображения
+
   //- Вызов:
-        +news("Текст", "some-mod")
+        +news({
+                width: "41.14285714285714%",
+                theme: "cinnabar",
+                src: "../blocks/news/img/events.png",
+                type: "events",
+                title: "This is the title",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              })
 
   //- Объект настроек по умолчанию
   -
     var settings = {
       width: "",
-      themeBlue: false
+      title: "It’s all going downhill",
+      date: "24  AUGUST  2013",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
+      day: 24,
+      month: "Aug",
+      src: "../blocks/news/img/news.png"
     },
 
     options = options || settings,
     width = options.width || settings.width,
+    title = options.title || settings.title,
+    date = options.data || settings.date,
+    text = options.text || settings.text,
+    day = options.day || settings.day,
+    month = options.month || settings.month,
+    src = options.src || settings.src,
 
+    //- Список модификаторов
     modifiers = "";
 
     if (options.theme === "blue")
       modifiers += " news_theme_blue";
 
     if (options.theme === "cinnabar")
-      modifiers += "news_theme_cinnabar";
+      modifiers += " news_theme_cinnabar";
+
+    if (options.type === "events")
+      modifiers += " news_type_events"
 
   .news(class=modifiers, style=width != "" ? `width: ${width}` : "")&attributes(attributes)
     .news__img-wrapper
-      img.news__img(src="../blocks/news/img/news.png", alt="news")
+      img.news__img(src=src, alt="news & events")
     .news__inner-wrapper
       .news__text-block
-        h2.news__title It’s all going downhill
-        h2.news__date 24  AUGUST  2013
-        p.news__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.
+        if (options.type === "events")
+          h2.news__date= day
+            span.news__title-sub= month
+          h2.news__title= title
+          p.news__text= text
+          +button({text:"Add to calendar", events: true, noOutline: true})
+        else
+          h2.news__title= title
+          h2.news__date= date
+          p.news__text= text
+
 
 

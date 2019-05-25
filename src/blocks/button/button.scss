@@ -33,6 +33,24 @@
     border-width: 0;
   }
 
+  &_events {
+    min-width: 127px;
+    padding: .3125rem .875rem;
+    font-size: .625rem;
+    //color: $fountain-blue;
+    margin-left: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-width: 0;
+    letter-spacing: .5px;
+
+    @include for-tablet-landscape-down() {
+      padding-left: .625rem;
+      padding-right: .625rem;
+      margin-left: 0;
+    }
+  }
+
   // Размеры кнопки
   &_size_sm, // псевдоним для small
   &_size_small {

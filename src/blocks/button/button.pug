@@ -36,7 +36,8 @@ mixin button(options)
       theme: "",
       noOutline: false,
       animate: false,
-      form: false
+      form: false,
+      events: false
     },
     options = options || settings,
     text = options.text || settings.text,
@@ -44,7 +45,8 @@ mixin button(options)
     theme = options.theme || settings.theme,
     noOutline = options.noOutline || settings.noOutline,
     animate = options.animate || settings.animate,
-    form = options.form || settings.form;
+    form = options.form || settings.form,
+    events = options.events || settings.events;
 
     if (typeof(size) !== "undefined" && size)
       modifiers += ` button_size_${size}`;
@@ -60,5 +62,8 @@ mixin button(options)
 
     if (form === true)
         modifiers += ` button_form`;
+
+    if (events === true)
+      modifiers += ` button_events`;
 
   button.button(class=modifiers)&attributes(attributes)= text

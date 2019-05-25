@@ -3,8 +3,8 @@
   display: inline-block;
   width: 288px;
   max-width: 288px;
-  min-width: 220px;
 
+  min-width: 229px;
   max-height: 95px;
   box-sizing: border-box;
 
@@ -34,26 +34,22 @@
   &__text-block {
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: -1;
+    right: 0;
+    width: 67.01388888888889%;
 
-    width: 100%;
     height: 100%;
-    border-radius: 3px;
+    border-radius: 0 3px 3px 0;
     background-color: $dark-grey;
+    padding-left: 7.638888888888889%;
 
-    padding-left: 40.97222222222222%;
     padding-right: 7.857142857142857%;
     padding-top: 7.857142857142857%;
-
     padding-bottom: 10.41666666666667%;
     box-sizing: border-box;
 
     @include for-tablet-landscape-down() {
-      padding-top: 5%;
-      padding-bottom: 5%;
-      padding-right: 5%;
-      padding-left: 35%;
+      padding: 5%;
+      font-size: 14px;
     }
   }
 
@@ -69,10 +65,19 @@
     margin: 0;
     font-size: 1.75em; // 28px
     font-family: "Lato Light", sans-serif;
-    line-height: 1.625rem; // 26px
 
-    color: #fff;
+    line-height: 1.625rem; // 26px
+    color: $white;
     font-weight: 300;
+  }
+
+  &_type_events &__title {
+    font-size: .8125em;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+
+    text-transform: uppercase;
+    letter-spacing: .63px;
   }
 
   &__date {
@@ -87,6 +92,41 @@
     letter-spacing: .55px;
   }
 
+  &_type_events &__date {
+    font-size: 4.5625em;
+    font-family: "Lato Light", sans-serif;
+    font-weight: 300;
+    letter-spacing: -2.92px;
+
+    margin-top: 7px;
+    margin-left: -3px;
+    margin-bottom: 17px;
+
+    @include for-tablet-landscape-down {
+      margin-bottom: 7px;
+    }
+  }
+
+  &_theme_blue .button {
+    box-shadow: 0 3px $jungle-green;
+    color: $fountain-blue;
+  }
+
+  &_theme_cinnabar .button {
+    box-shadow: 0 3px $thunderbird;
+    color: $cinnabar;
+  }
+
+  &__title-sub {
+    font-size: .410958904109589em;
+    font-weight: 300;
+    line-height: 26px;
+    text-transform: none;
+
+    letter-spacing: normal;
+    margin-left: .875rem;
+  }
+
   &__text {
     margin: 0;
     font-size: .6875em; // 11px
@@ -95,5 +135,9 @@
 
     font-weight: 400;
     letter-spacing: .55px;
+  }
+
+  &_type_events &__text {
+    margin-bottom: 16px;
   }
 }
