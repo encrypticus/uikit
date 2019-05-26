@@ -39,7 +39,7 @@ mixin arrow-button(options)
 
     // Объект настроек по умолчанию
     settings = {
-      size: "50px",
+      size: "",
       theme: "",
       direction: "",
       noOutline: false,
@@ -55,7 +55,15 @@ mixin arrow-button(options)
     noOutline = options.noOutline || settings.noOutline,
     animate = options.animate || settings.animate,
     ripple = options.ripple || settings.ripple,
-    disable = options.disable || settings.disable
+    disable = options.disable || settings.disable;
+
+  //- Проверяет на корректность значение аргумента width - ширины блока элемента. Возвращает true, если значение
+  //- соответствует указанному шаблону, иначе false.
+  -
+    function isValidElementSize(size) {
+      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(size))) return true;
+      return false;
+    }
 
     if (typeof (theme) !== "undefined" && theme)
       modifiers += ` arrow-button_theme_${theme}`
@@ -72,5 +80,8 @@ mixin arrow-button(options)
     if (ripple === true)
       modifiers += ` arrow-button_ripple`
 
-  button.arrow-button(class=modifiers, style=`width: ${size}`, disabled=disable)&attributes(attributes)
+    if (size != "")
+      if (!isValidElementSize(size)) size = "50px";
+
+  button.arrow-button(class=modifiers, style=size != "" ? `width: ${size}` : "", disabled=disable)&attributes(attributes)
     span.arrow-button__arrow
