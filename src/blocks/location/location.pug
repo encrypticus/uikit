@@ -3,10 +3,13 @@
 mixin location(options)
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-  options.slogan     {string} - текстовое содержимое блока location__slogan
+  //-  options.address    {string} - текстовое содержимое блока location__address
   //- Вызов:
-        +location("Текст", "some-mod")
+        +location({
+          slogan: "He there!",
+          address: "1259  CALIFORNIA ST San Francisco, CA"
+        })
 
   -
     //- Объект настроек по умолчанию
