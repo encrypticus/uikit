@@ -1,0 +1,9 @@
+.location-wrapper {
+  width: 84.71428571428571%;
+  //min-width: 360px;
+  margin: 0 auto;
+
+  @include for-tablet-landscape-down() {
+    width: 100%;
+  }
+}
