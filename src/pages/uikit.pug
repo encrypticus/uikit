@@ -246,7 +246,7 @@ block content
             themeBlue: true
           })
 
-    section(style="width: 100%")
+    section(style="width: 100%; margin-bottom: 20px")
       +title("News & events")
       +news({width: "41.14285714285714%"})
       +news({
@@ -267,12 +267,12 @@ block content
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       })
 
-      section
-        +title("Location")
-        .location-wrapper
-          +location({
-            address: "1259  CALIFORNIA ST San Francisco, CA"
-          })
+    section
+      +title("Location")
+      .location-wrapper
+        +location({
+          address: "1259  CALIFORNIA ST San Francisco, CA"
+        })
 
   script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
   script(src="scripts.js")
