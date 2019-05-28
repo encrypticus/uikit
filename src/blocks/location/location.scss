@@ -12,40 +12,60 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 18px 25px 18px 27px;
+    padding: 1.125rem 1.5625rem 1.125rem 1.6875rem;
     box-sizing: border-box;
     //height: 69px;
     background-color: $cinnabar;
+
+    @media (max-width: 800px) {
+      font-size: 12px;
+      justify-content: space-between;
+    }
   }
 
   &__slogan {
     margin: 0;
     margin-top: -10px;
-    font-size: 30px;
+    font-size: 1.875em;
     font-family: "Lato Light", sans-serif;
     line-height: 26px;
     color: $white;
     font-weight: 300;
+    text-align: center;
   }
 
   &__address {
     margin: 0;
     margin-left: 27px;
-    font-size: 13px;
+    font-size: .8125em;
     font-family: "Lato", sans-serif;
     max-width: 140px;
     color: $white;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .63px;
+
+    @include for-tablet-landscape-down() {
+      max-width: none;
+      margin-left: 0;
+    }
   }
 
-  &__placemark1 {
-    margin-left: 194px;
+  &__placemarks {
+    min-width: 67px;
     margin-left: 35.7150084317032%;
+
+    @include for-tablet-landscape-down() {
+      margin-left: auto;
+    }
   }
 
+  //&__placemark1 {
+  //  margin-left: 194px;
+  //  margin-left: 35.7150084317032%;
+  //}
+  //
   &__placemark2 {
-    margin-left: auto;
+    margin-left: 19px;
   }
 }
