@@ -11,17 +11,15 @@ mixin location(options)
   -
     //- Объект настроек по умолчанию
     var settings = {
-      width: "",
       slogan: "Meet us!",
       address: ""
     },
 
     options = options || settings,
-    width = options.width || settings.width,
     slogan = options.slogan || settings.slogan,
     address = options.address || settings.address;
 
-  .location(class=allMods, id="map", style=width != "" ? `width: ${width}` : "")&attributes(attributes)
+  .location(class=allMods, id="map")&attributes(attributes)
     .location__panel
       p.location__slogan= slogan
       p.location__address= address
