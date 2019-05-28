@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development --env.browserSync=open",
     "prod": "webpack --mode production --env.browserSync=doNotOpen",
-    "server": "webpack-dev-server --mode development --open --env.browserSync=doNotOpen"
+    "server": "webpack-dev-server --mode development --open --env.browserSync=doNotOpen",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
