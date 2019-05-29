@@ -3,9 +3,9 @@ node_js:
   - stable
 script:
   - npm run prod
+  - travis_wait 20
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
   local_dir: dist
-script: travis_wait 20
