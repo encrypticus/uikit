@@ -46,7 +46,7 @@ module.exports = (env, args) => {
         },
       },
       miniCssExtractPlugin(),
-      optimization(),
+      // optimization(),
       watch(),
       font(),
       image(),
