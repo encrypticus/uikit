@@ -3,7 +3,7 @@ node_js:
   - stable
 script:
   - npm run prod
-  - travis_wait 20
+install: travis_wait 30 npm install
 deploy:
   provider: pages
   skip_cleanup: true
