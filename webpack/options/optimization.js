@@ -1,5 +1,5 @@
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // минификатор css
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // минификатор js
+var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // минификатор css
+var UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // минификатор js
 
 /**
  * Сжимает css- и js-файлы
@@ -13,13 +13,13 @@ module.exports = function (jsOptions = {}, cssOptions = {}) {
   return {
 
     optimization: {// минификация css и js в prod-режиме
-      minimizer: [
+      minimizer: [/*
         // Параметр optimization.minimizer переопределяет значения по умолчанию, предоставляемые сборщиком,
         // поэтому нужно обязательно указать также JS minimizer:
         new UglifyJsPlugin({
           cache: true,
           parallel: true,
-        }),
+        }),*/
         // минификация css
         new OptimizeCSSAssetsPlugin({})
       ]
