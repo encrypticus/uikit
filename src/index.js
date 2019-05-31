@@ -5,4 +5,4 @@ import "./blocks/slider/slider";
 import "./blocks/toggle/toggle";
 import "./blocks/search-field/search-field";
 import "./blocks/location/location";
-import "./blocks/calendar/datepicker.min";
+import "./blocks/calendar/calendar";
