@@ -1,6 +1,6 @@
 //-
 
-mixin calendar(text, mods)
+mixin calendar()
 
   //- Принимает:
   //-   text    {string} - текст
@@ -8,15 +8,4 @@ mixin calendar(text, mods)
   //- Вызов:
         +calendar("Текст", "some-mod")
 
-  -
-    // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' calendar_' + modsList[i].trim();
-      }
-    }
-
-  .calendar(class=allMods)&attributes(attributes)= text
-    block
+  .datepicker-here(class=allMods)&attributes(attributes)
