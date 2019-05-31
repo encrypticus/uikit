@@ -43,8 +43,9 @@ module.exports = (env, args) => {
               loader: "babel-loader"
             },
           ]
-        },
+        }
       },
+      cleanWebpackPlugin(),
       miniCssExtractPlugin(),
       optimization(),
       watch(),
@@ -62,15 +63,13 @@ module.exports = (env, args) => {
   if (isDev) { // в режиме разработки
     return merge(
         config,
-        cleanWebpackPlugin(),
         sourceMap()
     );
   }
 
   if (!isDev) { // в режиме продакшн
     return merge(
-        config,
-        cleanWebpackPlugin()
+        config
     );
   }
 }
