@@ -15,7 +15,6 @@
   position: relative;
   z-index: 1;
   display: flex;
-  width: $datepickerDayCellSize;
   height: $datepickerDayCellSize;
   margin: 1px;
   //border-radius: $datepickerBorderRadius;
@@ -140,7 +139,7 @@
 // -------------------------------------------------
 
 .datepicker--cell-day {
-  //width: (100/7)#{"%"};
+  width: (100/7)#{"%"};
 
   &.-other-month- {
     @extend %otherMonth;
