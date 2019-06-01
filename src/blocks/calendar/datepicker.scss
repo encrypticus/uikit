@@ -1,0 +1,171 @@
+@import "datepicker-config";
+
+/* -------------------------------------------------
+    Datepicker
+   ------------------------------------------------- */
+
+.datepickers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media print {
+    display: none;
+  }
+}
+
+.datepicker {
+  position: absolute;
+  left: -100000px;
+  z-index: $datepickerZIndex;
+  width: $datepickerWidth;
+  font-size: $datepickerFontSize;
+  font-family: $datepickerFontFamily, sans-serif;
+  color: map_get($datepickerTextColor, common);
+  //border: 1px solid map_get($datepickerBorderColor, default);
+  border-radius: $datepickerBorderRadius;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+  box-sizing: content-box;
+  transition: opacity $datepickerTransitionSpeed $datepickerTransitionEase, transform $datepickerTransitionSpeed $datepickerTransitionEase, left 0s $datepickerTransitionSpeed;
+
+  &.-from-top- {
+    transform: translateY(-$datepickerTransitionOffset);
+  }
+
+  &.-from-right- {
+    transform: translateX($datepickerTransitionOffset);
+  }
+
+  &.-from-bottom- {
+    transform: translateY($datepickerTransitionOffset);
+  }
+
+  &.-from-left- {
+    transform: translateX(-$datepickerTransitionOffset);
+  }
+
+
+  &.active {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity $datepickerTransitionSpeed $datepickerTransitionEase, transform $datepickerTransitionSpeed $datepickerTransitionEase, left 0s 0s;
+  }
+}
+
+.datepicker-inline {
+
+  .datepicker {
+    position: static;
+    right: auto;
+    left: auto;
+    opacity: 1;
+    border-color: map-get($datepickerBorderColor, inline);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .datepicker--pointer {
+    display: none;
+  }
+}
+
+.datepicker--content {
+  box-sizing: content-box;
+  //padding: $datepickerPadding;
+
+  .-only-timepicker- & {
+    display: none;
+  }
+}
+
+//  Pointer
+// -------------------------------------------------
+$pointerHalfSize: $datepickerPointerSize / 2 - 1;
+
+.datepicker--pointer {
+  position: absolute;
+  z-index: -1;
+  width: $datepickerPointerSize;
+  height: $datepickerPointerSize;
+  background: #fff;
+  border-top: 1px solid map-get($datepickerBorderColor, default);
+  border-right: 1px solid map-get($datepickerBorderColor, default);
+
+  //  Main axis
+  // -------------------------
+
+  .-top-left- &,
+  .-top-center- &,
+  .-top-right- & {
+    top: calc(100% - #{$pointerHalfSize});
+    transform: rotate(135deg);
+  }
+
+  .-right-top- &,
+  .-right-center- &,
+  .-right-bottom- & {
+    right: calc(100% - #{$pointerHalfSize});
+    transform: rotate(225deg);
+  }
+
+  .-bottom-left- &,
+  .-bottom-center- &,
+  .-bottom-right- & {
+    bottom: calc(100% - #{$pointerHalfSize});
+    transform: rotate(315deg);
+  }
+
+  .-left-top- &,
+  .-left-center- &,
+  .-left-bottom- & {
+    left: calc(100% - #{$pointerHalfSize});
+    transform: rotate(45deg);
+  }
+
+  //  Secondary axis
+  // -------------------------
+
+  .-top-left- &,
+  .-bottom-left- & {
+    left: $datepickerPointerOffset;
+  }
+
+  .-top-right- &,
+  .-bottom-right- & {
+    right: $datepickerPointerOffset;
+  }
+
+  .-top-center- &,
+  .-bottom-center- & {
+    left: calc(50% - #{$datepickerPointerSize} / 2);
+  }
+
+  .-left-top- &,
+  .-right-top- & {
+    top: $datepickerPointerOffset;
+  }
+
+  .-left-bottom- &,
+  .-right-bottom- & {
+    bottom: $datepickerPointerOffset;
+  }
+
+  .-left-center- &,
+  .-right-center- & {
+    top: calc(50% - #{$datepickerPointerSize} / 2);
+  }
+
+}
+
+//  Body
+// -------------------------------------------------
+
+.datepicker--body {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

@@ -1,0 +1,187 @@
+@import "datepicker-config";
+
+/* -------------------------------------------------
+    Datepicker cells
+   ------------------------------------------------- */
+
+.datepicker--cells {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.datepicker--cell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: $datepickerDayCellSize;
+  margin: 1px;
+  //border-radius: $datepickerBorderRadius;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  align-items: center;
+  justify-content: center;
+
+  &.-focus- {
+    background: map_get($datepickerBG, hover);
+  }
+
+  &.-current- {
+    color: map_get($datepickerTextColor, currentDate);
+
+    &.-focus- {
+      color: map_get($datepickerTextColor, common);
+    }
+
+    &.-in-range- {
+      color: map_get($datepickerTextColor, currentDate);
+    }
+  }
+
+  &.-in-range- {
+    color: map_get($datepickerTextColor, common);
+    border-radius: 0;
+    background: map_get($datepickerBG, inRange);
+
+    &.-focus- {
+      background-color: rgba(map_get($datepickerBG, inRange), .2);
+    }
+  }
+
+  &.-disabled- {
+    color: map_get($datepickerTextColor, disabled);
+    cursor: default;
+
+    &.-focus- {
+      color: map_get($datepickerTextColor, disabled);
+    }
+
+    &.-in-range- {
+      color: darken(map_get($datepickerTextColor, disabled), 5);
+    }
+
+    &.-current- {
+
+      &.-focus- {
+        color: map_get($datepickerTextColor, disabled);
+      }
+    }
+  }
+
+  &.-range-from- {
+    border: 1px solid rgba(map_get($datepickerBG, selected), .5);
+    border-radius: $datepickerBorderRadius 0 0 $datepickerBorderRadius;
+    background-color: map_get($datepickerBG, inRange);
+  }
+
+  &.-range-to- {
+    border: 1px solid rgba(map_get($datepickerBG, selected), .5);
+    border-radius: 0 $datepickerBorderRadius $datepickerBorderRadius 0;
+    background-color: map_get($datepickerBG, inRange);
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: $datepickerBorderRadius;
+
+  }
+
+  &.-selected- {
+    color: #fff;
+    border: none;
+    background: map_get($datepickerBG, selected);
+
+    &.-current- {
+      color: #fff;
+      background: map_get($datepickerBG, selected);
+    }
+
+    &.-focus- {
+      background: map_get($datepickerBG, selectedHover);
+    }
+  }
+
+  &:empty {
+    cursor: default;
+  }
+}
+
+//  Day names
+// -------------------------------------------------
+
+.datepicker--days-names {
+  display: flex;
+  flex-wrap: wrap;
+  //margin: 8px 0 3px;
+  background-color: $cinnabar;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.datepicker--day-name {
+  display: flex;
+  font-size: .8em;
+  font-size: 9px;
+  font-family: Lato, Arial, sans-serif;
+  //color: map_get($datepickerTextColor, dayNames);
+  color: $white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: .45px;
+}
+
+//  Day cell
+// -------------------------------------------------
+
+.datepicker--cell-day {
+  width: (100/7)#{"%"};
+
+  &.-other-month- {
+    @extend %otherMonth;
+  }
+}
+
+
+//  Months
+// -------------------------------------------------
+
+.datepicker--months {}
+
+.datepicker--cells-months {
+  height: $datepickerMinBodyHeight;
+}
+
+//  Month cell
+// -------------------------
+
+.datepicker--cell-month {
+  width: 33.33%;
+  height: 25%;
+}
+
+//  Years
+// -------------------------------------------------
+
+.datepicker--years {
+  height: $datepickerMinBodyHeight;
+}
+
+.datepicker--cells-years {
+  height: $datepickerMinBodyHeight;
+}
+//  Year cell
+// -------------------------
+
+.datepicker--cell-year {
+  width: 100% / $datepickerYearsPerRow;
+  height: 33.33%;
+
+  &.-other-decade- {
+    @extend %otherMonth;
+  }
+}

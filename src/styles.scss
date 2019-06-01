@@ -48,4 +48,14 @@
 
 @import "blocks/news/news";
 
-@import "blocks/calendar/datepicker.min.css";
+@import "blocks/calendar/datepicker-config";
+
+@import "blocks/calendar/cell";
+
+@import "blocks/calendar/datepicker";
+
+@import "blocks/calendar/navigation";
+
+@import "blocks/calendar/timepicker";
+
+@import "blocks/calendar/calendar";

@@ -1,0 +1,260 @@
+@import "datepicker-config";
+
+/* -------------------------------------------------
+    Timepicker
+   ------------------------------------------------- */
+
+$rangeTrackHeight: 1px;
+$rangeTrackBg: #dedede;
+$rangeThumbSize: 12px;
+$rangeThumbBg: #dedede;
+
+@mixin trackSelector {
+
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+
+  &::-moz-range-track {
+    @content;
+  }
+
+  &::-ms-track {
+    @content;
+  }
+}
+
+@mixin thumbSelector {
+
+  &::-webkit-slider-thumb {
+    @content;
+  }
+
+  &::-moz-range-thumb {
+    @content;
+  }
+
+  &::-ms-thumb {
+    @content;
+  }
+}
+
+@mixin thumb {
+  width: $rangeThumbSize;
+  height: $rangeThumbSize;
+  border: 1px solid $rangeTrackBg;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background: #fff;
+  cursor: pointer;
+
+  transition: background .2s;
+}
+
+@mixin track {
+  height: $rangeTrackHeight;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.datepicker--time {
+  position: relative;
+  display: flex;
+
+  padding: $datepickerPadding;
+  border-top: 1px solid map_get($datepickerBorderColor, nav);
+  align-items: center;
+
+  &.-am-pm- {
+
+    .datepicker--time-sliders {
+      flex: 0 1 138px;
+      max-width: 138px;
+    }
+  }
+
+  .-only-timepicker- & {
+    border-top: none;
+  }
+}
+
+.datepicker--time-sliders {
+  flex: 0 1 153px;
+  margin-right: 10px;
+  max-width: 153px;
+}
+
+.datepicker--time-label {
+  display: none;
+  font-size: 12px;
+}
+
+.datepicker--time-current {
+  display: flex;
+  margin: 0 0 0 10px;
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+}
+
+.datepicker--time-current-colon {
+  margin: 0 2px 3px;
+  line-height: 1;
+}
+
+.datepicker--time-current-hours,
+.datepicker--time-current-minutes {
+  position: relative;
+  z-index: 1;
+  font-size: 19px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  line-height: 1;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    border-radius: $datepickerBorderRadius;
+    opacity: 0;
+    background: map_get($datepickerBG, hover);
+  }
+
+  &.-focus- {
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.datepicker--time-current-ampm {
+  font-size: 11px;
+  color: map_get($datepickerTextColor, navArrows);
+  text-transform: uppercase;
+  align-self: flex-end;
+  margin-left: 6px;
+  margin-bottom: 1px;
+}
+
+.datepicker--time-row {
+  display: flex;
+  height: 17px;
+  font-size: 11px;
+  align-items: center;
+  background: linear-gradient(to right,$rangeTrackBg, $rangeTrackBg) left 50%/100% $rangeTrackHeight no-repeat;
+
+  &:first-child {
+    margin-bottom: 4px;
+  }
+
+  input[type="range"] {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    flex: 1;
+    -webkit-appearance: none;
+
+    //  Thumb
+    // -------------------------------------------------
+
+    @include thumbSelector() {
+      @include thumb;
+    }
+
+    //  Track
+    // -------------------------------------------------
+    @include trackSelector() {
+      @include track;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    &::-ms-tooltip {
+      display: none;
+    }
+
+    &:hover {
+      @include thumbSelector() {
+        border-color: darken($rangeTrackBg, 15);
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      @include thumbSelector() {
+        background: map_get($datepickerBG, selected);
+        border-color: map_get($datepickerBG, selected);
+      }
+    }
+
+    &::-webkit-slider-thumb {
+      margin-top: -$rangeThumbSize/2;
+    }
+
+    &::-ms-fill-lower {
+      background: transparent;
+    }
+
+    &:focus::-ms-fill-lower {
+
+    }
+
+    &::-ms-fill-upper {
+      background: transparent;
+    }
+
+    &:focus::-ms-fill-upper {
+
+    }
+  }
+
+  span {
+    padding: 0 12px;
+  }
+}
+
+.datepicker--time-icon {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  margin: 0 5px -1px 0;
+  font-size: 16px;
+  color: map_get($datepickerTextColor, navArrows);
+  border: 1px solid;
+  border-radius: 50%;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    background: currentColor;
+  }
+
+  &:after {
+    top: calc(50% + 1px);
+    left: calc(50% - 1px);
+    width: 1px;
+    height: .4em;
+    transform: translateY(-100%);
+  }
+
+  &:before {
+    top: calc(50% + 1px);
+    left: calc(50% - 1px);
+    width: .4em;
+    height: 1px;
+  }
+}
+

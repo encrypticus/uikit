@@ -1,0 +1,101 @@
+@import "datepicker-config";
+
+/* -------------------------------------------------
+    Navigation
+   ------------------------------------------------- */
+
+.datepicker--nav {
+  display: flex;
+  padding: $datepickerPadding;
+  font-size: 24px;
+  font-family: "Lato Light", Arial, sans-serif;
+  line-height: 26px;
+  color: $white;
+  justify-content: space-between;
+  //border-bottom: 1px solid map_get($datepickerBorderColor, nav);
+  min-height: $datepickerNavigationHeight;
+  background-color: #d54c2c;
+  letter-spacing: -.72px;
+
+  .-only-timepicker- & {
+    display: none;
+  }
+}
+
+.datepicker--nav-title,
+.datepicker--nav-action {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.datepicker--nav-action {
+  width: 30px;
+  //border-radius: $datepickerBorderRadius;
+  user-select: none;
+
+  &:hover {
+    background: $cinnabar;
+  }
+
+  &.-disabled- {
+    visibility: hidden;
+  }
+
+  //svg {
+  //  width: 32px;
+  //  height: 32px;
+  //}
+  //
+  //path {
+  //  fill: none;
+  //  stroke: map_get($datepickerTextColor, navArrows);
+  //  stroke-width: 2px;
+  //}
+}
+
+.datepicker--nav-title {
+  padding: 0 8px;
+  border-radius: $datepickerBorderRadius;
+
+  i {
+    font-style: normal;
+    color: map_get($datepickerTextColor, navArrows);
+    margin-left: 5px;
+  }
+
+  &:hover {
+    background: $cinnabar;
+  }
+
+  &.-disabled- {
+    cursor: default;
+    background: none;
+  }
+}
+
+//  Buttons
+// -------------------------------------------------
+
+.datepicker--buttons {
+  display: flex;
+  padding: $datepickerPadding;
+  border-top: 1px solid map_get($datepickerBorderColor, nav);
+}
+
+.datepicker--button {
+  display: inline-flex;
+  height: 32px;
+  color: map_get($datepickerTextColor, currentDate);
+  border-radius: $datepickerBorderRadius;
+  cursor: pointer;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: map_get($datepickerTextColor, common);
+    background: map_get($datepickerBG, hover);
+  }
+}
