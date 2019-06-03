@@ -1,5 +1,5 @@
 $datepickerDayCellSize: 39px !default;
-$datepickerWidth: 311px !default;
+$datepickerWidth: 279px !default;
 $datepickerMinBodyHeight: 170px !default;
 $datepickerBorderRadius: 4px !default;
 $datepickerPadding: 4px !default;
@@ -12,7 +12,7 @@ $datepickerYearsPerRow: 4 !default;
 
 $datepickerTextColor: (
   button: #5cc4ef,
-  otherMonth: #dedede,
+  otherMonth: #fff,
   otherMonthInRange: #ccc,
   disabled: #aeaeae,
   currentDate: #4EB5E6,

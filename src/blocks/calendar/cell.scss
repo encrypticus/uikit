@@ -7,7 +7,6 @@
 .datepicker--cells {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -1px;
   margin-right: -1px;
 }
 
@@ -16,13 +15,17 @@
   z-index: 1;
   display: flex;
   height: $datepickerDayCellSize;
-  margin: 1px;
-  //border-radius: $datepickerBorderRadius;
+  margin: .5px;
+  font-size: 20px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  line-height: 42px;
+  color: #868686;
   box-sizing: border-box;
   cursor: pointer;
   background-color: #f2f2f2;
   align-items: center;
   justify-content: center;
+  font-weight: 400;
 
   &.-focus- {
     background: map_get($datepickerBG, hover);
@@ -139,7 +142,7 @@
 // -------------------------------------------------
 
 .datepicker--cell-day {
-  width: (100/7)#{"%"};
+  width: 39px;
 
   &.-other-month- {
     @extend %otherMonth;

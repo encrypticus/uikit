@@ -80,22 +80,31 @@
 
 .datepicker--buttons {
   display: flex;
-  padding: $datepickerPadding;
+  border-radius: 0 0 3px 3px;
+  //padding: $datepickerPadding;
   border-top: 1px solid map_get($datepickerBorderColor, nav);
+  background-color: #e5e5e5;
+  margin-top: .5px;
+  padding-left: 21px;
+  box-sizing: border-box;
 }
 
 .datepicker--button {
   display: inline-flex;
-  height: 32px;
-  color: map_get($datepickerTextColor, currentDate);
+  height: 49px;
+  font-size: 13px;
+  font-family: Lato, Arial, sans-serif;
+  color: #868686;
   border-radius: $datepickerBorderRadius;
   cursor: pointer;
   flex: 1;
-  justify-content: center;
+  //justify-content: center;
   align-items: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .65px;
 
   &:hover {
     color: map_get($datepickerTextColor, common);
-    background: map_get($datepickerBG, hover);
   }
 }
