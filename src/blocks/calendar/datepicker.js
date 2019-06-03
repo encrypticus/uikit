@@ -1831,7 +1831,7 @@
 
         _bindEvents: function () {
             this.d.$nav.on('click', '.datepicker--nav-action', $.proxy(this._onClickNavButton, this));
-            this.d.$nav.on('click', '.datepicker--nav-title', $.proxy(this._onClickNavTitle, this));
+            // this.d.$nav.on('click', '.datepicker--nav-title', $.proxy(this._onClickNavTitle, this));
             this.d.$datepicker.on('click', '.datepicker--button', $.proxy(this._onClickNavButton, this));
         },
 
