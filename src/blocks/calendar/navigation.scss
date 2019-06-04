@@ -22,6 +22,10 @@
   }
 }
 
+.datepicker-here_theme_blue .datepicker--nav {
+  background-color: #46ab9d;
+}
+
 .datepicker--nav-title,
 .datepicker--nav-action {
   display: flex;
@@ -32,27 +36,19 @@
 
 .datepicker--nav-action {
   width: 30px;
-  //border-radius: $datepickerBorderRadius;
   user-select: none;
 
   &:hover {
     background: $cinnabar;
   }
 
+  .datepicker-here_theme_blue &:hover {
+    background-color: $fountain-blue;
+  }
+
   &.-disabled- {
     visibility: hidden;
   }
-
-  //svg {
-  //  width: 32px;
-  //  height: 32px;
-  //}
-  //
-  //path {
-  //  fill: none;
-  //  stroke: map_get($datepickerTextColor, navArrows);
-  //  stroke-width: 2px;
-  //}
 }
 
 .datepicker--nav-title {
@@ -67,6 +63,10 @@
 
   &:hover {
     background: $cinnabar;
+  }
+
+  .datepicker-here_theme_blue &:hover {
+    background-color: $fountain-blue;
   }
 
   &.-disabled- {

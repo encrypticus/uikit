@@ -62,19 +62,20 @@ $datepickerTransitionOffset: 8px !default;
 
   &.-selected- {
     color: #fff;
-    background: lighten(map_get($datepickerBG, selected), 15);
+    //background-color: $cinnabar;
+    //background: lighten(map_get($datepickerBG, selected), 15);
 
-    &.-focus- {
-      background: lighten(map_get($datepickerBG, selected), 10);
-    }
+    //&.-focus- {
+    //  background: lighten(map_get($datepickerBG, selected), 10);
+    //}
   }
   
   &.-in-range- {
-    background-color: map_get($datepickerBG, inRange);
+    //background-color: map_get($datepickerBG, inRange);
     color: darken(map_get($datepickerTextColor, otherMonth), 7);
 
     &.-focus- {
-      background-color: rgba(map_get($datepickerBG, inRange), .2);
+      //background-color: rgba(map_get($datepickerBG, inRange), .2);
     }
   }
 

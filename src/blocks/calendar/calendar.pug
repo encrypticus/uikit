@@ -1,6 +1,6 @@
-//-
+//- Создает компонент calendar
 
-mixin calendar()
+mixin calendar(options)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -8,5 +8,19 @@ mixin calendar()
   //- Вызов:
         +calendar("Текст", "some-mod")
 
-  .datepicker-here(class=allMods)&attributes(attributes)
+  //- Объект настроек по умолчанию
+  -
+    var settings = {
+      theme: ""
+    },
+    options = options || settings,
+    theme = options.theme || settings.theme,
+
+    //- Список модификаторов
+    modifiers = "";
+
+    if (theme === "blue")
+      modifiers += " datepicker-here_theme_blue";
+
+  .datepicker-here(class=modifiers)&attributes(attributes)
     .datepicker-header

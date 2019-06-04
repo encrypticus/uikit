@@ -3,13 +3,20 @@
   width: $datepickerWidth;
   height: 109px;
   font-size: 5rem;
+
   font-family: "Lato Light", Arial, sans-serif;
   line-height: 26px;
   color: $white;
   justify-content: center;
+
   align-items: center;
   background-color: $cinnabar;
   border-radius: 3px 3px 0 0;
+
   font-weight: 300;
   letter-spacing: -3.2px;
+}
+
+.datepicker-here_theme_blue .datepicker-header {
+  background-color: $fountain-blue;
 }

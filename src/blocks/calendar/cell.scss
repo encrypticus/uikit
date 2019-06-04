@@ -105,6 +105,10 @@
     }
   }
 
+  .datepicker-here_theme_blue &.-selected- {
+    background-color: $fountain-blue;
+  }
+
   &:empty {
     cursor: default;
   }
@@ -120,6 +124,10 @@
   background-color: $cinnabar;
   padding-top: 9px;
   padding-bottom: 9px;
+}
+
+.datepicker-here_theme_blue .datepicker--days-names {
+  background-color: $fountain-blue;
 }
 
 .datepicker--day-name {
