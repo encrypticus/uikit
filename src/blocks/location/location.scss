@@ -23,6 +23,10 @@
     }
   }
 
+  &_theme_blue &__panel {
+    background-color: $fountain-blue;
+  }
+
   &__slogan {
     margin: 0;
     margin-top: -10px;

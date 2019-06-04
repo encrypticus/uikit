@@ -5,6 +5,8 @@ mixin location(options)
   //- Принимает:
   //-  options.slogan     {string} - текстовое содержимое блока location__slogan
   //-  options.address    {string} - текстовое содержимое блока location__address
+  //-  options.theme      {string} - клас-модификатор цветовой темы карты
+
   //- Вызов:
         +location({
           slogan: "He there!",
@@ -15,14 +17,22 @@ mixin location(options)
     //- Объект настроек по умолчанию
     var settings = {
       slogan: "Meet us!",
-      address: ""
+      address: "",
+      theme: ""
     },
+
+    //- Список модификаторов
+    modifiers = "",
 
     options = options || settings,
     slogan = options.slogan || settings.slogan,
-    address = options.address || settings.address;
+    address = options.address || settings.address,
+    theme = options.theme || settings.theme;
 
-  .location(class=allMods, id="map")&attributes(attributes)
+    if (theme === "blue")
+      modifiers += " location_theme_blue";
+
+  .location(class=modifiers, id="map")&attributes(attributes)
     .location__panel
       p.location__slogan= slogan
       p.location__address= address
