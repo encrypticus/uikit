@@ -1,23 +1,14 @@
 //- Создает компонент calendar
 
-mixin calendar(options)
+mixin calendar(theme = "")
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //- theme    {string} - класс модификатор темы календаря
   //- Вызов:
-        +calendar("Текст", "some-mod")
-
-  //- Объект настроек по умолчанию
+        +calendar("blue")
   -
-    var settings = {
-      theme: ""
-    },
-    options = options || settings,
-    theme = options.theme || settings.theme,
-
     //- Список модификаторов
-    modifiers = "";
+    var modifiers = "";
 
     if (theme === "blue")
       modifiers += " datepicker-here_theme_blue";
