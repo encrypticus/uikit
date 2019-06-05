@@ -277,10 +277,14 @@ block content
     section
       +title("Calendar")
       .flex-wrapper
-        .form-elements__left-col
-          +calendar()
-        .form-elements__right-col
-          +calendar("blue")
+        +calendar()
+        +calendar("blue")
+    section
+      +title("Messaging")
+      .flex-wrapper
+        +messaging({
+          theme: "blue", username: "Sarah Brown"
+        })
 
   script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
   script(src="scripts.js")

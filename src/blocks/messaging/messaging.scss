@@ -1,0 +1,103 @@
+// В этом файле должны быть стили для БЭМ-блока messaging, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.messaging {
+  width: 18rem;
+
+  &__header {
+    position: relative;
+    height: 7.1875em;
+    background-color: $grey;
+    border-radius: 3px 3px 0 0;
+    padding-top: 1rem;
+    box-sizing: border-box;
+  }
+
+  &_theme_blue &__header {
+    background: rgb(78, 183, 168);
+    background: linear-gradient(180deg, rgba(78, 183, 168, 1) 0%, rgba(78, 183, 168, 1) 70%, rgba(70, 171, 157, 1) 70%, rgba(70, 171, 157, 1) 100%);
+  }
+
+  &_theme_cinnabar &__header {
+    background-color: $cinnabar;
+  }
+
+  &__username {
+    margin: 0;
+    font-size: 2.125rem;
+    font-family: "Source Sans Pro Light", Arial, sans-serif;
+    line-height: 42px;
+    color: $white;
+    font-weight: 300;
+    letter-spacing: -1.02px;
+    text-align: center;
+  }
+
+  &__avatar-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    width: 5.875rem;
+    height: 5.875rem;
+    border-radius: 50%;
+    background-color: $grey;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, 50%);
+  }
+
+  &__avatar {
+    width: 100%;
+    max-width: 5.25rem;
+    height: auto;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    background-color: map_get($colorsBG, messaging);
+
+    padding: {
+      top: 22px;
+      right: 22px;
+      bottom: 29px;
+      left: 22px;
+    }
+
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon-chat {
+    margin-left: .3125rem;
+  }
+
+  &__icon-camera {
+    margin-right: .3125rem;
+  }
+
+  &__post {
+    margin: 0;
+    font-size: .8125rem;
+    font-family: "Lato", Arial, sans-serif;
+    letter-spacing: .63px;
+
+    &_question {
+      color: #868686;
+      border-radius: 7px;
+      background-color: $white;
+      margin-top: 15px;
+
+      padding: {
+        top: 25px;
+        right: 38px;
+        bottom: 23px;
+        left: 20px;
+      }
+    }
+  }
+}
