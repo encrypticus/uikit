@@ -11,7 +11,9 @@ mixin button(options)
                                             последней
   //- options.animate       {boolean}     - булево значение, от которого зависит, будет ли анимироваться изменение цвета
                                             кнопки при наведении
-  //- options.form          {boolean}     - булево значение, добавляющее кнопке модификатор принадлежности ее к форме
+  //- options.type          {boolean}     - строка, от значения которой зависит, какой класс-модификатор,
+                                            отвечающий за внешний вид кнопки, будет добавлен к элементу.
+                                            Возможные значения: "events", "form"
   //- Вызов:
         +button                                                     - белая кнопка среднего размера
         +button({size: "small", theme: "blue"})                     - маленькая кнопка синего цвета
@@ -36,8 +38,7 @@ mixin button(options)
       theme: "",
       noOutline: false,
       animate: false,
-      form: false,
-      events: false
+      type: ""
     },
     options = options || settings,
     text = options.text || settings.text,
@@ -45,8 +46,7 @@ mixin button(options)
     theme = options.theme || settings.theme,
     noOutline = options.noOutline || settings.noOutline,
     animate = options.animate || settings.animate,
-    form = options.form || settings.form,
-    events = options.events || settings.events;
+    type = options.type || settings.type;
 
     if (typeof(size) !== "undefined" && size)
       modifiers += ` button_size_${size}`;
@@ -60,10 +60,13 @@ mixin button(options)
     if (animate === true)
       modifiers += ` button_animate`;
 
-    if (form === true)
-        modifiers += ` button_form`;
+    if (type === "form")
+      modifiers += ` button_type_form`;
 
-    if (events === true)
-      modifiers += ` button_events`;
+    if(type === "messaging")
+      modifiers += ` button_type_messaging`;
+
+    if (type === "events")
+      modifiers += ` button_type_events`;
 
   button.button(class=modifiers)&attributes(attributes)= text

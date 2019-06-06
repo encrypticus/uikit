@@ -64,7 +64,7 @@ mixin news(options)
             span.news__title-sub= month
           h2.news__title= title
           p.news__text= text
-          +button({text:"Add to calendar", events: true, noOutline: true})
+          +button({text:"Add to calendar", type: "events", noOutline: true})
         else
           h2.news__title= title
           h2.news__date= date
