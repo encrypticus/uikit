@@ -57,6 +57,8 @@
   &__content {
     box-sizing: border-box;
     background-color: map_get($colorsBG, messaging);
+    display: flex;
+    flex-direction: column;
 
     padding: {
       top: 22px;
@@ -80,23 +82,49 @@
     margin-right: .3125rem;
   }
 
+  &__post-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: {
+      top: 15px;
+      bottom: 20px;
+    }
+  }
+
   &__post {
     margin: 0;
     font-size: .8125rem;
     font-family: "Lato", Arial, sans-serif;
+    line-height: 14px;
     letter-spacing: .63px;
 
     &_question {
-      color: #868686;
+      color: map_get($colorsBG, messaging-question);
       border-radius: 7px;
       background-color: $white;
-      margin-top: 15px;
 
       padding: {
-        top: 25px;
-        right: 38px;
-        bottom: 23px;
-        left: 20px;
+        top: 1.0625rem; // 17px / 16px
+        right: 2.0625rem; // 33px / 16px
+        bottom: 1.375rem; // 22px / 16px
+        left: 1.25rem; // 20px / 16px
+      }
+    }
+
+    &_answer {
+      color: map_get($colorsBG, messaging-answer);
+      border: 3px solid $white;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: $grey;
+      margin-bottom: 18px;
+
+      padding: {
+        top: .875rem; // 14px / 16px
+        right: 1.375rem; // 22px / 16px
+        bottom: 2.3125rem; // 37px / 16px
+        left: 1.125rem; // 18px / 16px
       }
     }
   }

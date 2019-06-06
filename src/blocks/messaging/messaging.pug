@@ -38,9 +38,11 @@ mixin messaging(options)
         svg.messaging__icon-camera(width="25", height="20", viewBox="0 0 25 20")
           path(fill="#8e8d8d", d="M1.61 3.902h4.024v-1.61c0-.889.72-1.61 1.61-1.61h9.658c.89 0 1.61.721 1.61 1.61v1.61h4.025c.889 0 1.61.721 1.61 1.61V18.39c0 .89-.721 1.61-1.61 1.61H1.61A1.61 1.61 0 0 1 0 18.39V5.512c0-.889.72-1.61 1.61-1.61zm5.03 7.848a5.433 5.433 0 1 0 10.866 0 5.433 5.433 0 0 0-10.866 0zm5.433-3.42a3.42 3.42 0 1 1 0 6.84 3.42 3.42 0 0 1 0-6.84z")
       .messaging__post-wrapper
+        svg(width="13", height="7", viewBox="0 0 13 7")
+          polygon(points="0,7 6.5,0 13,7", fill="#ffffff")
         p.messaging__post.messaging__post_question
           | Hey! So are we cool to meet at the art gallery? Say 8pm
-      p.messaging__post
+      p.messaging__post.messaging__post_answer
         | Yeah that sounds great. See you then.
-      +button({text: "Reply"})
+      +button({text: "Reply", theme: "blue"})
 
