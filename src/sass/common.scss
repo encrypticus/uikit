@@ -29,4 +29,14 @@ section {
 .flex-wrapper {
   display: flex;
   justify-content: space-around;
+
+  @include for-tablet-landscape-down() {
+    flex-direction: column;
+    align-items: center;
+
+    &__calendar,
+    &__messaging {
+      margin-bottom: 20px;
+    }
+  }
 }

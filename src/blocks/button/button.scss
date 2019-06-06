@@ -25,10 +25,10 @@
   }
 
   &_type_form {
-    color: $white;
+    color: $white !important;
+    border-width: 0;
     background-color: $fountain-blue;
     box-shadow: 0 2px $jungle-green;
-    border-width: 0;
   }
 
   &_type_events {
