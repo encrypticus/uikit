@@ -24,14 +24,14 @@
     transform: translateY(2px);
   }
 
-  &_form {
+  &_type_form {
     color: $white;
     background-color: $fountain-blue;
     box-shadow: 0 2px $jungle-green;
     border-width: 0;
   }
 
-  &_events {
+  &_type_events {
     min-width: 127px;
     padding: .3125rem .875rem;
     font-size: .625rem;
