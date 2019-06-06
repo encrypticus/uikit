@@ -61,10 +61,10 @@
     flex-direction: column;
 
     padding: {
-      top: 22px;
-      right: 22px;
-      bottom: 29px;
-      left: 22px;
+      top: 1.375rem; // 22px / 16px
+      right: 1.375rem; // 22px / 16px
+      bottom: 1.8125rem; // 29px / 16px
+      left: 1.375rem; // 22px / 16px
     }
 
   }
