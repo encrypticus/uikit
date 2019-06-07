@@ -16,7 +16,12 @@ module.exports = function (pretty = true) {
         {
           test: /\.pug$/,
           use: [
-              "html-loader",
+            {
+              loader: "html-loader",
+              options: {
+                attrs: ['img:src', 'video:poster', 'video:src']
+              }
+            },
             {
               loader: "pug-html-loader",
               options: {

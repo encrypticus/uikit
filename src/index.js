@@ -6,3 +6,4 @@ import "./blocks/toggle/toggle";
 import "./blocks/search-field/search-field";
 import "./blocks/location/location";
 import "./blocks/calendar/calendar";
+import "./blocks/air-videoplayer/air-videoplayer";

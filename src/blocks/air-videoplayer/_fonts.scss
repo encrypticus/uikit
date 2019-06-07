@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "ckin";
+  src: url("./fonts/ckin.eot");
+  src: url("./fonts/ckin.eot") format("embedded-opentype"),
+    url("./fonts/ckin.ttf") format("truetype"),
+    url("./fonts/ckin.woff") format("woff"),
+    url("./fonts/ckin.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ckin-"],
+[class*=" ckin-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "ckin" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ckin-compress:before {
+  content: "\e901";
+}
+
+.ckin-expand:before {
+  content: "\e900";
+}
+
+.ckin-play {
+  width: 10px;
+  height: 13px;
+  background-image: url("./blocks/air-videoplayer/img/icon-play.svg");
+}
+
+.ckin-play::before {
+  content: "";
+  width: 10px;
+  height: 13px;
+}
+
+.ckin-pause:before {
+  content: "\ea1d";
+}
+
+.ckin-stop:before {
+  content: "\ea1e";
+}
+
+.ckin-backward:before {
+  content: "\ea1f";
+}
+
+.ckin-forward:before {
+  content: "\ea20";
+}
+
+.ckin-volume-high:before {
+  content: "\ea26";
+}
+
+.ckin-volume-medium:before {
+  content: "\ea27";
+}
+
+.ckin-volume-low:before {
+  content: "\ea28";
+}
+
+.ckin-volume-mute:before {
+  content: "\ea2a";
+}

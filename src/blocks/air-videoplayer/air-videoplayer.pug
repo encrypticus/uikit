@@ -1,0 +1,13 @@
+//-
+
+mixin air-videoplayer(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +air-videoplayer("Текст", "some-mod")
+
+  .air-videoplayer()&attributes(attributes)
+    video(poster="../blocks/air-videoplayer/img/ckin.jpg",
+      src="../blocks/air-videoplayer/video/ckin.mp4")
