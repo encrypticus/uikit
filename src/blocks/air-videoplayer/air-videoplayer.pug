@@ -1,13 +1,36 @@
 //-
 
-mixin air-videoplayer(text, mods)
+mixin air-videoplayer(options)
 
   //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
+  //-   options.poster    {string} - путь до изображения для атрибута poster тэга video
+  //-   options.src       {string} - путь до видеофайла для атрибута src тэга video
+  //-   options.theme     {string} - класс-модификатор, от значения которого зависит цветовая тема
+                                     видеоплеера. Может принимать два значения: "blue", "cinnabar"
   //- Вызов:
         +air-videoplayer("Текст", "some-mod")
 
-  .air-videoplayer()&attributes(attributes)
-    video(poster="../blocks/air-videoplayer/img/ckin.jpg",
-      src="../blocks/air-videoplayer/video/ckin.mp4")
+  -
+    //- Объект настроек по умолчанию
+    var settings = {
+      poster: "../blocks/air-videoplayer/img/ckin.jpg",
+      src: "../blocks/air-videoplayer/video/ckin.mp4",
+      width: ""
+    },
+
+    options = options || settings,
+    poster = options.poster || settings.poster,
+    src = options.src || settings.src,
+    width = options.width || settings.width;
+
+    //- Список модификаторов
+    modifiers = '';
+
+    if (options.theme === 'blue')
+      modifiers += ' air-videoplayer_theme_blue';
+
+    if (options.theme === 'cinnabar')
+      modifiers += ' air-videoplayer_theme_cinnabar';
+
+  .air-videoplayer(class=modifiers, style=width != "" ? `width: ${width}` : "")&attributes(attributes)
+    video(poster=poster, src=src)
