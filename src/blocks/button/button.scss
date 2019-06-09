@@ -9,7 +9,7 @@
   line-height: .75rem;
   color: #000;
   border-radius: 3px;
-  background-color: $white;
+  background-color: $color-text-primary;
 
   font-weight: 400;
   text-transform: uppercase;
@@ -25,10 +25,10 @@
   }
 
   &_type_form {
-    color: $white !important;
+    color: $color-text-primary !important;
     border-width: 0;
     background-color: $fountain-blue;
-    box-shadow: 0 2px $jungle-green;
+    box-shadow: 0 2px $fountain-blue--dark;
   }
 
   &_type_events {
@@ -68,10 +68,10 @@
   &_theme_blue {
     color: $fountain-blue;
     border: 1px solid $fountain-blue;
-    box-shadow: 0 2px $jungle-green;
+    box-shadow: 0 2px $fountain-blue--dark;
 
     &:hover {
-      color: $white;
+      color: $color-text-primary;
       background-color: $fountain-blue;
     }
   }
@@ -79,10 +79,10 @@
   &_theme_cinnabar {
     color: $cinnabar;
     border: 1px solid $cinnabar;
-    box-shadow: 0 2px $thunderbird;
+    box-shadow: 0 2px $cinnabar--dark;
 
     &:hover {
-      color: $white;
+      color: $color-text-primary;
       background-color: $cinnabar;
     }
   }
@@ -103,7 +103,7 @@
     border-radius: 50%;
     opacity: .5;
 
-    background-color: $white;
+    background-color: $color-text-primary;
     transform: scale(0);
     animation: ripple .7s ease-out;
   }

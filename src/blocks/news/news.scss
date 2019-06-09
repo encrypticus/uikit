@@ -39,7 +39,7 @@
 
     height: 100%;
     border-radius: 0 3px 3px 0;
-    background-color: $dark-grey;
+    background-color: $gray--darken;
     padding-left: 7.638888888888889%;
 
     padding-right: 7.857142857142857%;
@@ -67,7 +67,7 @@
     font-family: "Lato Light", sans-serif;
 
     line-height: 1.625rem; // 26px
-    color: $white;
+    color: $color-text-primary;
     font-weight: 300;
   }
 
@@ -108,12 +108,12 @@
   }
 
   &_theme_blue .button {
-    box-shadow: 0 3px $jungle-green;
+    box-shadow: 0 3px $fountain-blue--dark;
     color: $fountain-blue;
   }
 
   &_theme_cinnabar .button {
-    box-shadow: 0 3px $thunderbird;
+    box-shadow: 0 3px $cinnabar--dark;
     color: $cinnabar;
   }
 

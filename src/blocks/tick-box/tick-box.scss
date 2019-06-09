@@ -6,7 +6,7 @@
   }
 
   &:checked + &__label &__tick {
-    fill: $white;
+    fill: $color-text-primary;
   }
 
   &__label {
@@ -16,13 +16,13 @@
     width: 1.4375rem;
 
     height: 1.4375rem;
-    background-color: $grey;
+    background-color: $gray;
     border-radius: 50%;
     cursor: pointer;
 
   }
 
   &__tick {
-    fill: $silver;
+    fill: $gray--dark;
   }
 }

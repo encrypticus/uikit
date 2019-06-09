@@ -5,18 +5,18 @@
   font-family: "Source Sans Pro";
 
   line-height: .875rem;
-  color: $dark-grey;
+  color: $gray--darken;
   border: none;
   border-radius: 3px;
 
-  background-color: $grey;
+  background-color: $gray;
   font-weight: 400;
   letter-spacing: .14px;
   box-sizing: border-box;
 
   &_error {
     background-color: $cinnabar;
-    color: $white;
+    color: $color-text-primary;
   }
 
   &-wrapper {

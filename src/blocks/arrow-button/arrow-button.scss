@@ -51,15 +51,15 @@
   }
 
   &:disabled {
-    background-color: $grey;
-    border-color: $grey;
+    background-color: $gray;
+    border-color: $gray;
     cursor: not-allowed;
   }
 
   // Переопределение цвета у отключенной стрелки
   &:disabled &__arrow::before,
   &:disabled &__arrow::after {
-    background-color: $white;
+    background-color: $color-text-primary;
   }
 
   // Направления стрелки
@@ -99,7 +99,7 @@
 
   &_theme_blue:hover &__arrow::before,
   &_theme_blue:hover &__arrow::after {
-    background-color: $white;
+    background-color: $color-text-primary;
   }
 
   &_theme_cinnabar &__arrow::before,
@@ -113,7 +113,7 @@
 
   &_theme_cinnabar:hover &__arrow::before,
   &_theme_cinnabar:hover &__arrow::after {
-    background-color: $white;
+    background-color: $color-text-primary;
   }
 
   // Анимация кнопки

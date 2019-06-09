@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   border-radius: 3px;
-  background-color: $grey;
+  background-color: $gray;
 
   box-sizing: border-box;
   cursor: pointer;
@@ -42,7 +42,7 @@
     font-family: "Source Sans Pro";
 
     line-height: .875rem;
-    color: $dark-grey;
+    color: $gray--darken;
     border-width: 0;
     padding-top: .4375rem;
 
@@ -59,7 +59,7 @@
     }
 
     option {
-      background-color: $grey;
+      background-color: $gray;
     }
   }
 }

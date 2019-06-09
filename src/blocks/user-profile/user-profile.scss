@@ -11,12 +11,12 @@
 
   &_themeBlue &__name,
   &_themeBlue &__job {
-    color: $white;
+    color: $color-text-primary;
   }
 
   &_themeBlue .icon-center,
   &_themeBlue .icon-edge {
-    fill: $white;
+    fill: $color-text-primary;
   }
 
   &__avatar-wrapper {
@@ -27,7 +27,7 @@
 
     height: 5.875rem;
     border-radius: 50%;
-    background-color: $grey;
+    background-color: $gray;
   }
 
   &__avatar {
@@ -41,7 +41,7 @@
     padding-top: .625rem;
     padding-bottom: .9375rem;
 
-    background-color: $grey;
+    background-color: $gray;
     border-radius: 7px;
     box-sizing: border-box;
 
@@ -55,7 +55,7 @@
   }
 
   &__triangle {
-    fill: $grey;
+    fill: $gray;
   }
 
   &__name {
@@ -76,7 +76,7 @@
     font-family: "Lato", sans-serif;
 
     line-height: .6875rem;
-    color: $color-title;
+    color: $black--light;
     text-transform: uppercase;
     letter-spacing: .55px;
   }
@@ -91,7 +91,7 @@
 }
 
 .icon-edge {
-  fill: $color-socials;
+  fill: $black--lighten;
 }
 
 .icon-center {

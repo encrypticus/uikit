@@ -27,7 +27,7 @@
   }
 
   &__step_incomplete {
-    background-color: $grey;
+    background-color: $gray;
   }
 
   // Цветовые темы для шагов
@@ -72,16 +72,16 @@
     }
 
     &_fill { // значение для пройденного пункта
-      color: $white;
+      color: $color-text-primary;
     }
 
     &_empty { // значение для непройденного пункта
-      color: $dark-grey;
+      color: $gray--darken;
     }
   }
 
   &__point_empty { // непройденный пункт
-    background-color: $grey;
+    background-color: $gray;
   }
 
   // Цветовые темы для пунктов

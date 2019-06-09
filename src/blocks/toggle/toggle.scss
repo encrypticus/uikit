@@ -19,11 +19,11 @@
 
     font-size: .75rem;
     font-family: "Lato", sans-serif;
-    color: $white;
+    color: $color-text-primary;
     border-radius: 15px;
 
     box-sizing: border-box;
-    background-color: $grey;
+    background-color: $gray;
     cursor: pointer;
     user-select: none;
 
@@ -42,7 +42,7 @@
       height: 1.125rem;
 
       border-radius: 50%;
-      background-color: $white;
+      background-color: $color-text-primary;
     }
   }
 

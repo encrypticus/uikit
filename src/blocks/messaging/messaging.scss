@@ -4,7 +4,7 @@
   &__header {
     position: relative;
     height: 7.1875em;
-    background-color: $grey;
+    background-color: $gray;
 
     border-radius: 3px 3px 0 0;
     padding-top: 1rem;
@@ -27,7 +27,7 @@
     font-family: "Source Sans Pro Light", Arial, sans-serif;
     line-height: 42px;
 
-    color: $white;
+    color: $color-text-primary;
     font-weight: 300;
     letter-spacing: -1.02px;
     text-align: center;
@@ -42,7 +42,7 @@
     width: 5.875rem;
     height: 5.875rem;
     border-radius: 50%;
-    background-color: $grey;
+    background-color: $gray;
 
     justify-content: center;
     align-items: center;
@@ -107,7 +107,7 @@
     &_question {
       color: map_get($colorsBG, messaging-question);
       border-radius: 7px;
-      background-color: $white;
+      background-color: $color-text-primary;
 
       padding: {
         top: 1.0625rem; // 17px / 16px
@@ -119,11 +119,11 @@
 
     &_answer {
       color: map_get($colorsBG, messaging-answer);
-      border: 3px solid $white;
+      border: 3px solid $color-text-primary;
       border-radius: 5px;
       box-sizing: border-box;
 
-      background-color: $grey;
+      background-color: $gray;
       margin-bottom: 18px;
 
       padding: {
@@ -137,7 +137,7 @@
 
   & .button {
     border-width: 0;
-    color: $white;
+    color: $color-text-primary;
 
     &:active {
       box-shadow: none;
@@ -146,11 +146,11 @@
 
   &_theme_blue .button {
     background-color: $fountain-blue;
-    box-shadow: 0 3px $jungle-green;
+    box-shadow: 0 3px $fountain-blue--dark;
   }
 
   &_theme_cinnabar .button {
     background-color: $cinnabar;
-    box-shadow: 0 3px $thunderbird;
+    box-shadow: 0 3px $cinnabar--dark;
   }
 }
