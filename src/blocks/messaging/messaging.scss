@@ -57,7 +57,7 @@
 
   &__content {
     box-sizing: border-box;
-    background-color: map_get($colorsBG, messaging);
+    background-color: $gray--light;
     display: flex;
 
     flex-direction: column;
@@ -105,7 +105,7 @@
     letter-spacing: .63px;
 
     &_question {
-      color: map_get($colorsBG, messaging-question);
+      color: $gray--darken;
       border-radius: 7px;
       background-color: $color-text-primary;
 
@@ -118,7 +118,7 @@
     }
 
     &_answer {
-      color: map_get($colorsBG, messaging-answer);
+      color: $gray--darken;
       border: 3px solid $color-text-primary;
       border-radius: 5px;
       box-sizing: border-box;
