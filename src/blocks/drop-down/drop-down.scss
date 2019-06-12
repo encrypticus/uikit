@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &:before { // зеленая кнопка
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -22,14 +22,14 @@
   }
 
   &:after { // стрелка на кнопке
-    content: "";
+    content: '';
     position: absolute;
     top: .625rem;
     right: .625rem;
 
     width: 15px;
     height: 10px;
-    background-image: url("blocks/drop-down/img/drop-arrow.svg");
+    background-image: url('blocks/drop-down/img/drop-arrow.svg');
 
     background-repeat: no-repeat;
     pointer-events: none;
@@ -39,7 +39,7 @@
     width: 100%;
     height: 100%;
     font-size: .875rem;
-    font-family: "Source Sans Pro";
+    font-family: 'Source Sans Pro';
 
     line-height: .875rem;
     color: $dark-grey;

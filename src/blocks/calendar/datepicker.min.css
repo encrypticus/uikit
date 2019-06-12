@@ -164,10 +164,10 @@
 .datepicker--time-current-colon {margin: 0 2px 3px;line-height: 1}
 
 .datepicker--time-current-hours,
-.datepicker--time-current-minutes {position: relative;z-index: 1;font-size: 19px;font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;line-height: 1}
+.datepicker--time-current-minutes {position: relative;z-index: 1;font-size: 19px;font-family: 'Century Gothic',CenturyGothic,AppleGothic,sans-serif;line-height: 1}
 
 .datepicker--time-current-hours:after,
-.datepicker--time-current-minutes:after {content: "";position: absolute;top: -3px;right: -2px;bottom: -2px;left: -2px;z-index: -1;border-radius: 4px;opacity: 0;background: #f0f0f0}
+.datepicker--time-current-minutes:after {content: '';position: absolute;top: -3px;right: -2px;bottom: -2px;left: -2px;z-index: -1;border-radius: 4px;opacity: 0;background: #f0f0f0}
 
 .datepicker--time-current-hours.-focus-:after,
 .datepicker--time-current-minutes.-focus-:after {opacity: 1}
@@ -217,7 +217,7 @@
 .datepicker--time-icon {position: relative;width: 1em;height: 1em;margin: 0 5px -1px 0;font-size: 16px;color: #9c9c9c;border: 1px solid;border-radius: 50%}
 
 .datepicker--time-icon:after,
-.datepicker--time-icon:before {content: "";background: currentColor;position: absolute}
+.datepicker--time-icon:before {content: '';background: currentColor;position: absolute}
 
 .datepicker--time-icon:after {top: calc(50% + 1px);left: calc(50% - 1px);width: 1px;height: .4em;-webkit-transform: translateY(-100%);transform: translateY(-100%)}
 

@@ -1,4 +1,4 @@
-@import "datepicker-config";
+@import 'datepicker-config';
 
 /* -------------------------------------------------
     Navigation
@@ -8,7 +8,7 @@
   display: flex;
   padding: $datepickerPadding;
   font-size: 24px;
-  font-family: "Lato Light", Arial, sans-serif;
+  font-family: 'Lato Light', Arial, sans-serif;
   line-height: 26px;
   color: $white;
   justify-content: space-between;

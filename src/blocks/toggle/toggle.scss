@@ -18,7 +18,7 @@
     padding: .25rem .75rem .3125rem 1.8125rem;
 
     font-size: .75rem;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     color: $white;
     border-radius: 15px;
 
@@ -32,7 +32,7 @@
     letter-spacing: .6px;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: .1875rem;
       right: unset;

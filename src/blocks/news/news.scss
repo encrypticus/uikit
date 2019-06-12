@@ -64,7 +64,7 @@
   &__title {
     margin: 0;
     font-size: 1.75em; // 28px
-    font-family: "Lato Light", sans-serif;
+    font-family: 'Lato Light', sans-serif;
 
     line-height: 1.625rem; // 26px
     color: $white;
@@ -73,7 +73,7 @@
 
   &_type_events &__title {
     font-size: .8125em;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
 
     text-transform: uppercase;
@@ -83,7 +83,7 @@
   &__date {
     margin: 0;
     font-size: .6875em; // 11px
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     line-height: 2.25rem; // 36px
 
     color: #fff;
@@ -94,7 +94,7 @@
 
   &_type_events &__date {
     font-size: 4.5625em;
-    font-family: "Lato Light", sans-serif;
+    font-family: 'Lato Light', sans-serif;
     font-weight: 300;
     letter-spacing: -2.92px;
 
