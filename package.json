@@ -77,7 +77,8 @@
         "border-radius",
         "opacity"
       ],
-      "color-hex-length": "short"
+      "color-hex-length": "short",
+      "string-quotes": "single"
     }
   },
   "browserslist": [

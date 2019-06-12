@@ -1,12 +1,12 @@
-@include load-font($src:"./fonts/Lato", $family: "Lato");
+@include load-font($src:'./fonts/Lato', $family: 'Lato');
 
-@include load-font($src:"./fonts/Lato-Black", $family: "Lato Black");
+@include load-font($src:'./fonts/Lato-Black', $family: 'Lato Black');
 
-@include load-font($src:"./fonts/Lato-Light", $family: "Lato Light");
+@include load-font($src:'./fonts/Lato-Light', $family: 'Lato Light');
 
-@include load-font($src:"./fonts/SourceSansPro", $family: "Source Sans Pro");
+@include load-font($src:'./fonts/SourceSansPro', $family: 'Source Sans Pro');
 
-@include load-font($src:"./fonts/SourceSansProLight", $family: "Source Sans Pro Light");
+@include load-font($src:'./fonts/SourceSansProLight', $family: 'Source Sans Pro Light');
 
 html {
   font-size: 16px;

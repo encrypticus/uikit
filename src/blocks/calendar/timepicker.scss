@@ -1,4 +1,4 @@
-@import "datepicker-config";
+@import 'datepicker-config';
 
 /* -------------------------------------------------
     Timepicker
@@ -110,11 +110,11 @@ $rangeThumbBg: #dedede;
   position: relative;
   z-index: 1;
   font-size: 19px;
-  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   line-height: 1;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -3px;
     right: -2px;
@@ -154,7 +154,7 @@ $rangeThumbBg: #dedede;
     margin-bottom: 4px;
   }
 
-  input[type="range"] {
+  input[type='range'] {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -237,7 +237,7 @@ $rangeThumbBg: #dedede;
 
   &:after,
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     background: currentColor;
   }

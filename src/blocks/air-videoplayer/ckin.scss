@@ -1,9 +1,9 @@
-@import "config";
+@import 'config';
 
-@import "fonts";
+@import 'fonts';
 
 body {
-  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  font-family: 'Helvetica Neue', 'Calibri Light', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: .02em;
@@ -17,7 +17,7 @@ video {
 
 .ckin__player {
   margin-bottom: 20px;
-  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  font-family: 'Helvetica Neue', 'Calibri Light', Roboto, sans-serif;
   letter-spacing: .02em;
 
   &.ckin__fullscreen {
@@ -63,7 +63,7 @@ video {
   cursor: pointer;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -208,7 +208,7 @@ video {
   cursor: pointer;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -354,7 +354,7 @@ video {
   cursor: pointer;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
