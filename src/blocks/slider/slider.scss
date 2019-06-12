@@ -249,11 +249,6 @@
 }
 
 .slider-wrapper {
-  width: 80%;
-
-  @include for-tablet-portrait-up () {
-    width: 37%;
-  }
 
   &_theme_cinnabar .slider__handle,
   &_theme_cinnabar .tooltip-inner,

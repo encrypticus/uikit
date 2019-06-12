@@ -168,17 +168,19 @@ block content
     section
       +title("Sliders")
       .elements-block
-        +slider({
-          theme: "cinnabar",
-          tooltip: "always"
-        })(class="elements-block__slider")
+        .elements-block__slider
+          +slider({
+            theme: "cinnabar",
+            tooltip: "always"
+          })
 
-        +slider({
-          theme: "blue",
-          ticks:[0, 25, 50, 75, 100],
-          step: 25,
-          selection: "before"
-        })(class="elements-block__slider")
+        .elements-block__slider
+          +slider({
+            theme: "blue",
+            ticks:[0, 25, 50, 75, 100],
+            step: 25,
+            selection: "before"
+          })
 
     section
       +title("Stages")

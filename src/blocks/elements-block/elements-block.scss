@@ -15,7 +15,12 @@
   }
 
   &__slider {
-    margin-top: 35px;
+    width: 37%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 
   &__stages {
