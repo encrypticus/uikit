@@ -4,7 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  @media (max-width: 500px) {
+  @include for-tablet-landscape-down () {
     flex-direction: column;
     justify-content: space-around;
   }
@@ -13,12 +13,22 @@
     margin-top: 10px;
   }
 
+  &__arrow-button {
+    margin-left: 24px;
+  }
+
   &__slider {
     margin-top: 35px;
   }
 
   &__stages {
     margin: 0 auto;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
   }
 }
 
