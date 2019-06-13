@@ -140,10 +140,24 @@ block content
     section
       +title("Percentage/pie chart")
       .elements-block
-        +percentage-chart({theme: "cinnabar", size: "14.28571428571429%"})
-        +percentage-chart({percent: 38, theme: "cinnabar", size: "14.28571428571429%"})
-        +percentage-chart({percent: 62, theme: "blue", size: "12%"})
-        +percentage-chart({percent: 89, theme: "cinnabar", size: "20%"})
+        .elements-block__chart
+          +percentage-chart({theme: "cinnabar"})
+        .elements-block__chart
+          +percentage-chart({percent: 38, theme: "cinnabar"})
+        .elements-block__chart
+          +percentage-chart({percent: 62, theme: "cinnabar"})
+        .elements-block__chart
+          +percentage-chart({percent: 89, theme: "cinnabar"})
+
+      .elements-block
+        .elements-block__chart
+          +percentage-chart({percent: 85, theme: "blue", size: "xl"})
+        .elements-block__chart
+          +percentage-chart({percent: 85, theme: "blue", size: "lg"})
+        .elements-block__chart
+          +percentage-chart({percent: 85, theme: "blue", size: "sm"})
+        .elements-block__chart
+          +percentage-chart({percent: 100, theme: "blue", size: "xs"})
 
       .elements-block
         +pie-chart({

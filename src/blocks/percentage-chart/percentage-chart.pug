@@ -1,13 +1,14 @@
 mixin percentage-chart(options)
 
   //- Принимает:
-  //-   options.size       {string} - размер элемента в % или px
+  //-   options.size       {string} - класс-модификатор размера чарта. Может принимать одно из следующих занчений:
+                                      small || sm, extra-small || xs, large || lg, extra-large || xl
   //-   options.percent    {number} - число процентов от 0 до 100
-  //-   options.theme      {string} - цветовая тема чарта
+  //-   options.theme      {string} - класс-модификатор цветовой темы
 
   //- Вызов:
-        +percentage-chart({percent: 89, theme: "cinnabar", size: "14%"}) - чарт  со значением 89%, размером 14% от
-                                                                           родительского блока, темой cinnabar
+        +percentage-chart({percent: 89, theme: "cinnabar", size: "sm"}) - чарт  со значением 89%, маленького размера,
+                                                                           темой cinnabar
         +percentage-chart({percent: 50, theme: "blue"})                  - чарт  со значением 50%, размером 100px, темой blue
 
   -
@@ -15,7 +16,6 @@ mixin percentage-chart(options)
 
     //- Объект с настройками по умолчанию
     settings = {
-      size: "",
       percent: 0,
       theme: ""
     },
@@ -24,30 +24,24 @@ mixin percentage-chart(options)
     percent = options.percent || settings.percent,
     theme = options.theme || settings.theme
 
-    //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
-    //- соответствует указанному шаблону, иначе false.
-    function validArg(arg) {
-      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(arg))) return true;
-      return false;
-    }
-
     if (typeof percent !== "number") percent = 0;
     if (percent < 0 ) percent = 0;
     if (percent > valueFull) percent = 100;
-    if (size != "")
-      if (!validArg(size)) size = "100px";
-
 
     valueEmpty = valueFull - percent,
+
     // список модификаторов
-    modifiers = "";
+    chartValueModifiers = "",
+    chartModifiers = "";
 
     if (typeof (theme) !== "undefined" && theme)
-      modifiers += ` percentage-chart__value_theme_${theme}`;
+      chartValueModifiers += ` percentage-chart__value_theme_${theme}`;
 
-  .percentage-chart(style=size != "" ? `width: ${size}`: "")&attributes(attributes)
-    .percentage-chart__wrapper
-      svg.percentage-chart__img(viewBox="0 0 36 36", fille="none")
-        circle.percentage-chart__value(class=modifiers, r="15.9155", cx="50%", cy="50%",
-        fill="none", stroke-width="1.6", stroke-dasharray=`${percent}, ${valueEmpty}`, stroke-dashoffset="25")
-        text.percentage-chart__text(x="18", y="23.35")= percent
+    if (typeof (size) !== "undefined" && size)
+      chartModifiers += ` percentage-chart_size_${size}`
+
+
+  svg.percentage-chart(class=chartModifiers, viewBox="0 0 36 36", fille="none")&attributes(attributes)
+    circle.percentage-chart__value(class=chartValueModifiers, r="15.9155", cx="50%", cy="50%",
+    fill="none", stroke-width="1.6", stroke-dasharray=`${percent}, ${valueEmpty}`, stroke-dashoffset="25")
+    text.percentage-chart__text(x="18", y="23.35")= percent

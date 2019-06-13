@@ -1,21 +1,29 @@
-// Стили для percentage-chart
-
 .percentage-chart {
-  width: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 
-  &__wrapper { // обертка
-    position: relative;
-    width: 100%;
-    padding-top: 100%;
+  &_size_large,
+  &_size_lg {
+    width: 7.5rem; // 120px
+    height: 7.5rem;
   }
 
-  &__img { // svg-элемент
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  &_size_extra-large,
+  &_size_xl {
+    width: 9.375rem; // 150px
+    height: 9.375rem;
+  }
 
-    height: 100%;
+  &_size_small,
+  &_size_sm {
+    width: 4.375rem; // 70px
+    height: 4.375rem;
+  }
+
+  &_size_extra-small,
+  &_size_xs {
+    width: 3.125rem; // 50px
+    height: 3.125rem;
   }
 
   &__value { // элементе circle
@@ -33,7 +41,7 @@
 
   &__text { // элемент text внутри svg
     font-size: .9rem;
-    font-family: 'Lato Light', sans-serif;
+    font-family: 'Lato Light', Arial, sans-serif;
     fill: #a9a9a9;
     text-anchor: middle;
 
