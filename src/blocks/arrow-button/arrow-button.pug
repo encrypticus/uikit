@@ -1,7 +1,7 @@
 mixin arrow-button(options)
 
   //- Принимает:
-    //-   options.size        {string}  - строка со значением ширины кнопки и единицами измерения
+    //-   options.size        {string}  - класс-модификатор размера кнопки: "lg" || "large", "sm" || "small"
     //-   options.theme       {string}  - класс-модификатор цветовой темы кнопки
     //-   options.direction   {string}  - класс-модификатор направления стрелки: влево, вправо, вверх, вниз
     //-   options.noOutline   {boolean} - булево значение, от которого зависит, будет ли к элементу кнопки
@@ -16,16 +16,16 @@ mixin arrow-button(options)
     //- Вызов:
           +arrow-button       - дефолтная кнопка белого цвета размером 50х50 пикселей
 
-          +arrow-button({     - кнопка голубого цвета, с размером в 45% от родительского блока, с отключенной
+          +arrow-button({     - кнопка голубого цвета маленького размера, с отключенной
             noOutline: true,    обводкой, анимацией изменения цвета и воспроизведением ripple-effect при клике
-            size: "45%",
+            size: "sm",
             theme: "blue",
             animate: true,
             ripple: true
           })
 
-          +arrow-button({     - кнопка вправо цвета киноварь, размером 45% от размера родительского блока, с отключенной
-            size: "45%",        обводкой, анимацией изменения цвета и воспроизведением ripple-effect при клике
+          +arrow-button({     - кнопка вправо цвета киноварь большого размера, с отключенной обводкой, анимацией
+            size: "lg",         изменения цвета и воспроизведением ripple-effect при клике
             noOutline: true,
             direction: "right",
             theme: "cinnabar",
@@ -39,7 +39,6 @@ mixin arrow-button(options)
 
     // Объект настроек по умолчанию
     settings = {
-      size: "",
       theme: "",
       direction: "",
       noOutline: false,
@@ -49,7 +48,6 @@ mixin arrow-button(options)
     },
 
     options = options || settings,
-    size = options.size || settings.size,
     theme = options.theme || settings.theme,
     direction = options.direction || settings.direction,
     noOutline = options.noOutline || settings.noOutline,
@@ -57,14 +55,7 @@ mixin arrow-button(options)
     ripple = options.ripple || settings.ripple,
     disable = options.disable || settings.disable;
 
-  //- Проверяет на корректность значение аргумента width - ширины блока элемента. Возвращает true, если значение
-  //- соответствует указанному шаблону, иначе false.
   -
-    function isValidElementSize(size) {
-      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(size))) return true;
-      return false;
-    }
-
     if (typeof (theme) !== "undefined" && theme)
       modifiers += ` arrow-button_theme_${theme}`
 
@@ -80,8 +71,17 @@ mixin arrow-button(options)
     if (ripple === true)
       modifiers += ` arrow-button_ripple`
 
-    if (size != "")
-      if (!isValidElementSize(size)) size = "50px";
+    if (options.size === "large")
+      modifiers += " arrow-button_size_large"
 
-  button.arrow-button(class=modifiers, style=size != "" ? `width: ${size}` : "", disabled=disable)&attributes(attributes)
+    if (options.size === "lg")
+      modifiers += " arrow-button_size_lg"
+
+    if (options.size === "small")
+      modifiers += " arrow-button_size_small"
+
+    if (options.size === "sm")
+      modifiers += " arrow-button_size_sm"
+
+  button.arrow-button(class=modifiers, disabled=disable)&attributes(attributes)
     span.arrow-button__arrow

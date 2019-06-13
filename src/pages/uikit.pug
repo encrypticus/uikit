@@ -55,86 +55,87 @@ block content
     section
       +title("Arrow buttons")
       .elements-block
-        +button-wrapper("15.85714285714286%")
+        .elements-block__button-wrapper
           +arrow-button({
+            size: "sm",
             noOutline: true,
-            size: "45%",
             theme: "blue",
             animate: true,
             ripple: true
           })
 
-          +arrow-button({
-            size: "45%",
-            noOutline: true,
-            direction: "right",
-            theme: "blue",
-            animate: true,
-            ripple: true
-          })
+          .elements-block__arrow-button
+            +arrow-button({
+              size: "sm",
+              noOutline: true,
+              direction: "right",
+              theme: "blue",
+              animate: true,
+              ripple: true
+            })
 
-        +button-wrapper("18.71428571428571%")
+        .elements-block__button-wrapper
           +arrow-button({
             noOutline: true,
-            size: "45%",
             theme: "cinnabar",
             disable: true
           })
 
-          +arrow-button({
-            noOutline: true, direction: "right",
-            size: "45%",
-            theme: "cinnabar",
-            disable: true
-          })
+          .elements-block__arrow-button
+            +arrow-button({
+              noOutline: true, direction: "right",
+              theme: "cinnabar",
+              disable: true
+            })
 
-        +button-wrapper("24.42857142857143%")
+        .elements-block__button-wrapper
           +arrow-button({
+            size: "lg",
             noOutline: true,
-            size: "45%",
             theme: "blue",
             animate: true,
             ripple: true
           })
 
-          +arrow-button({
-            noOutline: true, direction: "right",
-            size: "45%",
-            theme: "blue",
-            animate: true,
-            ripple: true
-          })
+          .elements-block__arrow-button
+            +arrow-button({
+              size: "lg",
+              noOutline: true,
+              direction: "right",
+              theme: "blue",
+              animate: true,
+              ripple: true
+            })
 
-        +button-wrapper("18.71428571428571%")
+        .elements-block__button-wrapper
           +arrow-button({
             noOutline: true,
-            size: "45%",
             theme: "cinnabar"
           })
 
-          +arrow-button({
-            noOutline: true, direction: "right",
-            size: "45%",
-            theme: "cinnabar"
-          })
+          .elements-block__arrow-button
+            +arrow-button({
+              noOutline: true, direction: "right",
+              theme: "cinnabar"
+            })
 
-        +button-wrapper("15.85714285714286%")
+        .elements-block__button-wrapper
           +arrow-button({
+            size: "small",
             noOutline: true,
-            size: "45%",
             theme: "blue",
             direction: "up",
             ripple: true
           })
 
-          +arrow-button({
-            size: "45%",
-            noOutline: true,
-            direction: "down",
-            theme: "blue",
-            ripple: true
-          })
-
+          .elements-block__arrow-button
+            +arrow-button({
+              size: "small",
+              noOutline: true,
+              direction: "down",
+              theme: "blue",
+              ripple: true
+            })
 
     section
       +title("Percentage/pie chart")
