@@ -1,7 +1,7 @@
 .form-tooltip {
   display: inline-flex;
   align-items: center;
-  max-width: 72px;
+  width: 72px;
 
   &_type_success &__inner {
     background-color: $fountain-blue;
@@ -22,10 +22,10 @@
   &__inner {
     width: 100%;
     font-size: .625rem;
-    font-family: 'Lato', sans-serif;
-    padding-top: 8px;
+    font-family: 'Lato', Arial, sans-serif;
+    padding-top: .5rem; // 8px
 
-    padding-bottom: 8px;
+    padding-bottom: .5rem; // 8px
     color: $color-text-primary;
     text-align: center;
     border-radius: 4px;

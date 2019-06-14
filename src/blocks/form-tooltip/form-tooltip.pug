@@ -1,29 +1,22 @@
 //- Создает всплывающую подсказку возле текстового поля
 
-mixin form-tooltip(options)
+mixin form-tooltip(type = "success")
 
   //- Принимает:
-  //-   options.width    {string} - ширина элемента с единицами измерения
-  //-   options.type     {string} - тип элемента: success или error
+  //-   type     {string} - тип элемента. Может принимать два значения: "success" или "error"
   //- Вызов:
-        +form-tooltip({width: "10%", type: "error"})
+        +form-tooltip("success")
 
   -
-    // Объект настроек элемента по умолчанию
-    var settings = {
-      type: "success",
-      width: "72px"
-    },
-    options = options || settings,
-    width = options.width || settings.width,
-    type = options.type || settings.type,
+    if (type !== "success" && type !== "error") type = "error"
+
     // Список модификаторов
     modifiers = "";
 
     if (typeof type != "undefined" && type)
       modifiers += ` form-tooltip_type_${type}`;
 
-  .form-tooltip(class=modifiers, style=`width: ${width}`)&attributes(attributes)
+  .form-tooltip(class=modifiers)&attributes(attributes)
     svg.form-tooltip__triangle(width="4", height="8", xmlns="http://www.w3.org/2000/svg")
       polygon(points="0,4 4,0 4,8")
     .form-tooltip__inner= type === "success" ? "thanks!" : "error"

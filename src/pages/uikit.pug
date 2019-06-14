@@ -263,11 +263,11 @@ block content
         .form-elements__left-col
           .form-elements__text-field
             +text-field("Your Name")
-          +form-tooltip({type: "error"})(class="form-elements__tooltip")
+          +form-tooltip("error")
 
           .form-elements__text-field
             +text-field("Your Email")
-          +form-tooltip()(class="form-elements__tooltip")
+          +form-tooltip()
 
           div
             +textarea({width: "82.28571428571429%"})
