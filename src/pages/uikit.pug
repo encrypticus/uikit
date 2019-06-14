@@ -261,23 +261,13 @@ block content
       +title("Form elements")
       .form-elements__inner
         .form-elements__left-col
-          div
-            +text-field({
-              placeholder: "Your Name",
-              width: "59.42857142857143100%"
-            })(class="form-elements__text-field")
+          .form-elements__text-field
+            +text-field("Your Name")
+          +form-tooltip({type: "error"})(class="form-elements__tooltip")
 
-            +form-tooltip({
-              type: "error",
-              width: "20.57142857142857%"
-            })(class="form-elements__tooltip")
-
-          div
-            +text-field({
-              placeholder: "Your Email",
-              width: "59.42857142857143100%"
-            })(class="form-elements__text-field")
-            +form-tooltip({width: "20.57142857142857%"})(class="form-elements__tooltip")
+          .form-elements__text-field
+            +text-field("Your Email")
+          +form-tooltip()(class="form-elements__tooltip")
 
           div
             +textarea({width: "82.28571428571429%"})

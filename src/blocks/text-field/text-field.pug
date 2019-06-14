@@ -1,25 +1,10 @@
 //- Создает текстовое поле
 
-mixin text-field(options)
+mixin text-field(placeholder = "")
 
   //- Принимает:
-  //-   options.placeholder    {string} - текст-заполнитель внутри текстого поля
-  //-   options.width          {string} - ширина текстового поля с единицами измерения
+  //-   placeholder    {string} - текст-заполнитель внутри текстого поля
   //- Вызов:
-        +text-field({placeholder: "Your email", width: "20%"})
+        +text-field("Your email")
 
-  //- Объект настроек текстового поля по умолчанию
-  -
-    var settings = {
-      placeholder: "",
-      width: "208px"
-    },
-    options = options || settings,
-    placeholder = options.placeholder || settings.placeholder,
-    width = options.width || settings.width;
-
-  input.text-field(
-    style=`width: ${width}`,
-    type="text",
-    placeholder=`${placeholder}`
-  )&attributes(attributes)
+  input.text-field( type="text", placeholder=`${placeholder}`)&attributes(attributes)
