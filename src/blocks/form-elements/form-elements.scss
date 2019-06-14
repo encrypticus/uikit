@@ -29,6 +29,16 @@
     width: 13rem;
   }
 
+  &__textarea {
+    margin-bottom: 8px;
+    display: inline-block;
+    width: 18rem;
+  }
+
+  &__button {
+    margin-left: 10.75rem; // 172px
+  }
+
   &__drop-down {
     margin-top: 12px;
   }

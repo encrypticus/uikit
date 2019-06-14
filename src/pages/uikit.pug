@@ -261,18 +261,20 @@ block content
       +title("Form elements")
       .form-elements__inner
         .form-elements__left-col
-          .form-elements__text-field
-            +text-field("Your Name")
-          +form-tooltip("error")
+          .form-elements__text-field-wrapper
+            .form-elements__text-field
+              +text-field("Your Name")
+            +form-tooltip("error")
 
-          .form-elements__text-field
-            +text-field("Your Email")
-          +form-tooltip()
+          .form-elements__text-field-wrapper
+            .form-elements__text-field
+              +text-field("Your Email")
+            +form-tooltip()
 
-          div
-            +textarea({width: "82.28571428571429%"})
+          .form-elements__textarea
+            +textarea()
 
-          div
+          .form-elements__button
             +button({text: "Submit", type: "form", theme: "blue"})
 
           +title("Search / Drop down")(style="margin-top: 68px")

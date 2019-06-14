@@ -1,7 +1,7 @@
 .form-tooltip {
   display: inline-flex;
   align-items: center;
-  width: 72px;
+  width: 4.5rem; // 72px
 
   &_type_success &__inner {
     background-color: $fountain-blue;
