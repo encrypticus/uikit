@@ -12,7 +12,7 @@ block title
 
 block content
   main.content
-    section
+    section.page-block
       +title("Standard buttons")
       .elements-block
         .elements-block__button
@@ -52,7 +52,7 @@ block content
         .elements-block__button
           +button({size: "sm", theme: "cinnabar"})
 
-    section
+    section.page-block
       +title("Arrow buttons")
       .elements-block
         .elements-block__button-wrapper
@@ -137,7 +137,7 @@ block content
               ripple: true
             })
 
-    section
+    section.page-block
       +title("Percentage/pie chart")
       .elements-block
         .elements-block__chart
@@ -221,7 +221,7 @@ block content
             size: "xl"
           })
 
-    section
+    section.page-block
       +title("Sliders")
       .elements-block
         .elements-block__slider
@@ -238,7 +238,7 @@ block content
             selection: "before"
           })
 
-    section
+    section.page-block
       +title("Stages")
       +stages({
         stages: 5,
@@ -311,7 +311,7 @@ block content
             themeBlue: true
           })
 
-    section(style="width: 100%; margin-bottom: 50px")
+    section.page-block
       +title("News & events")
       +news({width: "41.14285714285714%"})
       +news({
@@ -332,19 +332,20 @@ block content
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       })
 
-    section
+    section.page-block
       +title("Location")
       .location-wrapper
         +location({
           address: "1259  CALIFORNIA ST San Francisco, CA"
         })
 
-    section
+    section.page-block
       +title("Calendar")
       .flex-wrapper
         +calendar()(class="flex-wrapper__calendar")
         +calendar("blue")
-    section
+
+    section.page-block
       +title("Messaging")
       .flex-wrapper
         +messaging({
@@ -360,7 +361,7 @@ block content
           answer: "Yeah that sounds great. See you then."
         })
 
-    section
+    section.page-block
       +title("Video")
       +air-videoplayer({theme: "blue", width: "84.85714285714286%"})
       +air-videoplayer({theme: "cinnabar", width: "84.85714285714286%"})
