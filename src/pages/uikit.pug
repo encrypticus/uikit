@@ -161,24 +161,61 @@ block content
 
       .elements-block
         +pie-chart({
-            size: "14.28571428571429%", greySlice: 11,
-            redSlice: 26, blueSlice: 30
+          greySlice: 11,
+          redSlice: 26,
+          blueSlice: 30
         })
 
         +pie-chart({
-            size: "18%", greySlice: 33,
-            redSlice: 48, blueSlice: 15
+          greySlice: 33,
+          redSlice: 48,
+          blueSlice: 15
         })
 
         +pie-chart({
-            size:"10%", greySlice: 15,
-            redSlice: 10, blueSlice: 55
+          greySlice: 15,
+          redSlice: 10,
+          blueSlice: 55
         })
 
         +pie-chart({
-            size: "14.28571428571429%",greySlice: 25,
-            redSlice: 25, blueSlice: 50
+          greySlice: 25,
+          redSlice: 25,
+          blueSlice: 50
         })
+
+      .elements-block
+        .elements-block__chart
+          +pie-chart({
+            greySlice: 25,
+            redSlice: 25,
+            blueSlice: 50,
+            size: "sm"
+          })
+
+        .elements-block__chart
+          +pie-chart({
+            greySlice: 25,
+            redSlice: 25,
+            blueSlice: 50,
+            size: "lg"
+          })
+
+        .elements-block__chart
+          +pie-chart({
+            greySlice: 25,
+            redSlice: 25,
+            blueSlice: 50,
+            size: "xs"
+          })
+
+        .elements-block__chart
+          +pie-chart({
+            greySlice: 25,
+            redSlice: 25,
+            blueSlice: 50,
+            size: "xl"
+          })
 
     section
       +title("Sliders")

@@ -1,21 +1,21 @@
 mixin pie-chart(options)
 
   //- Принимает:
-  //-   options.size       {string} - размер элемента в % или px
+  //-   options.size       {string} - класс-модификатор, задающий размер компонента. Может принимать одно из следующих
+                                      заначений: "small" || "sm", "large" || "lg", "extra-small" || "xs", "extra-large" || "lg"
   //-   options.greySlice  {number} - число от 0 до 100, размер серого сегмента чарта
   //-   options.redSlice   {number} - число от 0 до 100, размер красного сегмента чарта
   //-   options.blueSlice  {number} - число от 0 до 100, размер голубого сегмента чарта
 
   //- Вызов:
-        +pie-chart({size: "67%", greySlice: 45, redSlice: 24, blueSlice: 11})
+        +pie-chart({size: "sm", greySlice: 45, redSlice: 24, blueSlice: 11})
 
   -
     //- Общий размер чарта
-    var whole = 100,
+    var fullValue = 100,
 
     //- Объект настроек по умолчанию
     settings = {
-      size: "",
       greySlice: 33,
       redSlice: 33,
       blueSlice: 34
@@ -25,14 +25,8 @@ mixin pie-chart(options)
     size = options.size || settings.size,
     greySlice = options.greySlice || settings.greySlice,
     redSlice = options.redSlice || settings.redSlice,
-    blueSlice = options.blue || settings.blueSlice;
-
-    //- Проверяет на корректность значение аргумента size - размера блока элемента. Возвращает true, если значение
-    //- соответствует указанному шаблону, иначе false.
-    function validArg(arg) {
-      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(arg))) return true;
-      return false;
-    }
+    blueSlice = options.blue || settings.blueSlice,
+    modifiers = "";
 
     //- Провека на соответсвие типа переданных значений размеров
     if (typeof greySlice !== "number") greySlice = 33;
@@ -44,31 +38,28 @@ mixin pie-chart(options)
     if (redSlice < 0) redSlice = 0;
     if (blueSlice < 0) blueSlice = 0;
 
-    if (greySlice > whole) greySlice = whole;
-    if (redSlice > whole) redSlice = whole;
-    if (blueSlice > whole) blueSlice = whole;
+    if (greySlice > fullValue) greySlice = fullValue;
+    if (redSlice > fullValue) redSlice = fullValue;
+    if (blueSlice > fullValue) blueSlice = fullValue;
 
     //- Проверка на выход суммы размеров всех сегментов за пределы общего размера чарта
-    if ((greySlice + redSlice + blueSlice) > 100) {
+    if ((greySlice + redSlice + blueSlice) > 100)
       greySlice = 33;
       redSlice = 33;
       blueSlice = 34;
-    }
 
-    if (size != "")
-      if (!validArg(size)) size = "100px";
+    if (typeof (size) !== "undefined" && size)
+      modifiers += ` pie-chart_size_${size}`;
 
-    var greySliceGap = whole - greySlice, // промежуточный интервал для stroke-dasharray серого сегмента чарта
-        redSliceGap = whole - redSlice, // промежуточный интервал для stroke-dasharray красного сегмента чарта
-        blueSliceGap = whole - blueSlice, // промежуточный интервал для stroke-dasharray голубого сегмента чарта
-        redSliceOffset = whole - greySlice + 25, // смещение относительно заданной по умолчанию системы координат красного сегмента чарта
-        blueSliceOffset = whole - greySlice - redSlice + 25; // смещение относительно заданной по умолчанию системы координат голубого сегмента чарта
+    var greySliceGap = fullValue - greySlice, // промежуточный интервал для stroke-dasharray серого сегмента чарта
+        redSliceGap = fullValue - redSlice, // промежуточный интервал для stroke-dasharray красного сегмента чарта
+        blueSliceGap = fullValue - blueSlice, // промежуточный интервал для stroke-dasharray голубого сегмента чарта
+        redSliceOffset = fullValue - greySlice + 25, // смещение относительно заданной по умолчанию системы координат красного сегмента чарта
+        blueSliceOffset = fullValue - greySlice - redSlice + 25; // смещение относительно заданной по умолчанию системы координат голубого сегмента чарта
 
 
-  .pie-chart(style=size != "" ? `width: ${size}` : "")&attributes(attributes)
-    .pie-chart__wrapper
-      svg.pie-chart__img(viewBox="0 0 41 41")
-        circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%")
-        circle.pie-chart__grey(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${greySlice}, ${greySliceGap}`, stroke-dashoffset="25")
-        circle.pie-chart__red(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${redSlice}, ${redSliceGap}`, stroke-dashoffset=redSliceOffset)
-        circle.pie-chart__blue(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${blueSlice}, ${blueSliceGap}`, stroke-dashoffset=blueSliceOffset)
+  svg.pie-chart(class=modifiers, viewBox="0 0 41 41")&attributes(attributes)
+    circle.pie-chart__empty(r="15.9155", cx="50%", cy="50%")
+    circle.pie-chart__grey(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${greySlice}, ${greySliceGap}`, stroke-dashoffset="25")
+    circle.pie-chart__red(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${redSlice}, ${redSliceGap}`, stroke-dashoffset=redSliceOffset)
+    circle.pie-chart__blue(r="15.9155", cx="50%", cy="50%", stroke-dasharray=`${blueSlice}, ${blueSliceGap}`, stroke-dashoffset=blueSliceOffset)
