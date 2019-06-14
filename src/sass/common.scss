@@ -24,6 +24,12 @@ body {
 
 .page-block {
   margin-bottom: 60px;
+
+  &__stages {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+  }
 }
 
 .flex-wrapper {

@@ -1,22 +1,17 @@
 .stages {
-  width: 85%;
+  position: relative;
+  width: 100%;
+  height: 5px;
+
   max-width: 595px;
-
-  @include for-phone-only() {
-    width: 100%;
-  }
-
-  &__inner { // внутренний блок-обертка
-    position: relative;
-    padding-bottom: .8403361344537815%;
-  }
+  min-width: 320px;
   
   &__steps { // контейнер для шагов компонента
     position: absolute;
     right: 1%;
     left: 1%;
-    display: flex;
 
+    display: flex;
     height: 100%;
     margin: 0 auto;
   }
@@ -30,6 +25,10 @@
     background-color: $gray;
   }
 
+  &__step_completed {
+    background-color: $gray--dark;
+  }
+
   // Цветовые темы для шагов
   &_theme_cinnabar &__step_completed {
     background-color: $cinnabar;
@@ -40,36 +39,30 @@
   }
 
   &__point-wrapper { // обертка для пунктов
-    width: 4.873949579831933%;
-    margin-top: -2.016806722689076%;
+    width: 1.8125rem; // 29px
+    height: 1.8125rem; // 29px
+    margin-top: -.75rem; // -12px
   }
 
   &__point { // пункт компонента
-    position: relative;
-    width: 100%;
+    width: 1.8125rem; // 29px
+    height: 1.8125rem; // 29px
+    margin-top: -.75rem; // -12px
     border-radius: 50%;
-    padding-bottom: 100%;
   }
 
   &__value { // цифровое значение пункта
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
     display: flex;
-    //font-size: .875rem;
-    font-family: 'Lato';
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: .875rem;
+    font-family: 'Lato', Arial, sans-serif;
 
+    justify-content: center;
     align-items: center;
     font-weight: 400;
-    letter-spacing: .7px;
 
-    @media (max-width: 600px) {
-      font-size: .6rem !important;
-    }
+    letter-spacing: .7px;
 
     &_fill { // значение для пройденного пункта
       color: $color-text-primary;
@@ -82,6 +75,10 @@
 
   &__point_empty { // непройденный пункт
     background-color: $gray;
+  }
+
+  &__point_fill { // пройденный пункт
+    background-color: $gray--dark;
   }
 
   // Цветовые темы для пунктов

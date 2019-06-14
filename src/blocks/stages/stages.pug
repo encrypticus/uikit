@@ -1,26 +1,30 @@
-//-
-
-mixin stages({stages = 5, completed = 3, theme = "", width = "", fontSize = ".875rem"} = {})
+mixin stages(options)
 
   //- Принимает:
   //-   stages       {number} - общее количество шагов
   //-   completed    {number} - количество завершенных шагов
   //-   theme        {string} - цветовая тема
-  //-   width        {string} - строка со значением ширины слайдера и единицами измерения
 
   //- Вызов:
-        +stages({             - элемент с количеством шагов 5, количеством завершенных шагов 3,
-          stages: 5,          голубого цвета, шириной 50% ширины родительского элемента
+        +stages({             - элемент с количеством шагов 5, количеством завершенных шагов 3, голубого цвета
           completed: 3,
+          stages: 5,
           theme: "blue",
-          width: "50%"
         })
 
   -
+    // Объект настроек по умолчанию
+    var settings = {
+      stages: 5,
+      completed: 3
+    },
+
+    options = options || settings,
+    stages = options.stages || settings.stages,
+    completed = options.completed || settings.completed,
+    theme = options.theme || settings.theme;
+
     if (!isValidArg(stages)) stages = 5;
-    if (width != "")
-      if (!isValidElementSize(width)) width = "595px";
-    if (!isValidFontSize(fontSize)) fontSize = ".875rem";
 
     // список модификаторов
     var modifiers = "",
@@ -41,40 +45,21 @@ mixin stages({stages = 5, completed = 3, theme = "", width = "", fontSize = ".87
       return true;
     }
 
-  //- Проверяет на корректность значение аргумента width - ширины блока элемента. Возвращает true, если значение
-  //- соответствует указанному шаблону, иначе false.
-  -
-    function isValidElementSize(size) {
-      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(size))) return true;
-      return false;
-    }
-
-  //- Проверяет на корректность значение аргумента fontSize - размера шрифта элемента. Возвращает true, если значение
-  //- соответствует указанному шаблону, иначе false.
-  -
-    function isValidFontSize(size) {
-      if ((/^((\d+)?\.?)\d+(px|rem)$/i.test(size))) return true;
-      return false;
-    }
-
-
     if (typeof (theme) !== "undefined" && theme)
-      modifiers += ` stages_theme_${theme}`;
+      modifiers += ` stages_theme_${theme}`
 
-  .stages(class=modifiers, style=width != "" ? `width: ${width}` : "")&attributes(attributes)
-    .stages__inner
-      .stages__steps
-        - for (var i = 0; i < completedSteps; i++)
-            .stages__step.stages__step_completed
-        - for (var i = 0; i < incompleteSteps; i++)
-            .stages__step.stages__step_incomplete
+  .stages(class=modifiers)&attributes(attributes)
+    .stages__steps
+      - for (var i = 0; i < completedSteps; i++)
+          .stages__step.stages__step_completed
+      - for (var i = 0; i < incompleteSteps; i++)
+          .stages__step.stages__step_incomplete
 
-      .stages__points
-        - for (var i = 0; i < stages; i++)
-            .stages__point-wrapper
-              - if (i < fillPoint)
-                  .stages__point.stages__point_fill
-                    span.stages__value.stages__value_fill(style=`font-size: ${fontSize}`)= i + 1
-              - else
-                  .stages__point.stages__point_empty
-                    span.stages__value.stages__value_empty(style=`font-size: ${fontSize}`)= i + 1
+    .stages__points
+      - for (var i = 0; i < stages; i++)
+          - if (i < fillPoint)
+              .stages__point.stages__point_fill
+                span.stages__value.stages__value_fill= i + 1
+          - else
+              .stages__point.stages__point_empty
+                span.stages__value.stages__value_empty= i + 1
