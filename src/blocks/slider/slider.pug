@@ -1,7 +1,6 @@
 mixin slider(options)
 
   //- Принимает:
-    //-   options.width       {string}  -  строка со значением ширины слайдера и единицами измерения
     //-   options.theme       {string}  -  класс-модификатор цветвой темы слайдера
     //-   options.min         {number}  -  минимальное значение слайдера
     //-   options.max         {number}  -  максимальное значение слайдера
@@ -17,10 +16,9 @@ mixin slider(options)
     //-   options.ticks       {array}   -  массив чисел, значения которых указывают, где под слайдером будут располагаться
                                            числовые метки
 
-    //- Вызов:                          -  слайдер голубого цвета, шириной 100%, со всплывающей меткой над бегунком, с
+    //- Вызов:                          -  слайдер голубого цвета, со всплывающей меткой над бегунком, с
         +slider({                          отображением числовых меток, отображением выделения, шагом 25
             theme: "cinnabar",
-            width: "100%",
             tooltip: "always",
             ticks:[0, 25, 50, 75, 100],
             step: 25,
@@ -42,7 +40,6 @@ mixin slider(options)
     },
 
     options = options || settings,
-    width = options.width,
     theme = options.theme || settings.theme,
     min = options.min || settings.min,
     max = options.max || settings.max,
@@ -55,11 +52,10 @@ mixin slider(options)
     // список модификаторов
     modifiers = "";
 
-    if (typeof (theme) !== "undefined" && theme) {
-    modifiers += ` slider-wrapper_theme_${theme}`;
-    }
+    if (typeof (theme) !== "undefined" && theme)
+      modifiers += ` slider-wrapper_theme_${theme}`;
 
-  .slider-wrapper(class=modifiers, style=options.width != undefined ? `width:${width}` : "")&attributes(attributes)
+  .slider-wrapper(class=modifiers)&attributes(attributes)
     input(
       type="text"
       name=name

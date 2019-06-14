@@ -21,7 +21,7 @@
   &__slider {
     width: 37%;
 
-    @media (max-width: 500px) {
+    @include for-tablet-landscape-down {
       width: 100%;
       margin-top: 20px;
     }
