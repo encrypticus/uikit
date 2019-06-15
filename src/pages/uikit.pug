@@ -278,15 +278,16 @@ block content
             +button({text: "Submit", type: "form", theme: "blue"})
 
           +title("Search / Drop down")(style="margin-top: 68px")
-          +search-field({placeholder: "Search", width: "82.28571428571429%"})
-          +search-field({placeholder: "Search", width: "82.28571428571429%",
-            error: true})(style="margin-top: 10px")
+          .form-elements__search-field
+            +search-field({placeholder: "Search"})
+          .form-elements__search-field
+            +search-field({placeholder: "Search", error: true})
 
           +drop-down({
             width: "82.28571428571429%",
             options: ["option1", "option2", "option3", "option4", "option5", "option6"],
             noOutline: true
-          })(class="form-elements__drop-down")
+          })
 
         .form-elements__right-col
           +title("Toggles")
