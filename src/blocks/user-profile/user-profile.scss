@@ -1,21 +1,33 @@
 .user-profile {
   display: flex;
 
-  &_themeBlue &__info {
+  &_theme_blue &__info {
     background-color: $fountain-blue;
   }
 
-  &_themeBlue &__triangle {
+  &_theme_cinnabar &__info {
+    background-color: $cinnabar;
+  }
+
+  &_theme_blue &__triangle {
     fill: $fountain-blue;
   }
 
-  &_themeBlue &__name,
-  &_themeBlue &__job {
+  &_theme_cinnabar &__triangle {
+    fill: $cinnabar;
+  }
+
+  &_theme_blue &__name,
+  &_theme_blue &__job,
+  &_theme_cinnabar &__name,
+  &_theme_cinnabar &__jog {
     color: $color-text-primary;
   }
 
-  &_themeBlue .icon-center,
-  &_themeBlue .icon-edge {
+  &_theme_blue .icon-center,
+  &_theme_blue .icon-edge,
+  &_theme_cinnabar .icon-center,
+  &_theme_cinnabar .icon-edge {
     fill: $color-text-primary;
   }
 
@@ -62,7 +74,7 @@
     margin: 0;
     margin-bottom: .3125rem;
     font-size: 1.125rem;
-    font-family: Lato, sans-serif;
+    font-family: Lato, Arial, sans-serif;
 
     line-height: 1.125rem;
     color: $cinnabar;
@@ -73,7 +85,7 @@
     margin: 0;
     margin-bottom: .8125rem;
     font-size: .6875rem;
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, Arial, sans-serif;
 
     line-height: .6875rem;
     color: $black--light;

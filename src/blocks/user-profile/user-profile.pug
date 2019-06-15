@@ -4,8 +4,10 @@ mixin user-profile(options)
 
   //- Принимает:
   //-   options.avatar    {string} - путь до файла с фото пользователя
-  //-   name              {string} - имя пользователя
-  //-   job               {string} - профессия пользователя
+  //-   options.name              {string} - имя пользователя
+  //-   options.job               {string} - профессия пользователя
+  //-   options.theme             {string} - цветовая тема компонента. Может принимать 2 значения: "blue" или "cinnabar"
+
   //- Вызов:
         +user-profile({
           name: "Vasya Pupkin",
@@ -26,12 +28,13 @@ mixin user-profile(options)
     avatar = options.avatar || settings.avatar,
     name = options.name || settings.name,
     job = options.job || settings.job,
+    theme = options.theme,
 
     //- Список модификаторов
     modifiers = "";
 
-    if (options.themeBlue === true)
-      modifiers += "user-profile_themeBlue";
+    if (typeof(theme) !== "undefined" && theme)
+      modifiers += ` user-profile_theme_${theme}`;
 
   .user-profile(class=modifiers)&attributes(attributes)
     .user-profile__avatar-wrapper
@@ -43,12 +46,15 @@ mixin user-profile(options)
         h2.user-profile__name= name
         h3.user-profile__job= job
         .user-profile__socials
-          svg.icon-edge(width="0.625em", height="1.3125em")
-            use(xlink:href="#icon-fb")
-          svg.icon-center(width="1.5625em", height="1.25em")
-            use(xlink:href="#icon-tw")
-          svg.icon-edge(width="1.3125em", height="1.3125em")
-            use(xlink:href="#icon-dr")
+          a.profile__link(href="https://facebook.com")
+            svg.icon-edge(width="0.625em", height="1.3125em")
+              use(xlink:href="#icon-fb")
+          a.profile__link(href="https://twitter.com")
+            svg.icon-center(width="1.5625em", height="1.25em")
+              use(xlink:href="#icon-tw")
+          a.profile__link(href="https://dribbble.com")
+            svg.icon-edge(width="1.3125em", height="1.3125em")
+              use(xlink:href="#icon-dr")
 
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-fb" viewBox="0 0 22.45 48.31" width="10" height="21">

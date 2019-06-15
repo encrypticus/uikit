@@ -328,12 +328,14 @@ block content
             })
 
           +title("User profile")(style="margin-top: 87px")
-          +user-profile({job: "ux designer"})(style="margin-bottom: 10px")
+          .form-elements__profile
+            +user-profile({job: "ux designer"})
+
           +user-profile({
             name: "Sarah Brown",
             job: "developer",
             avatar: "../blocks/user-profile/img/avatar2.png",
-            themeBlue: true
+            theme: "blue"
           })
 
     section.page-block
