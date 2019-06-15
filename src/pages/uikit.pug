@@ -283,11 +283,12 @@ block content
           .form-elements__search-field
             +search-field({placeholder: "Search", error: true})
 
-          +drop-down({
-            width: "82.28571428571429%",
-            options: ["option1", "option2", "option3", "option4", "option5", "option6"],
-            noOutline: true
-          })
+          .form-elements__drop-down
+            +drop-down({
+              options: ["option1", "option2", "option3", "option4", "option5", "option6"],
+              noOutline: true,
+              theme: "blue"
+            })
 
         .form-elements__right-col
           +title("Toggles")

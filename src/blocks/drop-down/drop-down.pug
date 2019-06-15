@@ -3,55 +3,48 @@
 mixin drop-down(options)
 
   //- Принимает:
-    //-   options.width          {string}       - ширина текстового поля с единицами измерения
     //-   options.options        {<sring>array} - массив строк для текстового содержимого элементов options
+    //-   options.theme          {string}       - цветовая тема компонента. Может принимать 2 значения: "blue" или "cinnabar"
     //-   options.noOutline      {boolean}      - булево значение, от которого зависит, будет ли к элементу добавлен
                                                   класс-модификатор, убирающий дефолтный outline в активном состоянии
                                                   последнего
     //- Вызов:
-          +drop-down({width: "20%", options: ["option1", "option2", "option3", "option4", "option5", "option6"]})
-
-  //- Проверяет на корректность значение аргумента width - ширины блока элемента. Возвращает true, если значение
-  //- соответствует указанному шаблону, иначе false.
-  -
-    function isValidElementSize(width) {
-      if ((/^((\d+)?\.?)\d+(px|%)$/i.test(width))) return true;
-      return false;
-    }
+          +drop-down({theme: "cinnabar", options: ["option1", "option2", "option3", "option4", "option5", "option6"]})
 
   //- Проверяет на корректность значение аргумента options - массива значений пунктов списка. Возвращает true, если значение
-  //- соответствует указанному шаблону, иначе false.
+  //- является массивом, иначе false.
   -
     function isArray(array) {
       if (Array.isArray(array)) return true;
       return false;
     }
 
-  -
-    // Список модификаторов
-    var modifiers = "",
+    //- Список модификаторов для элемента drop-down__select
+    var selectModifiers = "",
+
+    //- Список модификаторов для блока drop-down
+    dropModifiers = "",
 
     // Объект настроек по умолчанию
     settings = {
-      width: "288px",
       options: [],
       noOutline: false
     },
 
     options = options || settings,
-    width = options.width || settings.width,
     opts = options.options || settings.options,
-    noOutline = options.noOutline || settings.noOutline;
-
-    if (!isValidElementSize(width)) width = settings.width;
+    noOutline = options.noOutline || settings.noOutline,
+    theme = options.theme;
 
     if (!isArray(opts)) opts = settings.options;
 
-    if (noOutline == true)
-      modifiers += " drop-down__select_noOutline";
+    if (noOutline === true) selectModifiers += " drop-down__select_noOutline";
 
-  .drop-down(style= `width: ${width}`)&attributes(attributes)
-    select.drop-down__select(class=modifiers)
-      option(disabled, selected) Choose An Option
+    if (typeof (theme) !== "undefined" && theme)
+      dropModifiers += ` drop-down_theme_${theme}`
+
+  .drop-down(class=dropModifiers)&attributes(attributes)
+    select.drop-down__select(class=selectModifiers)
+      option.drop-down__option(disabled, selected) Choose An Option
       each option, i in opts
-        option(value=`option${i+1}`)= option
+        option.drop-down__option(value=`option${i+1}`)= option
