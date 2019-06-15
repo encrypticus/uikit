@@ -293,12 +293,38 @@ block content
           +title("Toggles")
           +toggle()
           +toggle({enabled: true, name: "toggle2"})
-          +toggle({enabled: true, theme: "blue"})
-          +toggle({enabled: true, theme: "cinnabar"})
+
+          +toggle({
+            enabled: true,
+            theme: "blue",
+            name: "toggle3"
+          })
+
+          +toggle({
+            enabled: true,
+            theme: "cinnabar",
+            name: "toggle4"
+          })
 
           +title("Tick boxes")(style="margin-top: 30px")
-          +tick-box({id: "tick1", check: true})
-          +tick-box({id: "tick2"})
+          +tick-box({enabled: true})
+
+          .form-elements__tick-box
+            +tick-box({name: "tick-box2"})
+
+          .form-elements__tick-box
+            +tick-box({
+              name: "tick-box3",
+              enabled: true,
+              theme: "blue"
+            })
+
+          .form-elements__tick-box
+            +tick-box({
+              name: "tick-box4",
+              enabled: true,
+              theme: "cinnabar"
+            })
 
           +title("User profile")(style="margin-top: 87px")
           +user-profile({job: "ux designer"})(style="margin-bottom: 10px")

@@ -2,24 +2,33 @@
 
 mixin tick-box(options)
   //- Принимает:
-      //-   options.check    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
-      //-   options.type     {string} - id элемента чекбокса
+      //-   options.enabled    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
+      //-   options.name       {string} - аттрибут name элемента чекбокса
+      //-   options.theme      {string} - класс-модификатор цветовой темы элемента.
+                                          Может принимать 2 значения: "blue" или "cinnabar"
 
       //- Вызов:
-            +form-tooltip({check: true, id: "toggle1"})
+            +form-tooltip({check: true, name: "tick-box2"})
 
   //- Объект настроек по умолчанию
   -
     var settings = {
-    check: false,
-    id: ""
+      enabled: false,
+      name: "tick-box",
     },
-    options = options || settings,
-    id = options.id || settings.id,
-    check = options.check || settings.check;
 
-  input.tick-box(type="checkbox", id=id, checked = check === false ? false : true )
-  label.tick-box__label(for=id)
-    svg(xmlns="http://www.w3.org/2000/svg", width="0.8125em", height="0.625em", viewBox="0 0 13 10")
-      g
-        path(class="tick-box__tick", d="M11.043.012l1.41 1.405-7.758 7.726-.025-.025-.318.316L0 5.099 1.41 3.694 4.378 6.65z")
+    options = options || settings,
+    name = options.name || settings.name,
+    enabled = options.enabled || settings.enabled,
+    theme = options.theme,
+    //- Список модификаторов
+    modifiers = "";
+
+    if (typeof modifiers !== "undefined" && theme)
+      modifiers += ` tick-box_theme_${theme}`
+
+  label.tick-box(class=modifiers)
+    input.tick-box__input(type="checkbox", name=name, checked = enabled === false ? false : true )
+    span.tick-box__label
+      svg(xmlns="http://www.w3.org/2000/svg", width="0.8125em", height="0.625em", viewBox="0 0 13 10")
+        path.tick-box__tick(d="M11.043.012l1.41 1.405-7.758 7.726-.025-.025-.318.316L0 5.099 1.41 3.694 4.378 6.65z")
