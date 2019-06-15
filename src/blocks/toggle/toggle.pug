@@ -2,22 +2,34 @@
 
 mixin toggle(options)
   //- Принимает:
-    //-   options.check    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
-    //-   options.type     {string} - id элемента чекбокса
+    //-   options.enabled    {boolean} - булево значение, от которого зависит, включен или выключен чекбокс
+    //-   options.name       {string} - атрибут name элемента input
+    //-   options.theme      {string} - класс-модификатор цветовой темы элемента
 
     //- Вызов:
-          +form-tooltip({check: true, id: "toggle1"})
+          +form-tooltip({enabled: true, name: "enabled"})
 
   //- Объект настроек по умолчанию
   -
     var settings = {
-      check: false,
-      id: ""
+      enabled: false,
+      name: "toggle"
     },
-    options = options || settings,
-    id = options.id || settings.id,
-    check = options.check || settings.check,
-    text = check === false ? "Off" : "On";
 
-  input.toggle(type="checkbox", id=id, checked = check === false ? false : true )
-  label.toggle__label(for=id)= text
+    options = options || settings,
+    name = options.name || settings.name,
+    enabled = options.enabled || settings.enabled,
+    theme = options.theme,
+    //- Списоок модификаторов
+    modifiers = "";
+
+    if (enabled !== false && enabled !== true) enabled = false;
+
+    if (typeof(theme) !== "undefined" && theme)
+      modifiers += ` toggle_theme_${theme}`
+
+    var text = enabled === false ? "Off" : "On";
+
+  label.toggle(class=modifiers)
+    input.toggle__input(type="checkbox", name=name, checked = enabled === false ? false : true )
+    span.toggle__label= text

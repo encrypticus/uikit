@@ -290,8 +290,10 @@ block content
 
         .form-elements__right-col
           +title("Toggles")
-          +toggle({id: "toggle1"})
-          +toggle({check: true, id: "toggle2"})
+          +toggle()
+          +toggle({enabled: true, name: "toggle2"})
+          +toggle({enabled: true, theme: "blue"})
+          +toggle({enabled: true, theme: "cinnabar"})
 
           +title("Tick boxes")(style="margin-top: 30px")
           +tick-box({id: "tick1", check: true})

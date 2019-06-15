@@ -1,14 +1,32 @@
 .toggle {
-  display: none;
+  display: inline-block;
 
-  &:checked + &__label {
-    background-color: $fountain-blue;
-    padding: .25rem 1.8125rem .3125rem .75rem;
+  &__input {
+    display: none;
+
+    &:checked + .toggle__label {
+      background-color: $gray--dark;
+      padding: .25rem 1.8125rem .3125rem .75rem;
+    }
+
+    &:checked + .toggle__label:before {
+      right: .1875rem;
+      left: unset;
+    }
   }
 
-  &:checked + &__label:before {
-    right: .1875rem;
-    left: unset;
+  &_theme_blue {
+
+    .toggle__input:checked + .toggle__label {
+      background-color: $fountain-blue;
+    }
+  }
+
+  &_theme_cinnabar {
+
+    .toggle__input:checked + .toggle__label {
+      background-color: $cinnabar;
+    }
   }
 
   &__label {
@@ -18,7 +36,7 @@
     padding: .25rem .75rem .3125rem 1.8125rem;
 
     font-size: .75rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     color: $color-text-primary;
     border-radius: 15px;
 
@@ -45,5 +63,4 @@
       background-color: $color-text-primary;
     }
   }
-
 }
