@@ -11,14 +11,15 @@ mixin button(options)
                                             последней
   //- options.animate       {boolean}     - булево значение, от которого зависит, будет ли анимироваться изменение цвета
                                             кнопки при наведении
-  //- options.type          {boolean}     - строка, от значения которой зависит, какой класс-модификатор,
-                                            отвечающий за внешний вид кнопки, будет добавлен к элементу.
+  //- options.viewType      {boolean}     - строка, от значения которой зависит, какой класс-модификатор,
+                                            отвечающий за внешний вид кнопки, будет добавлен к элементу
                                             Возможные значения: "events", "form"
+  //- options.type          {string}      - Тип кнопки: "submit", "button", "reset". По умолчанию "submit"
   //- Вызов:
         +button                                                     - белая кнопка среднего размера
         +button({size: "small", theme: "blue"})                     - маленькая кнопка синего цвета
         +button({size: "sm", theme: "blue"})                        - маленькая кнопка синего цвета
-        +button({theme: "cinnabar"})(class="buttons-block__button") - кнопка среднего размера цвета "cinnabar".
+        +button({theme: "cinnabar"})(class="buttons-block__button") - кнопка среднего размера цвета "cinnabar"
                                                                       К кнопке примиксован класс элемента
                                                                       buttons-block__button блока buttons-block
                                                                        для задания ей внешней геометрии.
@@ -38,7 +39,7 @@ mixin button(options)
       theme: "",
       noOutline: false,
       animate: false,
-      type: ""
+      viewType: ""
     },
     options = options || settings,
     text = options.text || settings.text,
@@ -46,7 +47,8 @@ mixin button(options)
     theme = options.theme || settings.theme,
     noOutline = options.noOutline || settings.noOutline,
     animate = options.animate || settings.animate,
-    type = options.type || settings.type;
+    viewType = options.viewType || settings.viewType,
+    type = options.type;
 
     if (typeof(size) !== "undefined" && size)
       modifiers += ` button_size_${size}`;
@@ -60,13 +62,13 @@ mixin button(options)
     if (animate === true)
       modifiers += ` button_animate`;
 
-    if (type === "form")
+    if (viewType === "form")
       modifiers += ` button_type_form`;
 
-    if(type === "messaging")
+    if(viewType === "messaging")
       modifiers += ` button_type_messaging`;
 
-    if (type === "events")
+    if (viewType === "events")
       modifiers += ` button_type_events`;
 
-  button.button(class=modifiers)&attributes(attributes)= text
+  button.button(class=modifiers, type= type !== "undefined" ? type : "")&attributes(attributes)= text
