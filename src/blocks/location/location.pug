@@ -27,10 +27,10 @@ mixin location(options)
     options = options || settings,
     slogan = options.slogan || settings.slogan,
     address = options.address || settings.address,
-    theme = options.theme || settings.theme;
+    theme = options.theme;
 
-    if (theme === "blue")
-      modifiers += " location_theme_blue";
+    if (theme !== "undefined" && theme)
+      modifiers += ` location_theme_${theme}`
 
   .location(class=modifiers, id="map")&attributes(attributes)
     .location__panel

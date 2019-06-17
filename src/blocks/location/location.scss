@@ -15,7 +15,7 @@
     padding: 1.125rem 1.5625rem 1.125rem 1.6875rem;
 
     box-sizing: border-box;
-    background-color: $cinnabar;
+    background-color: $gray--dark;
 
     @media (max-width: 800px) {
       font-size: 12px;
@@ -27,11 +27,19 @@
     background-color: $fountain-blue;
   }
 
+  &_theme_cinnabar &__panel {
+    background-color: $cinnabar;
+  }
+
+  &_theme_blue &__panel {
+    background-color: $fountain-blue;
+  }
+
   &__slogan {
     margin: 0;
     margin-top: -10px;
     font-size: 1.875em;
-    font-family: 'Lato Light', sans-serif;
+    font-family: 'Lato Light', Arial, sans-serif;
 
     line-height: 26px;
     color: $color-text-primary;
@@ -43,7 +51,7 @@
     margin: 0;
     margin-left: 27px;
     font-size: .8125em;
-    font-family: 'Lato', sans-serif;
+    font-family: Lato, Arial, sans-serif;
 
     max-width: 140px;
     color: $color-text-primary;
