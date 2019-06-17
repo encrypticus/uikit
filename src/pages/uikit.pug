@@ -340,24 +340,29 @@ block content
 
     section.page-block
       +title("News & events")
-      +news({width: "41.14285714285714%"})
-      +news({
-        width: "41.14285714285714%",
-        theme: "blue",
-        src: "../blocks/news/img/events.png",
-        type: "events",
-        title: "This is the title",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      })
-      +news({width: "41.14285714285714%", theme: "cinnabar"})
-      +news({
-        width: "41.14285714285714%",
-        theme: "cinnabar",
-        src: "../blocks/news/img/events.png",
-        type: "events",
-        title: "This is the title",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      })
+      .page-block__block-news
+        .page-block__news
+          +news({width: "41.14285714285714%"})
+        .page-block__news
+          +news({
+            width: "41.14285714285714%",
+            theme: "blue",
+            src: "../blocks/news/img/events.png",
+            type: "events",
+            title: "This is the title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          })
+        .page-block__news
+          +news({width: "41.14285714285714%", theme: "cinnabar"})
+        .page-block__news
+          +news({
+            width: "41.14285714285714%",
+            theme: "cinnabar",
+            src: "../blocks/news/img/events.png",
+            type: "events",
+            title: "This is the title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          })
 
     section.page-block
       +title("Location")

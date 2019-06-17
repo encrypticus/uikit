@@ -30,6 +30,19 @@ body {
     justify-content: center;
     margin-bottom: 80px;
   }
+
+  &__block-news {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__news {
+    margin: {
+      right: 1.125rem;
+      bottom: 1.125rem;
+    }
+  }
 }
 
 .flex-wrapper {
