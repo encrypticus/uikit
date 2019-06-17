@@ -10,8 +10,12 @@
   }
 
   &__left-col {
+    margin-bottom: 30px;
+    text-align: center;
+
     @media (min-width: 700px) {
       width: 50%;
+      margin-bottom: 0;
     }
   }
 
@@ -57,5 +61,7 @@
 
   &__profile {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
   }
 }

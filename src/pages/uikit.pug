@@ -342,12 +342,13 @@ block content
             .form-elements__profile
               +user-profile({job: "ux designer"})
 
-            +user-profile({
-              name: "Sarah Brown",
-              job: "developer",
-              avatar: "../blocks/user-profile/img/avatar2.png",
-              theme: "blue"
-            })
+            .form-elements__profile
+              +user-profile({
+                name: "Sarah Brown",
+                job: "developer",
+                avatar: "../blocks/user-profile/img/avatar2.png",
+                theme: "blue"
+              })
 
     section.page-block
       .content__title
