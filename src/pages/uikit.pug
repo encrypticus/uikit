@@ -13,7 +13,8 @@ block title
 block content
   main.content
     section.page-block
-      +title("Standard buttons")
+      .content__title
+        +title("Standard buttons")
       .elements-block
         .elements-block__button
           +button({size: "sm", theme: "blue"})
@@ -53,7 +54,8 @@ block content
           +button({size: "sm", theme: "cinnabar"})
 
     section.page-block
-      +title("Arrow buttons")
+      .content__title
+        +title("Arrow buttons")
       .elements-block
         .elements-block__button-wrapper
           +arrow-button({
@@ -138,7 +140,8 @@ block content
             })
 
     section.page-block
-      +title("Percentage/pie chart")
+      .content__title
+        +title("Percentage/pie chart")
       .elements-block
         .elements-block__chart
           +percentage-chart({theme: "cinnabar"})
@@ -222,7 +225,8 @@ block content
           })
 
     section.page-block
-      +title("Sliders")
+      .content__title
+        +title("Sliders")
       .elements-block
         .elements-block__slider
           +slider({
@@ -239,7 +243,8 @@ block content
           })
 
     section.page-block
-      +title("Stages")
+      .content__title
+        +title("Stages")
       .page-block__stages
         +stages({
           stages: 5,
@@ -257,89 +262,96 @@ block content
       .page-block__stages
         +stages({stages: 10})
 
-    section.form-elements
-      +title("Form elements")
-      .form-elements__inner
-        .form-elements__left-col
-          .form-elements__text-field-wrapper
-            .form-elements__text-field
-              +text-field("Your Name")
-            +form-tooltip("error")
+    .page-block
+      section.form-elements
+        .content__title
+          +title("Form elements")
+        .form-elements__inner
+          .form-elements__left-col
+            .form-elements__text-field-wrapper
+              .form-elements__text-field
+                +text-field("Your Name")
+              +form-tooltip("error")
 
-          .form-elements__text-field-wrapper
-            .form-elements__text-field
-              +text-field("Your Email")
-            +form-tooltip()
+            .form-elements__text-field-wrapper
+              .form-elements__text-field
+                +text-field("Your Email")
+              +form-tooltip()
 
-          .form-elements__textarea
-            +textarea()
+            .form-elements__textarea
+              +textarea()
 
-          .form-elements__button
-            +button({text: "Submit", type: "form", theme: "blue"})
+            .form-elements__button
+              +button({text: "Submit", type: "form", theme: "blue"})
 
-          +title("Search / Drop down")(style="margin-top: 68px")
-          .form-elements__search-field
-            +search-field({placeholder: "Search"})
-          .form-elements__search-field
-            +search-field({placeholder: "Search", error: true})
+            .content__title.content__title_type_form
+              +title("Search / Drop down")
+            .form-elements__search-field
+              +search-field({placeholder: "Search"})
+            .form-elements__search-field
+              +search-field({placeholder: "Search", error: true})
 
-          .form-elements__drop-down
-            +drop-down({
-              options: ["option1", "option2", "option3", "option4", "option5", "option6"],
-              noOutline: true,
+            .form-elements__drop-down
+              +drop-down({
+                options: ["option1", "option2", "option3", "option4", "option5", "option6"],
+                noOutline: true,
+                theme: "blue"
+              })
+
+          .form-elements__right-col
+            .content__title
+              +title("Toggles")
+            +toggle()
+            +toggle({enabled: true, name: "toggle2"})
+
+            +toggle({
+              enabled: true,
+              theme: "blue",
+              name: "toggle3"
+            })
+
+            +toggle({
+              enabled: true,
+              theme: "cinnabar",
+              name: "toggle4"
+            })
+
+            .content__title.content__title_type_form
+              +title("Tick boxes")
+            +tick-box({enabled: true})
+
+            .form-elements__tick-box
+              +tick-box({name: "tick-box2"})
+
+            .form-elements__tick-box
+              +tick-box({
+                name: "tick-box3",
+                enabled: true,
+                theme: "blue"
+              })
+
+            .form-elements__tick-box
+              +tick-box({
+                name: "tick-box4",
+                enabled: true,
+                theme: "cinnabar"
+              })
+
+            .content__title.content__title_type_form
+              +title("User profile")
+            .form-elements__profile
+              +user-profile({job: "ux designer"})
+
+            +user-profile({
+              name: "Sarah Brown",
+              job: "developer",
+              avatar: "../blocks/user-profile/img/avatar2.png",
               theme: "blue"
             })
-
-        .form-elements__right-col
-          +title("Toggles")
-          +toggle()
-          +toggle({enabled: true, name: "toggle2"})
-
-          +toggle({
-            enabled: true,
-            theme: "blue",
-            name: "toggle3"
-          })
-
-          +toggle({
-            enabled: true,
-            theme: "cinnabar",
-            name: "toggle4"
-          })
-
-          +title("Tick boxes")(style="margin-top: 30px")
-          +tick-box({enabled: true})
-
-          .form-elements__tick-box
-            +tick-box({name: "tick-box2"})
-
-          .form-elements__tick-box
-            +tick-box({
-              name: "tick-box3",
-              enabled: true,
-              theme: "blue"
-            })
-
-          .form-elements__tick-box
-            +tick-box({
-              name: "tick-box4",
-              enabled: true,
-              theme: "cinnabar"
-            })
-
-          +title("User profile")(style="margin-top: 87px")
-          .form-elements__profile
-            +user-profile({job: "ux designer"})
-
-          +user-profile({
-            name: "Sarah Brown",
-            job: "developer",
-            avatar: "../blocks/user-profile/img/avatar2.png",
-            theme: "blue"
-          })
 
     section.page-block
-      +title("News & events")
+      .content__title
+        +title("News & events")
       .page-block__block-news
         .page-block__news
           +news({width: "41.14285714285714%"})
@@ -365,7 +377,8 @@ block content
           })
 
     section.page-block
-      +title("Location")
+      .content__title
+        +title("Location")
       .location-wrapper
         +location({
           theme: "cinnabar",
@@ -373,13 +386,15 @@ block content
         })
 
     section.page-block
-      +title("Calendar")
+      .content__title
+        +title("Calendar")
       .flex-wrapper
         +calendar()(class="flex-wrapper__calendar")
         +calendar("blue")
 
     section.page-block
-      +title("Messaging")
+      .content__title
+        +title("Messaging")
       .flex-wrapper
         +messaging({
           theme: "blue",
@@ -395,7 +410,8 @@ block content
         })
 
     section.page-block
-      +title("Video")
+      .content__title
+        +title("Video")
       +air-videoplayer({theme: "blue", width: "84.85714285714286%"})
       +air-videoplayer({theme: "cinnabar", width: "84.85714285714286%"})
 

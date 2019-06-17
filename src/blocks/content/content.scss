@@ -6,4 +6,12 @@
 
   padding: 71px 5%;
   box-shadow: 0 0 20px $gray;
+
+  &__title {
+    margin-bottom: 30px;
+
+    &_type_form {
+      margin-top: 37px;
+    }
+  }
 }
