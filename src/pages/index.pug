@@ -1,4 +1,5 @@
 extends  ../blocks/layout/layout.pug
+include includes
 
 block keywords
   meta(name="keywords", content="")
@@ -7,9 +8,10 @@ block description
   meta(name="description" content="")
 
 block title
-  title Главная
+  title Home
 
 block content
-  main.content
-    a(href="uikit.html") To uikit
-  script(src="scripts.js")
+  body.page
+    include ../blocks/header/header
+
+  script(src="index.js")

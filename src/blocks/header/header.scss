@@ -1,0 +1,54 @@
+.page-header {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: $fountain-blue;
+  align-items: center;
+  padding: 5px .8rem;
+
+  @include for-tablet-landscape-down() {
+    flex-direction: column;
+  }
+
+  &__main-nav-wrapper {
+    margin-left: 2%;
+    width: 81%;
+
+    @include for-tablet-landscape-down() {
+      display: none;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &.js-hidden {
+      display: none;
+    }
+  }
+
+  &__main-nav {
+    display: flex;
+
+    @include for-tablet-landscape-down() {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    display: flex;
+    width: 15%;
+    min-width: 120px;
+
+    margin-left: auto;
+    align-items: center;
+    order: 1;
+
+    @include for-tablet-landscape-down() {
+      margin-left: auto;
+      margin-right: auto;
+      order: 0;
+      width: 70%;
+    }
+  }
+}

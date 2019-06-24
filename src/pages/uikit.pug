@@ -11,410 +11,411 @@ block title
   title UiKit
 
 block content
-  main.content
-    section.page-block
-      .content__title
-        +title("Standard buttons")
-      .elements-block
-        .elements-block__button
-          +button({size: "sm", theme: "blue"})
+  body
+    main.content
+      section.page-block
+        .content__title
+          +title("Standard buttons")
+        .elements-block
+          .elements-block__button
+            +button({size: "sm", theme: "blue"})
 
-        .elements-block__button
-          +button({theme: "blue"})
+          .elements-block__button
+            +button({theme: "blue"})
 
-        .elements-block__button
-          +button({
-            size: "lg", noOutline: true,
-            animate: true, theme: "blue"
-          })
+          .elements-block__button
+            +button({
+              size: "lg", noOutline: true,
+              animate: true, theme: "blue"
+            })
 
-        .elements-block__button
-          +button({theme: "blue"})
+          .elements-block__button
+            +button({theme: "blue"})
 
-        .elements-block__button
-          +button({size: "sm", theme: "blue"})
+          .elements-block__button
+            +button({size: "sm", theme: "blue"})
 
-      .elements-block
-        .elements-block__button
-          +button({size: "sm", theme: "cinnabar"})
+        .elements-block
+          .elements-block__button
+            +button({size: "sm", theme: "cinnabar"})
 
-        .elements-block__button
-          +button({theme: "cinnabar"})
+          .elements-block__button
+            +button({theme: "cinnabar"})
 
-        .elements-block__button
-          +button({
-            size: "lg", theme: "cinnabar",
-            noOutline: true, animate: true
-          })
+          .elements-block__button
+            +button({
+              size: "lg", theme: "cinnabar",
+              noOutline: true, animate: true
+            })
 
-        .elements-block__button
-          +button({theme: "cinnabar"})
+          .elements-block__button
+            +button({theme: "cinnabar"})
 
-        .elements-block__button
-          +button({size: "sm", theme: "cinnabar"})
+          .elements-block__button
+            +button({size: "sm", theme: "cinnabar"})
 
-    section.page-block
-      .content__title
-        +title("Arrow buttons")
-      .elements-block
-        .elements-block__button-wrapper
-          +arrow-button({
-            size: "sm",
-            noOutline: true,
-            theme: "blue",
-            animate: true,
-            ripple: true
-          })
-
-          .elements-block__arrow-button
+      section.page-block
+        .content__title
+          +title("Arrow buttons")
+        .elements-block
+          .elements-block__button-wrapper
             +arrow-button({
               size: "sm",
               noOutline: true,
-              direction: "right",
               theme: "blue",
               animate: true,
               ripple: true
             })
 
-        .elements-block__button-wrapper
-          +arrow-button({
-            noOutline: true,
-            theme: "cinnabar",
-            disable: true
-          })
+            .elements-block__arrow-button
+              +arrow-button({
+                size: "sm",
+                noOutline: true,
+                direction: "right",
+                theme: "blue",
+                animate: true,
+                ripple: true
+              })
 
-          .elements-block__arrow-button
+          .elements-block__button-wrapper
             +arrow-button({
-              noOutline: true, direction: "right",
+              noOutline: true,
               theme: "cinnabar",
               disable: true
             })
 
-        .elements-block__button-wrapper
-          +arrow-button({
-            size: "lg",
-            noOutline: true,
-            theme: "blue",
-            animate: true,
-            ripple: true
-          })
+            .elements-block__arrow-button
+              +arrow-button({
+                noOutline: true, direction: "right",
+                theme: "cinnabar",
+                disable: true
+              })
 
-          .elements-block__arrow-button
+          .elements-block__button-wrapper
             +arrow-button({
               size: "lg",
               noOutline: true,
-              direction: "right",
               theme: "blue",
               animate: true,
               ripple: true
             })
 
-        .elements-block__button-wrapper
-          +arrow-button({
-            noOutline: true,
-            theme: "cinnabar"
-          })
+            .elements-block__arrow-button
+              +arrow-button({
+                size: "lg",
+                noOutline: true,
+                direction: "right",
+                theme: "blue",
+                animate: true,
+                ripple: true
+              })
 
-          .elements-block__arrow-button
+          .elements-block__button-wrapper
             +arrow-button({
-              noOutline: true, direction: "right",
+              noOutline: true,
               theme: "cinnabar"
             })
 
-        .elements-block__button-wrapper
-          +arrow-button({
-            size: "small",
-            noOutline: true,
-            theme: "blue",
-            direction: "up",
-            ripple: true
-          })
-
-          .elements-block__arrow-button
-            +arrow-button({
-              size: "small",
-              noOutline: true,
-              direction: "down",
-              theme: "blue",
-              ripple: true
-            })
-
-    section.page-block
-      .content__title
-        +title("Percentage/pie chart")
-      .elements-block
-        .elements-block__chart
-          +percentage-chart({theme: "cinnabar"})
-        .elements-block__chart
-          +percentage-chart({percent: 38, theme: "cinnabar"})
-        .elements-block__chart
-          +percentage-chart({percent: 62, theme: "cinnabar"})
-        .elements-block__chart
-          +percentage-chart({percent: 89, theme: "cinnabar"})
-
-      .elements-block
-        .elements-block__chart
-          +percentage-chart({percent: 85, theme: "blue", size: "xl"})
-        .elements-block__chart
-          +percentage-chart({percent: 85, theme: "blue", size: "lg"})
-        .elements-block__chart
-          +percentage-chart({percent: 85, theme: "blue", size: "sm"})
-        .elements-block__chart
-          +percentage-chart({percent: 100, theme: "blue", size: "xs"})
-
-      .elements-block
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 11,
-            redSlice: 26,
-            blueSlice: 30
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 33,
-            redSlice: 48,
-            blueSlice: 15
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 15,
-            redSlice: 10,
-            blueSlice: 55
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 25,
-            redSlice: 25,
-            blueSlice: 50
-          })
-
-      .elements-block
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 25,
-            redSlice: 25,
-            blueSlice: 50,
-            size: "sm"
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 25,
-            redSlice: 25,
-            blueSlice: 50,
-            size: "lg"
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 25,
-            redSlice: 25,
-            blueSlice: 50,
-            size: "xs"
-          })
-
-        .elements-block__chart
-          +pie-chart({
-            greySlice: 25,
-            redSlice: 25,
-            blueSlice: 50,
-            size: "xl"
-          })
-
-    section.page-block
-      .content__title
-        +title("Sliders")
-      .elements-block
-        .elements-block__slider
-          +slider({
-            theme: "cinnabar",
-            tooltip: "always"
-          })
-
-        .elements-block__slider
-          +slider({
-            theme: "blue",
-            ticks:[0, 25, 50, 75, 100],
-            step: 25,
-            selection: "before"
-          })
-
-    section.page-block
-      .content__title
-        +title("Stages")
-      .page-block__stages
-        +stages({
-          stages: 5,
-          completed: 3,
-          theme: "cinnabar",
-        })
-
-      .page-block__stages
-        +stages({
-          stages: 7,
-          completed: 5,
-          theme: "blue"
-        })
-
-      .page-block__stages
-        +stages({stages: 10})
-
-    .page-block
-      section.form-elements
-        .content__title
-          +title("Form elements")
-        .form-elements__inner
-          .form-elements__left-col
-            .form-elements__text-field-wrapper
-              .form-elements__text-field
-                +text-field("Your Name")
-              +form-tooltip("error")
-
-            .form-elements__text-field-wrapper
-              .form-elements__text-field
-                +text-field("Your Email")
-              +form-tooltip()
-
-            .form-elements__textarea
-              +textarea()
-
-            .form-elements__button
-              +button({text: "Submit", viewType: "form", theme: "blue"})
-
-            .content__title.content__title_type_form
-              +title("Search / Drop down")
-            .form-elements__search-field
-              +search-field({placeholder: "Search"})
-            .form-elements__search-field
-              +search-field({placeholder: "Search", error: true})
-
-            .form-elements__drop-down
-              +drop-down({
-                options: ["option1", "option2", "option3", "option4", "option5", "option6"],
-                noOutline: true,
-                theme: "blue"
-              })
-
-          .form-elements__right-col
-            .content__title
-              +title("Toggles")
-            +toggle()
-            +toggle({enabled: true, name: "toggle2"})
-
-            +toggle({
-              enabled: true,
-              theme: "blue",
-              name: "toggle3"
-            })
-
-            +toggle({
-              enabled: true,
-              theme: "cinnabar",
-              name: "toggle4"
-            })
-
-            .content__title.content__title_type_form
-              +title("Tick boxes")
-            +tick-box({enabled: true})
-
-            .form-elements__tick-box
-              +tick-box({name: "tick-box2"})
-
-            .form-elements__tick-box
-              +tick-box({
-                name: "tick-box3",
-                enabled: true,
-                theme: "blue"
-              })
-
-            .form-elements__tick-box
-              +tick-box({
-                name: "tick-box4",
-                enabled: true,
+            .elements-block__arrow-button
+              +arrow-button({
+                noOutline: true, direction: "right",
                 theme: "cinnabar"
               })
 
-            .content__title.content__title_type_form
-              +title("User profile")
-            .form-elements__profile
-              +user-profile({job: "ux designer"})
+          .elements-block__button-wrapper
+            +arrow-button({
+              size: "small",
+              noOutline: true,
+              theme: "blue",
+              direction: "up",
+              ripple: true
+            })
 
-            .form-elements__profile
-              +user-profile({
-                name: "Sarah Brown",
-                job: "developer",
-                avatar: "../blocks/user-profile/img/avatar2.png",
-                theme: "blue"
+            .elements-block__arrow-button
+              +arrow-button({
+                size: "small",
+                noOutline: true,
+                direction: "down",
+                theme: "blue",
+                ripple: true
               })
 
-    section.page-block
-      .content__title
-        +title("News & events")
-      .page-block__block-news
-        .page-block__news
-          +news({width: "41.14285714285714%"})
-        .page-block__news
-          +news({
-            width: "41.14285714285714%",
-            theme: "blue",
-            src: "../blocks/news/img/events.png",
-            type: "events",
-            title: "This is the title",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          })
-        .page-block__news
-          +news({width: "41.14285714285714%", theme: "cinnabar"})
-        .page-block__news
-          +news({
-            width: "41.14285714285714%",
+      section.page-block
+        .content__title
+          +title("Percentage/pie chart")
+        .elements-block
+          .elements-block__chart
+            +percentage-chart({theme: "cinnabar"})
+          .elements-block__chart
+            +percentage-chart({percent: 38, theme: "cinnabar"})
+          .elements-block__chart
+            +percentage-chart({percent: 62, theme: "cinnabar"})
+          .elements-block__chart
+            +percentage-chart({percent: 89, theme: "cinnabar"})
+
+        .elements-block
+          .elements-block__chart
+            +percentage-chart({percent: 85, theme: "blue", size: "xl"})
+          .elements-block__chart
+            +percentage-chart({percent: 85, theme: "blue", size: "lg"})
+          .elements-block__chart
+            +percentage-chart({percent: 85, theme: "blue", size: "sm"})
+          .elements-block__chart
+            +percentage-chart({percent: 100, theme: "blue", size: "xs"})
+
+        .elements-block
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 11,
+              redSlice: 26,
+              blueSlice: 30
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 33,
+              redSlice: 48,
+              blueSlice: 15
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 15,
+              redSlice: 10,
+              blueSlice: 55
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 25,
+              redSlice: 25,
+              blueSlice: 50
+            })
+
+        .elements-block
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 25,
+              redSlice: 25,
+              blueSlice: 50,
+              size: "sm"
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 25,
+              redSlice: 25,
+              blueSlice: 50,
+              size: "lg"
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 25,
+              redSlice: 25,
+              blueSlice: 50,
+              size: "xs"
+            })
+
+          .elements-block__chart
+            +pie-chart({
+              greySlice: 25,
+              redSlice: 25,
+              blueSlice: 50,
+              size: "xl"
+            })
+
+      section.page-block
+        .content__title
+          +title("Sliders")
+        .elements-block
+          .elements-block__slider
+            +slider({
+              theme: "cinnabar",
+              tooltip: "always"
+            })
+
+          .elements-block__slider
+            +slider({
+              theme: "blue",
+              ticks:[0, 25, 50, 75, 100],
+              step: 25,
+              selection: "before"
+            })
+
+      section.page-block
+        .content__title
+          +title("Stages")
+        .page-block__stages
+          +stages({
+            stages: 5,
+            completed: 3,
             theme: "cinnabar",
-            src: "../blocks/news/img/events.png",
-            type: "events",
-            title: "This is the title",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           })
 
-    section.page-block
-      .content__title
-        +title("Location")
-      .location-wrapper
-        +location({
-          theme: "cinnabar",
-          address: "1259  CALIFORNIA ST San Francisco, CA"
-        })
+        .page-block__stages
+          +stages({
+            stages: 7,
+            completed: 5,
+            theme: "blue"
+          })
 
-    section.page-block
-      .content__title
-        +title("Calendar")
-      .flex-wrapper
-        +calendar()(class="flex-wrapper__calendar")
-        +calendar("blue")
+        .page-block__stages
+          +stages({stages: 10})
 
-    section.page-block
-      .content__title
-        +title("Messaging")
-      .flex-wrapper
-        +messaging({
-          theme: "blue",
-          username: "Sarah Brown",
-          question: "Hey! So are we cool to meet at the art gallery? Say 8pm",
-          answer: "Yeah that sounds great. See you then."
-        })(class="flex-wrapper__messaging")
-        +messaging({
-          theme: "cinnabar",
-          username: "Sarah Brown",
-          question: "Hey! So are we cool to meet at the art gallery? Say 8pm ",
-          answer: "Yeah that sounds great. See you then."
-        })
+      .page-block
+        section.form-elements
+          .content__title
+            +title("Form elements")
+          .form-elements__inner
+            .form-elements__left-col
+              .form-elements__text-field-wrapper
+                .form-elements__text-field
+                  +text-field("Your Name")
+                +form-tooltip("error")
 
-    section.page-block
-      .content__title
-        +title("Video")
-      +air-videoplayer({theme: "blue", width: "84.85714285714286%"})
-      +air-videoplayer({theme: "cinnabar", width: "84.85714285714286%"})
+              .form-elements__text-field-wrapper
+                .form-elements__text-field
+                  +text-field("Your Email")
+                +form-tooltip()
 
-  script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
-  script(src="scripts.js")
+              .form-elements__textarea
+                +textarea()
+
+              .form-elements__button
+                +button({text: "Submit", viewType: "form", theme: "blue"})
+
+              .content__title.content__title_type_form
+                +title("Search / Drop down")
+              .form-elements__search-field
+                +search-field({placeholder: "Search"})
+              .form-elements__search-field
+                +search-field({placeholder: "Search", error: true})
+
+              .form-elements__drop-down
+                +drop-down({
+                  options: ["option1", "option2", "option3", "option4", "option5", "option6"],
+                  noOutline: true,
+                  theme: "blue"
+                })
+
+            .form-elements__right-col
+              .content__title
+                +title("Toggles")
+              +toggle()
+              +toggle({enabled: true, name: "toggle2"})
+
+              +toggle({
+                enabled: true,
+                theme: "blue",
+                name: "toggle3"
+              })
+
+              +toggle({
+                enabled: true,
+                theme: "cinnabar",
+                name: "toggle4"
+              })
+
+              .content__title.content__title_type_form
+                +title("Tick boxes")
+              +tick-box({enabled: true})
+
+              .form-elements__tick-box
+                +tick-box({name: "tick-box2"})
+
+              .form-elements__tick-box
+                +tick-box({
+                  name: "tick-box3",
+                  enabled: true,
+                  theme: "blue"
+                })
+
+              .form-elements__tick-box
+                +tick-box({
+                  name: "tick-box4",
+                  enabled: true,
+                  theme: "cinnabar"
+                })
+
+              .content__title.content__title_type_form
+                +title("User profile")
+              .form-elements__profile
+                +user-profile({job: "ux designer"})
+
+              .form-elements__profile
+                +user-profile({
+                  name: "Sarah Brown",
+                  job: "developer",
+                  avatar: "../blocks/user-profile/img/avatar2.png",
+                  theme: "blue"
+                })
+
+      section.page-block
+        .content__title
+          +title("News & events")
+        .page-block__block-news
+          .page-block__news
+            +news({width: "41.14285714285714%"})
+          .page-block__news
+            +news({
+              width: "41.14285714285714%",
+              theme: "blue",
+              src: "../blocks/news/img/events.png",
+              type: "events",
+              title: "This is the title",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            })
+          .page-block__news
+            +news({width: "41.14285714285714%", theme: "cinnabar"})
+          .page-block__news
+            +news({
+              width: "41.14285714285714%",
+              theme: "cinnabar",
+              src: "../blocks/news/img/events.png",
+              type: "events",
+              title: "This is the title",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            })
+
+      section.page-block
+        .content__title
+          +title("Location")
+        .location-wrapper
+          +location({
+            theme: "cinnabar",
+            address: "1259  CALIFORNIA ST San Francisco, CA"
+          })
+
+      section.page-block
+        .content__title
+          +title("Calendar")
+        .flex-wrapper
+          +calendar()(class="flex-wrapper__calendar")
+          +calendar("blue")
+
+      section.page-block
+        .content__title
+          +title("Messaging")
+        .flex-wrapper
+          +messaging({
+            theme: "blue",
+            username: "Sarah Brown",
+            question: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+            answer: "Yeah that sounds great. See you then."
+          })(class="flex-wrapper__messaging")
+          +messaging({
+            theme: "cinnabar",
+            username: "Sarah Brown",
+            question: "Hey! So are we cool to meet at the art gallery? Say 8pm ",
+            answer: "Yeah that sounds great. See you then."
+          })
+
+      section.page-block
+        .content__title
+          +title("Video")
+        +air-videoplayer({theme: "blue", width: "84.85714285714286%"})
+        +air-videoplayer({theme: "cinnabar", width: "84.85714285714286%"})
+
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
+    script(src="uikit.js")

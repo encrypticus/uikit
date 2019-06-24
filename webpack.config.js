@@ -26,11 +26,16 @@ module.exports = (env, args) => {
   let mode = "development";
   let isDev = mode === args.mode; // флаг, указывающий режим сборки
 
+  // точки входа
   const config = merge({
-        entry: "./src/index.js", // точка входа
+        entry: {
+          'index': './src/index.js',
+          'uikit': './src/uikit.js',
+          'styles': './src/styles.scss'
+        },
 
         output: { // точка выхода
-          filename: "scripts.js", // имя выходного js-файла
+          filename: "[name].js", // имя выходного js-файла
           path: path.resolve(__dirname, "dist"), // директория, в которой будет лежать выходной файл
         },
 

@@ -1,0 +1,22 @@
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 200px;
+
+  @include for-tablet-landscape-down() {
+    width: 100%;
+  }
+
+  &__img {
+    width: 2.625rem;
+  }
+
+  &__link {
+    font-size: 1.25rem;
+    font-family: Andika, Arial, sans-serif;
+    color: $color-text-primary;
+
+    text-decoration: none;
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,44 @@
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 67%;
+  min-width: 400px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  justify-content: space-between;
+  order: 1;
+
+  @include for-tablet-landscape-down() {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+
+    @include for-tablet-landscape-down() {
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: .875rem;
+    font-family: Lato, Arial, sans-serif;
+
+    color: $color-text-primary;
+    font-weight: 400;
+    text-decoration: none;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    &:hover {
+      color: $cinnabar;
+    }
+  }
+}
