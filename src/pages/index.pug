@@ -33,6 +33,16 @@ block content
           .page__pie-chart-inner
             +pie-chart({size: "fluid"})
 
+        .page__description
+          .page__title
+            +title("Four simple steps to get an extension")
+          p.page__description-text To do this, go to the chrome extension store
+          +button({
+            text: "Do it...",
+            theme: "cinnabar",
+            animate: true
+          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+
       .page__right-col
         .page__description
           .page__title
