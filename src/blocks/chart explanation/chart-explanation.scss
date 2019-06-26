@@ -1,0 +1,24 @@
+.chart-explanation {
+  margin: 10px 0;
+
+  &__pie {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 3px;
+
+    &_color_cinnabar {
+      background-color: $cinnabar;
+    }
+
+    &_color_blue {
+      background-color: $fountain-blue;
+    }
+
+    &_color_gray {
+      background-color: $black--lighten
+    }
+  }
+}
