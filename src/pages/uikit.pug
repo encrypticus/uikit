@@ -1,4 +1,4 @@
-extends  ../blocks/layout/layout.pug
+extends  ../components/layout/layout.pug
 include includes
 
 block keywords
@@ -347,7 +347,7 @@ block content
                 +user-profile({
                   name: "Sarah Brown",
                   job: "developer",
-                  avatar: "../blocks/user-profile/img/avatar2.png",
+                  avatar: "../components/user-profile/img/avatar2.png",
                   theme: "blue"
                 })
 
@@ -361,7 +361,7 @@ block content
             +news({
               width: "41.14285714285714%",
               theme: "blue",
-              src: "../blocks/news/img/events.png",
+              src: "../components/news/img/events.png",
               type: "events",
               title: "This is the title",
               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -372,7 +372,7 @@ block content
             +news({
               width: "41.14285714285714%",
               theme: "cinnabar",
-              src: "../blocks/news/img/events.png",
+              src: "../components/news/img/events.png",
               type: "events",
               title: "This is the title",
               text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."

@@ -1,4 +1,4 @@
-extends  ../blocks/layout/layout.pug
+extends  ../components/layout/layout.pug
 include includes
 
 block keywords
@@ -12,7 +12,12 @@ block title
 
 block content
   body.page
-    include ../blocks/header/header
-    include ../blocks/rotator/rotator
+    include ../components/header/header
+    include ../components/rotator/rotator
+
+    main.page__content
+      .page__left-col
+        img(src="../img/content1.png", alt="extension screenshot example")
+      .page-right-col
 
   script(src="index.js")

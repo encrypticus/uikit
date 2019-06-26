@@ -4,74 +4,74 @@
 
 @import 'sass/common';
 
-@import 'blocks/content/content';
+@import 'components/content/content';
 
-@import 'blocks/elements-block/elements-block.scss';
+@import 'components/elements-block/elements-block.scss';
 
-@import 'blocks/title/title';
+@import 'components/title/title';
 
-@import 'blocks/button/button';
+@import 'components/button/button';
 
-@import 'blocks/button-wrapper/button-wrapper';
+@import 'components/button-wrapper/button-wrapper';
 
-@import 'blocks/arrow-button/arrow-button';
+@import 'components/arrow-button/arrow-button';
 
-@import 'blocks/percentage-chart/percentage-chart';
+@import 'components/percentage-chart/percentage-chart';
 
-@import 'blocks/pie-chart/pie-chart';
+@import 'components/pie-chart/pie-chart';
 
-@import 'blocks/slider/slider';
+@import 'components/slider/slider';
 
-@import 'blocks/stages/stages';
+@import 'components/stages/stages';
 
-@import 'blocks/form-tooltip/form-tooltip';
+@import 'components/form-tooltip/form-tooltip';
 
-@import 'blocks/form-elements/form-elements';
+@import 'components/form-elements/form-elements';
 
-@import 'blocks/text-field/text-field';
+@import 'components/text-field/text-field';
 
-@import 'blocks/textarea/textarea';
+@import 'components/textarea/textarea';
 
-@import 'blocks/toggle/toggle';
+@import 'components/toggle/toggle';
 
-@import 'blocks/tick-box/tick-box';
+@import 'components/tick-box/tick-box';
 
-@import 'blocks/location-wrapper/location-wrapper';
+@import 'components/location-wrapper/location-wrapper';
 
-@import 'blocks/location/location';
+@import 'components/location/location';
 
-@import 'blocks/search-field/search-field';
+@import 'components/search-field/search-field';
 
-@import 'blocks/drop-down/drop-down';
+@import 'components/drop-down/drop-down';
 
-@import 'blocks/user-profile/user-profile';
+@import 'components/user-profile/user-profile';
 
-@import 'blocks/news/news';
+@import 'components/news/news';
 
-@import 'blocks/calendar/datepicker-config';
+@import 'components/calendar/datepicker-config';
 
-@import 'blocks/calendar/cell';
+@import 'components/calendar/cell';
 
-@import 'blocks/calendar/datepicker';
+@import 'components/calendar/datepicker';
 
-@import 'blocks/calendar/navigation';
+@import 'components/calendar/navigation';
 
-@import 'blocks/calendar/timepicker';
+@import 'components/calendar/timepicker';
 
-@import 'blocks/calendar/calendar';
+@import 'components/calendar/calendar';
 
-@import 'blocks/messaging/messaging';
+@import 'components/messaging/messaging';
 
-@import 'blocks/air-videoplayer/air-videoplayer';
+@import 'components/air-videoplayer/air-videoplayer';
 
-@import 'blocks/messaging/messaging';
+@import 'components/messaging/messaging';
 
-@import 'blocks/header/header';
+@import 'components/header/header';
 
-@import 'blocks/site-logo/site-logo';
+@import 'components/site-logo/site-logo';
 
-@import 'blocks/main-nav/main-nav';
+@import 'components/main-nav/main-nav';
 
-@import 'blocks/menu-toggler/menu-toggler';
+@import 'components/menu-toggler/menu-toggler';
 
-@import 'blocks/rotator/rotator';
+@import 'components/rotator/rotator';

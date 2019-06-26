@@ -36,6 +36,18 @@ body {
 
   margin: 0 auto;
   box-shadow: 0 0 10px $black;
+
+  &__left-col,
+  &__right-col {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .page-block {

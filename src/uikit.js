@@ -1,9 +1,9 @@
 import './styles.scss';
-import './blocks/button/button';
-import './blocks/arrow-button/arrow-button';
-import './blocks/slider/slider';
-import './blocks/toggle/toggle';
-import './blocks/search-field/search-field';
-import './blocks/location/location';
-import './blocks/calendar/calendar';
-import './blocks/air-videoplayer/air-videoplayer';
+import './components/button/button';
+import './components/arrow-button/arrow-button';
+import './components/slider/slider';
+import './components/toggle/toggle';
+import './components/search-field/search-field';
+import './components/location/location';
+import './components/calendar/calendar';
+import './components/air-videoplayer/air-videoplayer';
