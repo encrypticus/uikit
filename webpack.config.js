@@ -30,8 +30,7 @@ module.exports = (env, args) => {
   const config = merge({
         entry: {
           'index': './src/index.js',
-          'uikit': './src/uikit.js',
-          'styles': './src/styles.scss'
+          'uikit': './src/uikit.js'
         },
 
         output: { // точка выхода
