@@ -1,0 +1,61 @@
+.rotator {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0;
+
+  &__slides {
+    //display: flex;
+    width: 500%;
+    margin-left: 0;
+    transition: margin-left .5s;
+  }
+
+  &__slide {
+    width: 20%;
+    height: auto;
+  }
+
+  &__description {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    left: 10%;
+
+    padding: 1% .625rem;
+    border: .3125rem solid $fountain-blue;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  &__description-text {
+    margin: 0;
+    font-size: 1.25rem;
+
+    font-family: Lato, Arial, sans-serif;
+    color: $color-text-primary;
+    text-align: center;
+
+    @include for-tablet-landscape-down() {
+      font-size: 1rem;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &__arrow-button {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: translateX(-50%);
+
+    &_direction_right {
+      right: 0;
+      left: unset;
+      transform: translateX(50%);
+    }
+  }
+}

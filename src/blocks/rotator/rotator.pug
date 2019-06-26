@@ -1,0 +1,16 @@
+.rotator
+  .rotator__slides
+    img.rotator__slide(src="../blocks/rotator/img/slide1.jpg", alt="slide")
+    img.rotator__slide(src="../blocks/rotator/img/slide2.png", alt="slide")
+    img.rotator__slide(src="../blocks/rotator/img/slide3.png", alt="slide")
+    img.rotator__slide(src="../blocks/rotator/img/slide4.png", alt="slide")
+    img.rotator__slide(src="../blocks/rotator/img/slide5.png", alt="slide")
+  .rotator__description
+    p.rotator__description-text
+      | Scroll buttons is a simple but functional extension.
+    .rotator__button
+      +button({text: 'More', theme: 'blue'})
+    .rotator__arrow-button
+      +arrow-button({theme: 'blue', size: 'sm'})
+    .rotator__arrow-button.rotator__arrow-button_direction_right
+      +arrow-button({theme: 'blue', size: 'sm', direction: 'right'})
