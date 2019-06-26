@@ -2,22 +2,24 @@
 
 .button {
   position: relative;
+  display: inline-block;
   padding: .5625rem 2rem;
   font-size: .75rem;
-  font-family: Lato, Arial, sans-serif;
 
+  font-family: Lato, Arial, sans-serif;
   line-height: .75rem;
   color: #000;
   border-radius: 3px;
-  background-color: $color-text-primary;
 
+  background-color: $color-text-primary;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .6px;
-  cursor: pointer;
 
+  cursor: pointer;
   user-select: none;
   overflow: hidden;
+  text-decoration: none;
 
   &:active {
     box-shadow: none;
@@ -32,9 +34,9 @@
   }
 
   &_type_events {
-    min-width: 127px;
     padding: .3125rem .875rem;
     font-size: .625rem;
+    min-width: 127px;
     margin-left: 11px;
     font-weight: 400;
     text-transform: uppercase;

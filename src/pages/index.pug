@@ -18,9 +18,24 @@ block content
     main.page__content
       .page__left-col
         img(src="../img/content1.png", alt="extension screenshot example")
+        .page__description
+          +title("Usability and settings")
+          p.page__description-text The ability to change the size, transparency and position of the buttons in the browser window
+          +button({
+            text: "Try now",
+            theme: "blue",
+            animate: true
+          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+
       .page__right-col
         .page__description
           +title("Select a button imgage you like")
           p.page__description-text At your choice, there are 40 images of buttons.
+          +button({
+            text: "Download",
+            theme: "cinnabar",
+            animate: true
+          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+        img(src="../img/content2.jpg", alt="extension screenshot example")
 
   script(src="index.js")

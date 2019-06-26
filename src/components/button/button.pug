@@ -71,4 +71,7 @@ mixin button(options)
     if (viewType === "events")
       modifiers += ` button_type_events`;
 
-  button.button(class=modifiers, type= type !== "undefined" ? type : "")&attributes(attributes)= text
+  if (attributes.href)
+    a.button(class=modifiers)&attributes(attributes)= text
+  else
+    button.button(class=modifiers, type= type !== "undefined" ? type : "")&attributes(attributes)= text
