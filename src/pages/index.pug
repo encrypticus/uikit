@@ -12,12 +12,15 @@ block title
 
 block content
   body.page
-    include ../components/header/header
-    include ../components/rotator/rotator
+    include ../blocks/header/header
+    include ../blocks/rotator/rotator
 
     main.page__content
       .page__left-col
         img(src="../img/content1.png", alt="extension screenshot example")
-      .page-right-col
+      .page__right-col
+        .page__description
+          +title("Select a button imgage you like")
+          p.page__description-text At your choice, there are 40 images of buttons.
 
   script(src="index.js")

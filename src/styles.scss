@@ -66,12 +66,14 @@
 
 @import 'components/messaging/messaging';
 
-@import 'components/header/header';
+@import 'blocks/page/page';
 
-@import 'components/site-logo/site-logo';
+@import 'blocks/header/header';
 
-@import 'components/main-nav/main-nav';
+@import 'blocks/site-logo/site-logo';
 
-@import 'components/menu-toggler/menu-toggler';
+@import 'blocks/main-nav/main-nav';
 
-@import 'components/rotator/rotator';
+@import 'blocks/menu-toggler/menu-toggler';
+
+@import 'blocks/rotator/rotator';
