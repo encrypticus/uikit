@@ -1,6 +1,14 @@
 .percentage-chart {
-  width: 6.25rem; // 100px
-  height: 6.25rem;
+
+  &_size_fluid {
+    width: 100%;
+  }
+
+  &_size_middle,
+  &_size_md {
+    width: 6.25rem; // 100px
+    height: 6.25rem;
+  }
 
   &_size_large,
   &_size_lg {

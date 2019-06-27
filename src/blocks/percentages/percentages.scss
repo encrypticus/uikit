@@ -1,0 +1,12 @@
+.percentages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  margin-top: 60px;
+  border: 1px solid $gray;
+
+  &__inner {
+    width: 45%;
+  }
+}

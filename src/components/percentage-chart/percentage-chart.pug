@@ -2,7 +2,7 @@ mixin percentage-chart(options)
 
   //- Принимает:
   //-   options.size       {string} - класс-модификатор размера чарта. Может принимать одно из следующих занчений:
-                                      small || sm, extra-small || xs, large || lg, extra-large || xl
+                                      small || sm, extra-small || xs, large || lg, extra-large || xl, fluid
   //-   options.percent    {number} - число процентов от 0 до 100
   //-   options.theme      {string} - класс-модификатор цветовой темы
 
@@ -17,7 +17,8 @@ mixin percentage-chart(options)
     //- Объект с настройками по умолчанию
     settings = {
       percent: 0,
-      theme: ""
+      theme: "",
+      size: "md"
     },
     options = options || settings,
     size = options.size || settings.size,
