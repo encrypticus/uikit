@@ -1,0 +1,8 @@
+mixin chart-explanation(text, color = "gray")
+  -
+    //- Список модификаторов
+    var modifiers = ` chart-explanation__pie_color_${color}`;
+
+  .chart-explanation
+    span.chart-explanation__pie(class=modifiers)
+    span.chart-explanation__text= text

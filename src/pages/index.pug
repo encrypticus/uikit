@@ -61,7 +61,16 @@ block content
         .page__description
           .page__title
             +title("Distribution of product users by geographic region")
-          include ../blocks/chart explanation/chart explanation
+          +chart-explanation("Russia", "blue")
+          +chart-explanation("Ukraine", "cinnabar")
+          +chart-explanation("United States", "gray")
 
         include ../blocks/steps/steps
+
+        .page__description
+          .page__title
+            +title("Distribution of product users by operating system (%)")
+          +chart-explanation("Windows", "blue")
+          +chart-explanation("Linux", "cinnabar")
+
   script(src="index.js")
