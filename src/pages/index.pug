@@ -15,64 +15,65 @@ block content
     include ../blocks/header/header
     include ../blocks/rotator/rotator
 
-    main.page__content
-      .page__left-col
-        img(src="../img/content1.png", alt="extension screenshot example")
+    .wrapper
+      main.page__content
+        .page__left-col
+          img(src="../img/content1.png", alt="extension screenshot example")
 
-        .page__description
-          .page__title
-            +title("Usability and settings")
-          p.page__description-text The ability to change the size, transparency and position of the buttons in the browser window
-          +button({
-            text: "Try now",
-            theme: "blue",
-            animate: true
-          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+          .page__description
+            .page__title
+              +title("Usability and settings")
+            p.page__description-text The ability to change the size, transparency and position of the buttons in the browser window
+            +button({
+              text: "Try now",
+              theme: "blue",
+              animate: true
+            })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
-        .page__pie-chart
-          .page__pie-chart-inner
-            +pie-chart({size: "fluid"})
+          .page__pie-chart
+            .page__pie-chart-inner
+              +pie-chart({size: "fluid"})
 
-        .page__description
-          .page__title
-            +title("Four simple steps to get an extension")
-          p.page__description-text To do this, go to the chrome extension store
-          +button({
-            text: "Do it...",
-            theme: "cinnabar",
-            animate: true
-          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+          .page__description
+            .page__title
+              +title("Four simple steps to get an extension")
+            p.page__description-text To do this, go to the chrome extension store
+            +button({
+              text: "Do it...",
+              theme: "cinnabar",
+              animate: true
+            })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
-        include ../blocks/percentages/percentages
+          include ../blocks/percentages/percentages
 
-      .page__right-col
-        .page__description
-          .page__title
-            +title("Select a button imgage you like")
-          p.page__description-text At your choice, there are 40 images of buttons.
-          +button({
-            text: "Download",
-            theme: "cinnabar",
-            animate: true
-          })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+        .page__right-col
+          .page__description
+            .page__title
+              +title("Select a button imgage you like")
+            p.page__description-text At your choice, there are 40 images of buttons.
+            +button({
+              text: "Download",
+              theme: "cinnabar",
+              animate: true
+            })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
-        img(src="../img/content2.jpg", alt="extension screenshot example")
+          img(src="../img/content2.jpg", alt="extension screenshot example")
 
-        .page__description
-          .page__title
-            +title("Distribution of product users by geographic region")
-          +chart-explanation("Russia", "blue")
-          +chart-explanation("Ukraine", "cinnabar")
-          +chart-explanation("United States", "gray")
+          .page__description
+            .page__title
+              +title("Distribution of product users by geographic region")
+            +chart-explanation("Russia", "blue")
+            +chart-explanation("Ukraine", "cinnabar")
+            +chart-explanation("United States", "gray")
 
-        include ../blocks/steps/steps
+          include ../blocks/steps/steps
 
-        .page__description
-          .page__title
-            +title("Distribution of product users by operating system (%)")
-          +chart-explanation("Windows", "blue")
-          +chart-explanation("Linux", "cinnabar")
+          .page__description
+            .page__title
+              +title("Distribution of product users by operating system (%)")
+            +chart-explanation("Windows", "blue")
+            +chart-explanation("Linux", "cinnabar")
 
-      include ../blocks/videoplayer/videoplayer
+        include ../blocks/videoplayer/videoplayer
 
-  script(src="index.js")
+    script(src="index.js")

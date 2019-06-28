@@ -16,6 +16,8 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    flex: 1 0 auto;
+
     padding: 20px;
     justify-content: space-between;
     background-color: $color-text-primary;
@@ -35,8 +37,8 @@
 
   &__description {
     padding: {
-      top: 150px;
-      bottom: 120px;
+      top: 20%; //150px / 605px
+      bottom: 19.83471074380165%; // 120px / 605px;
     }
   }
 
