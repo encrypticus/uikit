@@ -31,15 +31,12 @@ block content
             })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
         .page__blocks-wrapper.page__blocks-wrapper_justify_between
-          .page__description.page__description_pos_left
+          .page__description
             .page__title
-              +title("Four simple steps to get an extension")
-            p.page__description-text To do this, go to the chrome extension store
-            +button({
-              text: "Do it...",
-              theme: "cinnabar",
-              animate: true
-            })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+              +title("Distribution of product users by geographic region")
+            +chart-explanation("Russia", "blue")
+            +chart-explanation("Ukraine", "cinnabar")
+            +chart-explanation("United States", "gray")
 
           .page__pie-chart
             .page__pie-chart-inner
@@ -51,6 +48,13 @@ block content
 
           .page__description.page__description_pos_right
             .page__title
+              +title("Distribution of product users by operating system (%)")
+            +chart-explanation("Windows", "blue")
+            +chart-explanation("Linux", "cinnabar")
+
+        .page__blocks-wrapper.page__blocks-wrapper_justify_between
+          .page__description
+            .page__title
               +title("Select a button imgage")
             p.page__description-text At your choice, there are 40 images of buttons.
             +button({
@@ -58,15 +62,6 @@ block content
               theme: "cinnabar",
               animate: true
             })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
-
-
-        .page__blocks-wrapper.page__blocks-wrapper_justify_between
-          .page__description
-            .page__title
-              +title("Distribution of product users by geographic region")
-            +chart-explanation("Russia", "blue")
-            +chart-explanation("Ukraine", "cinnabar")
-            +chart-explanation("United States", "gray")
 
           img(src="../img/content2.jpg", alt="extension screenshot example")
 
@@ -76,9 +71,13 @@ block content
 
           .page__description.page__description_pos_right
             .page__title
-              +title("Distribution of product users by operating system (%)")
-            +chart-explanation("Windows", "blue")
-            +chart-explanation("Linux", "cinnabar")
+              +title("Four simple steps to get an extension")
+            p.page__description-text To do this, go to the chrome extension store
+            +button({
+              text: "Do it...",
+              theme: "cinnabar",
+              animate: true
+            })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
         include ../blocks/videoplayer/videoplayer
 

@@ -1,15 +1,22 @@
 .steps {
   width: 48%;
-  height: 366px;
   border: 1px solid $gray;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   overflow: hidden;
+
+  @include for-tablet-landscape-down() {
+    width: 80%;
+  }
+
+  @include for-phone-only {
+    width: 100%;
+  }
 
   &__slides {
     display: flex;
     width: 400%;
-    padding-top: 10rem;
+    padding-top: 5rem;
     animation: slideInLeft 15s infinite;
   }
 
