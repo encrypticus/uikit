@@ -23,22 +23,25 @@
     background-color: $color-text-primary;
   }
 
-  &__left-col,
-  &__right-col {
+  &__blocks-wrapper {
     display: flex;
-    width: 48%;
-    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    align-items: center;
+    width: 100%;
+
+    &_justify_between {
+      justify-content: space-between;
+    }
 
     img {
-      width: 100%;
-      //height: auto;
+      width: 48%;
     }
   }
 
   &__description {
-    padding: {
-      top: 20%; //150px / 605px
-      bottom: 19.83471074380165%; // 120px / 605px;
+
+    &_pos_right {
+      margin-left: 3rem;
     }
   }
 
@@ -50,7 +53,7 @@
   }
 
   &__pie-chart {
-    width: 100%;
+    width: 48%;
     border: 1px solid $gray;
 
     &-inner {

@@ -17,10 +17,10 @@ block content
 
     .wrapper
       main.page__content
-        .page__left-col
+        .page__blocks-wrapper
           img(src="../img/content1.png", alt="extension screenshot example")
 
-          .page__description
+          .page__description.page__description_pos_right
             .page__title
               +title("Usability and settings")
             p.page__description-text The ability to change the size, transparency and position of the buttons in the browser window
@@ -30,11 +30,8 @@ block content
               animate: true
             })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
-          .page__pie-chart
-            .page__pie-chart-inner
-              +pie-chart({size: "fluid"})
-
-          .page__description
+        .page__blocks-wrapper.page__blocks-wrapper_justify_between
+          .page__description.page__description_pos_left
             .page__title
               +title("Four simple steps to get an extension")
             p.page__description-text To do this, go to the chrome extension store
@@ -44,12 +41,17 @@ block content
               animate: true
             })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
+          .page__pie-chart
+            .page__pie-chart-inner
+              +pie-chart({size: "fluid"})
+
+
+        .page__blocks-wrapper
           include ../blocks/percentages/percentages
 
-        .page__right-col
-          .page__description
+          .page__description.page__description_pos_right
             .page__title
-              +title("Select a button imgage you like")
+              +title("Select a button imgage")
             p.page__description-text At your choice, there are 40 images of buttons.
             +button({
               text: "Download",
@@ -57,8 +59,8 @@ block content
               animate: true
             })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
 
-          img(src="../img/content2.jpg", alt="extension screenshot example")
 
+        .page__blocks-wrapper.page__blocks-wrapper_justify_between
           .page__description
             .page__title
               +title("Distribution of product users by geographic region")
@@ -66,9 +68,13 @@ block content
             +chart-explanation("Ukraine", "cinnabar")
             +chart-explanation("United States", "gray")
 
+          img(src="../img/content2.jpg", alt="extension screenshot example")
+
+
+        .page__blocks-wrapper
           include ../blocks/steps/steps
 
-          .page__description
+          .page__description.page__description_pos_right
             .page__title
               +title("Distribution of product users by operating system (%)")
             +chart-explanation("Windows", "blue")
