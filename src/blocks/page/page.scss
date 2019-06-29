@@ -58,4 +58,21 @@
       margin: auto;
     }
   }
+
+  &__popup-messaging {
+    position: fixed;
+    bottom: 1rem;
+    left: calc(50% - 9rem);
+
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    &_visible {
+      visibility: visible;
+      opacity: 1;
+      transition: all .5s .5s;
+    }
+  }
 }
