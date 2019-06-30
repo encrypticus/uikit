@@ -104,8 +104,9 @@
 
   &__popup-messaging {
     position: fixed;
-    bottom: 1rem;
-    left: calc(50% - 9rem);
+    bottom: .5rem;
+    left: calc(50%);
+    transform: translateX(-50%);
 
     z-index: 20;
     opacity: 0;

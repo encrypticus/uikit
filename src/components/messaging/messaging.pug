@@ -4,10 +4,11 @@ mixin messaging(options)
 
   //- Принимает:
   //-   options.theme       {string}  - строковое значение, от которого зависит цветовая тема компонента.
-                                       Может принимать 2 значения: "blue", "cinnabar".
+                                        Может принимать 2 значения: "blue", "cinnabar".
   //-   options.username    {string}  - имя пользователя
   //-   options.question    {string}  - текст в блоке вопроса
   //-   options.answer      {string}  - текст в блоке ответа
+  //-   options.fluid       {string}  - булево значение
 
   //- Вызов:
         +messaging({
@@ -21,7 +22,8 @@ mixin messaging(options)
     //- Объект настроек по умолчанию
     var settings = {
       theme: "",
-      username: ""
+      username: "",
+      fluid: false
     },
 
     // Список модификаторов
@@ -31,13 +33,17 @@ mixin messaging(options)
     theme = options.theme || settings.theme,
     username = options.username || settings.username,
     question = options.question,
-    answer = options.answer;
+    answer = options.answer,
+    fluid = options.fluid || settings.fluid;
 
     if (theme === "blue")
       modifiers += " messaging_theme_blue"
 
     if (theme === "cinnabar")
       modifiers += " messaging_theme_cinnabar"
+
+    if (fluid === true)
+      modifiers += " messaging_fluid"
 
   .messaging(class=modifiers)&attributes(attributes)= text
     .messaging__header
@@ -54,6 +60,7 @@ mixin messaging(options)
         svg(width="13", height="7", viewBox="0 0 13 7")
           polygon(points="0,7 6.5,0 13,7", fill="#ffffff")
         p.messaging__post.messaging__post_question= question
-      p.messaging__post.messaging__post_answer= answer
-      +button({text: "Reply"})
+      form.messaging__form(action="/")
+        textarea.messaging__post.messaging__post_answer= answer
+        +button({text: "Reply"})
 

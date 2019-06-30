@@ -1,14 +1,31 @@
 .messaging {
   width: 18rem;
 
+  &_fluid {
+    @include for-phone-landscape-down() {
+      width: 25rem;
+    }
+  }
+
+  &_visibility_hidden {
+    display: none;
+  }
+
   &__header {
     position: relative;
     height: 7.1875em;
     background-color: $gray;
 
+    box-sizing: border-box;
     border-radius: 3px 3px 0 0;
     padding-top: 1rem;
-    box-sizing: border-box;
+  }
+
+  &_fluid &__header {
+    @include for-phone-landscape-down() {
+      height: 4rem;
+      padding-top: .5rem;
+    }
   }
 
   &_theme_blue &__header {
@@ -18,7 +35,7 @@
 
   &_theme_cinnabar &__header {
     background-color: $cinnabar;
-    background: linear-gradient(180deg, rgba(231,87,53,1) 0%, rgba(231,87,53,1) 70%, rgba(213,76,44,1) 70%, rgba(213,76,44,1) 100%);
+    background: linear-gradient(180deg, rgba(231, 87, 53, 1) 0%, rgba(231, 87, 53, 1) 70%, rgba(213, 76, 44, 1) 70%, rgba(213, 76, 44, 1) 100%);
   }
 
   &__username {
@@ -33,9 +50,15 @@
     text-align: center;
   }
 
+  &_fluid &__username {
+    @include for-phone-landscape-down() {
+      font-size: 2rem;
+    }
+  }
+
   &__avatar-wrapper {
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 50%;
     display: flex;
 
@@ -47,6 +70,13 @@
     justify-content: center;
     align-items: center;
     transform: translate(-50%, 50%);
+  }
+
+  &_fluid &__avatar-wrapper {
+    @include for-phone-landscape-down() {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 
   &__avatar {
@@ -70,6 +100,12 @@
       left: 1.375rem; // 22px / 16px
     }
 
+  }
+
+  &_fluid &__content {
+    @include for-phone-landscape-down() {
+      padding: .75rem;
+    }
   }
 
   &__icons {
@@ -96,6 +132,20 @@
     }
   }
 
+  &_fluid &__post-wrapper {
+    @include for-phone-landscape-down() {
+      margin: {
+        top: 8px;
+        bottom: 10px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__post {
     margin: 0;
     font-size: .8125rem;
@@ -108,6 +158,7 @@
       color: $gray--darken;
       border-radius: 7px;
       background-color: $color-text-primary;
+      box-sizing: border-box;
 
       padding: {
         top: 1.0625rem; // 17px / 16px
@@ -125,12 +176,27 @@
 
       background-color: $gray;
       margin-bottom: 18px;
+      resize: none;
 
       padding: {
         top: .875rem; // 14px / 16px
         right: 1.375rem; // 22px / 16px
         bottom: 2.1875rem; // 35px / 16px
         left: 1.125rem; // 18px / 16px
+      }
+    }
+  }
+
+  &_fluid &__post {
+    @include for-phone-landscape-down() {
+
+      &_question {
+        padding: .5rem 1rem;
+      }
+
+      &_answer {
+        height: 36px;
+        padding: .5rem;
       }
     }
   }

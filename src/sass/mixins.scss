@@ -80,3 +80,9 @@
     @content;
   }
 }
+
+@mixin for-phone-landscape-down() {
+  @media (max-width: 640px) and (orientation: landscape) {
+    @content;
+  }
+}
