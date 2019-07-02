@@ -1,0 +1,23 @@
+mixin review(options)
+  -
+    var settings = {
+      avatar: "../blocks/review/img/user1.jpg",
+      name: "Username",
+      review: "Excellent"
+    },
+
+    options = options || settings,
+    avatar = options.avatar || settings.avatar,
+    name = options.name || settings.name,
+    review = options.review || settings.review
+
+  .review
+    .review__avatar
+      img(src=avatar, alt=avatar)
+    .review__text
+      p.review__name= name
+        p.review__feedback= review
+        form.review__form(action="/")
+          p.review__question Was this review helpful to you?
+            span.review__tick-box
+              +tick-box({theme: "blue"})

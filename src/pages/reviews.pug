@@ -1,0 +1,43 @@
+extends  ../components/layout/layout.pug
+include includes
+
+block keywords
+  meta(name="keywords", content="")
+
+block description
+  meta(name="description" content="")
+
+block title
+  title Home
+
+block content
+  body.page
+    .wrapper
+      include ../blocks/header/header
+      main.page__content
+        .left-col
+          .page__reviews
+            +review({
+              name: "Dimitri Pasmore",
+              review: "SUPER! GENIALLY SIMPLE!"
+            })
+
+            +review({
+              name: "Dimitri Pasmore",
+              review: "SUPER! GENIALLY SIMPLE!",
+              avatar: "../blocks/review/img/user2.jpg"
+            })
+
+            +review({
+              name: "Dimitri Pasmore",
+              review: "SUPER! GENIALLY SIMPLE!",
+              avatar: "../blocks/review/img/user3.jpg"
+            })
+
+            +review({
+              name: "Dimitri Pasmore",
+              review: "SUPER! GENIALLY SIMPLE!",
+              avatar: "../blocks/review/img/user4.jpg"
+            })
+        .right-col
+      include ../blocks/footer/footer

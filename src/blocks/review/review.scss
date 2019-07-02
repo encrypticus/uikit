@@ -1,0 +1,45 @@
+.review {
+  display: flex;
+  margin-bottom: 1rem;
+
+  &__avatar {
+    align-self: flex-start;
+    margin-right: 1rem;
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  &__name,
+  &__feedback,
+  &__question {
+    font-family: Lato, Arial, sans-serif;
+    color: $gray--darken;
+  }
+
+  &__name {
+    margin: 0;
+    color: #1a73e8;
+  }
+
+  &__question {
+    font-size: .875rem;
+    color: $gray--dark;
+    margin: {
+      top: .5rem;
+      right: .5rem;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__tick-box {
+    display: inline-block;
+    margin-left: .5rem;
+  }
+
+  &__feedback {
+    margin: .5rem 0;
+  }
+}

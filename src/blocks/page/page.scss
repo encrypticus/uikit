@@ -12,6 +12,10 @@
   max-width: 1300px;
   box-shadow: 0 0 10px $black;
 
+  &__header-wrapper {
+    margin-bottom: 10px;
+  }
+
   &__content {
     display: flex;
     align-items: flex-start;
@@ -21,6 +25,12 @@
     padding: 1rem;
     justify-content: space-between;
     background-color: $color-text-primary;
+  }
+
+  &__reviews {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   &__blocks-wrapper {

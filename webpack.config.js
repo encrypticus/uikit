@@ -60,6 +60,7 @@ module.exports = (env, args) => {
       sass(isDev),
       htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug", inject: false}),
       htmlWebpackPlugin({filename: "index.html", template: "src/pages/index.pug", inject: false}),
+      htmlWebpackPlugin({filename: "reviews.html", template: "src/pages/reviews.pug", inject: false}),
       styleLintPlugin(),
       env.browserSync === "open" ? browserSync() : {},
       jquery()
