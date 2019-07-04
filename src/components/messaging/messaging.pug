@@ -23,6 +23,7 @@ mixin messaging(options)
     var settings = {
       theme: "",
       username: "",
+      avatar: "../components/messaging/img/avatar2.png",
       fluid: false
     },
 
@@ -32,6 +33,7 @@ mixin messaging(options)
     options = options || settings,
     theme = options.theme || settings.theme,
     username = options.username || settings.username,
+    avatar = options.avatar || settings.avatar,
     question = options.question,
     answer = options.answer,
     fluid = options.fluid || settings.fluid;
@@ -49,7 +51,7 @@ mixin messaging(options)
     .messaging__header
       h2.messaging__username= username
       .messaging__avatar-wrapper
-        img.messaging__avatar(src="../components/messaging/img/avatar2.png", alt="avatar")
+        img.messaging__avatar(src=avatar, alt="avatar")
     .messaging__content
       .messaging__icons
         svg.messaging__icon-chat(width="1.25em", height="1.3125em", viewBox="0 0 20 21")

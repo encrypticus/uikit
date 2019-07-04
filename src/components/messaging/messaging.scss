@@ -69,6 +69,7 @@
 
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     transform: translate(-50%, 50%);
   }
 
@@ -83,6 +84,7 @@
     width: 100%;
     max-width: 5.25rem;
     height: auto;
+    border-radius: 50%;
   }
 
   &__content {

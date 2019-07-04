@@ -1,9 +1,22 @@
 //- Создает поле ввода
 
-mixin textarea(placeholder = "Your Message")
-	//- Принимает:
-	//-   placeholder    {string} - текст-заполнитель внутри поля ввода
-	//- Вызов:
-				+textarea("Your message")
+mixin textarea(options)
+  //- Принимает:
+  //-   options.placeholder    {string} - текст-заполнитель внутри поля ввода
+  //-   options.name    			 {string} - текст-заполнитель внутри поля ввода
 
-	textarea.textarea(placeholder= placeholder)&attributes(attributes)
+  //- Вызов:
+        +textarea("Your message")
+
+  -
+    //- Объект настроек по умолчанию
+    var settings = {
+      placeholder: "",
+      name: ""
+    },
+
+    options = options || settings,
+    placeholder = options.placeholder || settings.placeholder,
+    name = options.name || settings.name;
+
+  textarea.textarea(placeholder=placeholder, name=name)&attributes(attributes)

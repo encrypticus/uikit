@@ -271,16 +271,26 @@ block content
             .form-elements__left-col
               .form-elements__text-field-wrapper
                 .form-elements__text-field
-                  +text-field("Your Name")
+                  +text-field({
+                    placeholder: "Your Name",
+                    name: "firstname"
+                  })
                 +form-tooltip("error")
 
               .form-elements__text-field-wrapper
                 .form-elements__text-field
-                  +text-field("Your Email")
+                  +text-field({
+                    placeholder: "Your Email",
+                    name: "email",
+                    type: "email"
+                  })
                 +form-tooltip()
 
               .form-elements__textarea
-                +textarea()
+                +textarea({
+                  placeholder: "Your Message",
+                  name: "message"
+                })
 
               .form-elements__button
                 +button({text: "Submit", viewType: "form", theme: "blue"})

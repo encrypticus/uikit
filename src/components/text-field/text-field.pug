@@ -1,10 +1,25 @@
 //- Создает текстовое поле
 
-mixin text-field(placeholder = "")
+mixin text-field(options)
 
   //- Принимает:
-  //-   placeholder    {string} - текст-заполнитель внутри текстого поля
-  //- Вызов:
-        +text-field("Your email")
+  //-   options.placeholder    {string} - текст-заполнитель внутри текстого поля
+  //-   options.name           {string} - атрибут name текстого поля
+  //-   options.type           {string} - атрибут type текстого поля
 
-  input.text-field( type="text", placeholder=`${placeholder}`)&attributes(attributes)
+  //- Вызов:
+        +text-field({placeholder: "Your name", name: "firstname", type: "email"})
+  -
+    //- Объект настроек по умолчанию
+    var settings = {
+      placeholder: "",
+      name: "",
+      type: "text"
+    },
+
+    options = options || settings,
+    placeholder = options.placeholder || settings.placeholder,
+    name = options.name || settings.name,
+    type = options.type || settings.type;
+
+  input.text-field( type=`${type}`, name=`${name}` placeholder=`${placeholder}`)&attributes(attributes)

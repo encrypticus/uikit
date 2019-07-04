@@ -1,9 +1,10 @@
 .textarea {
   width: 100%;
+  min-width: 18rem;
   height: 88px;
   padding: .625rem 0 0 .875rem;
-  font-size: .875rem;
 
+  font-size: .875rem;
   font-family: 'Source Sans Pro', Arial, sans-serif;
   color: $gray--darken;
   border-radius: 4px;
@@ -11,6 +12,5 @@
   letter-spacing: .14px;
   box-sizing: border-box;
   background-color: $gray;
-
   border-width: 0;
 }

@@ -16,7 +16,7 @@ mixin form-tooltip(type = "success")
     if (typeof type != "undefined" && type)
       modifiers += ` form-tooltip_type_${type}`;
 
-  .form-tooltip(class=modifiers)&attributes(attributes)
+  .form-tooltip.form-tooltip_hidden(class=modifiers)&attributes(attributes)
     svg.form-tooltip__triangle(width="4", height="8", xmlns="http://www.w3.org/2000/svg")
       polygon(points="0,4 4,0 4,8")
     .form-tooltip__inner= type === "success" ? "thanks!" : "error"

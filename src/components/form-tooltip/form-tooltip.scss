@@ -3,6 +3,10 @@
   align-items: center;
   width: 4.5rem; // 72px
 
+  &_hidden {
+    display: none;
+  }
+
   &_type_success &__inner {
     background-color: $fountain-blue;
   }

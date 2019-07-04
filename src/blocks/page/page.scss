@@ -19,18 +19,67 @@
   &__content {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
     flex: 1 0 auto;
+    flex-wrap: wrap;
 
     padding: 1rem;
     justify-content: space-between;
     background-color: $color-text-primary;
+
+    &_reviews {
+      flex-wrap: nowrap;
+
+      @include for-tablet-landscape-down() {
+        flex-direction: column;
+      }
+    }
   }
 
   &__reviews {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
+    @media (max-width: 980px) {
+      justify-content: flex-start;
+    }
+
+    @include for-tablet-landscape-down() {
+      justify-content: space-between;
+    }
+  }
+
+  &__feedback-form {
+    width: 18rem;
+  }
+
+  &__login-form {
+    margin-bottom: 2rem;
+    width: 13rem;
+  }
+
+  &__feedback {
+    width: 40%;
+  }
+
+  &__textfield {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 18rem;
+  }
+
+  &__textarea {
+    width: 18rem;
+    margin-bottom: 1rem;
+  }
+
+  &__form-button {
+    max-width: 18rem;
+    text-align: right;
+  }
+
+  &__calendar {
+    align-self: center;
   }
 
   &__blocks-wrapper {
