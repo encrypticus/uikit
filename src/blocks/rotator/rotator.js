@@ -16,7 +16,6 @@ arrowLeft.addEventListener('click', function () {
 
 arrowRight.addEventListener('click', function () {
   var marginLeft = parseInt(style.marginLeft);
-  console.log(marginLeft);
 
   if (marginLeft === -400) {
     style.marginLeft = 0;

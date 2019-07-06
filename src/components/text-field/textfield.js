@@ -1,24 +1,51 @@
-var textFields = document.querySelectorAll('.text-field'),
-    tooltips = document.querySelectorAll('.form-tooltip'),
-    tooltipsText = document.querySelectorAll('.form-tooltip__inner');
+var forms = document.querySelectorAll('.page__form');
 
-Array.prototype.forEach.call(textFields, function (textField, count) {
-  var tooltip = tooltips[count],
-      tooltipText = tooltipsText[count];
+Array.prototype.forEach.call(forms, function (form) {
+  var textFields = form.querySelectorAll('.text-field'),
+      tooltips = form.querySelectorAll('.form-tooltip'),
+      tooltipsText = form.querySelectorAll('.form-tooltip__inner');
 
-  if (tooltip !== undefined) {
-    textField.addEventListener('blur', function () {
-      tooltip.classList.remove('form-tooltip_hidden');
+  form.addEventListener('submit', function (event) {
 
-      if (this.value === '') {
-        tooltip.classList.remove('form-tooltip_type_success');
-        tooltip.classList.add('form-tooltip_type_error');
-        tooltipText.textContent = 'Error';
-      } else {
-        tooltip.classList.remove('form-tooltip_type_error');
-        tooltip.classList.add('form-tooltip_type_success');
-        tooltipText.textContent = 'Thanks';
+    Array.prototype.forEach.call(textFields, function (textField, count) {
+      var tooltip = tooltips[count],
+          tooltipText = tooltipsText[count];
+
+      if (tooltip !== undefined) {
+        tooltip.classList.remove('form-tooltip_hidden');
+
+        if (textField.value.trim() === '') {
+          tooltip.classList.remove('form-tooltip_type_success');
+          tooltip.classList.add('form-tooltip_type_error');
+          tooltipText.textContent = 'Error';
+          event.preventDefault();
+        } else {
+          tooltip.classList.remove('form-tooltip_type_error');
+          tooltip.classList.add('form-tooltip_type_success');
+          tooltipText.textContent = 'Thanks';
+        }
       }
-    }, false);
-  }
+    });
+  }, false);
+
+  Array.prototype.forEach.call(textFields, function (textField, count) {
+    var tooltip = tooltips[count],
+        tooltipText = tooltipsText[count];
+
+    if (tooltip !== undefined) {
+      textField.addEventListener('blur', function () {
+        tooltip.classList.remove('form-tooltip_hidden');
+
+        if (this.value.trim() === '') {
+          tooltip.classList.remove('form-tooltip_type_success');
+          tooltip.classList.add('form-tooltip_type_error');
+          tooltipText.textContent = 'Error';
+        } else {
+          tooltip.classList.remove('form-tooltip_type_error');
+          tooltip.classList.add('form-tooltip_type_success');
+          tooltipText.textContent = 'Thanks';
+        }
+      }, false);
+    }
+  });
 });

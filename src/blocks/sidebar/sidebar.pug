@@ -1,0 +1,23 @@
+article.right-col
+  .page__title
+    +title("Login:")
+  form.page__form.page__form_login(action="/")
+    .page__textfield
+      +text-field({
+        placeholder: "Login",
+        name: "login"
+      })
+      +form-tooltip
+
+    .page__textfield
+      +text-field({
+        placeholder: "Password",
+        type: "password",
+        name: "password"
+      })
+      +form-tooltip
+
+    .page__form-button
+      +button({text: "Submit", theme: "cinnabar"})
+  .page__calendar
+    +calendar

@@ -31,7 +31,8 @@ module.exports = (env, args) => {
         entry: {
           'index': './src/index.js',
           'uikit': './src/uikit.js',
-          'reviews': './src/reviews.js'
+          'reviews': './src/reviews.js',
+          'news': './src/news.js'
         },
 
         output: { // точка выхода
@@ -62,6 +63,7 @@ module.exports = (env, args) => {
       htmlWebpackPlugin({filename: "uikit.html", template: "src/pages/uikit.pug", inject: false}),
       htmlWebpackPlugin({filename: "index.html", template: "src/pages/index.pug", inject: false}),
       htmlWebpackPlugin({filename: "reviews.html", template: "src/pages/reviews.pug", inject: false}),
+      htmlWebpackPlugin({filename: "news.html", template: "src/pages/news.pug", inject: false}),
       styleLintPlugin(),
       env.browserSync === "open" ? browserSync() : {},
       jquery()

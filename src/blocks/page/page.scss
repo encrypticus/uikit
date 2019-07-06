@@ -26,7 +26,8 @@
     justify-content: space-between;
     background-color: $color-text-primary;
 
-    &_reviews {
+    &_reviews,
+    &_news {
       flex-wrap: nowrap;
 
       @include for-tablet-landscape-down() {
@@ -35,9 +36,11 @@
     }
   }
 
-  &__reviews {
+  &__reviews,
+  &__news {
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
 
     @media (max-width: 980px) {
@@ -46,6 +49,28 @@
 
     @include for-tablet-landscape-down() {
       justify-content: space-between;
+    }
+  }
+
+  &__news {
+    @media (max-width: 980px) {
+      justify-content: space-around;
+    }
+  }
+
+  &__event {
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+
+    &_feedback {
+      width: 18rem;
+    }
+
+    &_login {
+      margin-bottom: 2rem;
+      width: 13rem;
     }
   }
 

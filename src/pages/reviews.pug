@@ -40,7 +40,7 @@ block content
               avatar: "../blocks/review/img/user4.jpg"
             })
 
-          form.page__feedback-form(action='/')
+          form.page__form.page__form_feedback(action='/')
               .page__title
                 +title("Leave your feedback:")
 
@@ -68,29 +68,7 @@ block content
               .page__form-button
                 +button({text: "Submit", theme: "blue"})
 
-        article.right-col
-          .page__title
-            +title("Login:")
-          form.page__login-form(action="/")
-            .page__textfield
-              +text-field({
-                placeholder: "Login",
-                name: "login"
-              })
-              +form-tooltip
-
-            .page__textfield
-              +text-field({
-                placeholder: "Password",
-                type: "password",
-                name: "password"
-              })
-              +form-tooltip
-
-            .page__form-button
-              +button({text: "Submit", theme: "cinnabar"})
-          .page__calendar
-            +calendar
+        include ../blocks/sidebar/sidebar
 
       include ../blocks/footer/footer
 

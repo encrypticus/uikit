@@ -1,0 +1,72 @@
+extends  ../components/layout/layout.pug
+include includes
+
+block keywords
+  meta(name="keywords", content="")
+
+block description
+  meta(name="description" content="")
+
+block title
+  title Home
+
+block content
+  body.page
+    .wrapper
+      include ../blocks/header/header
+
+      main.page__content.page__content_news
+        section.left-col
+          section.page__news
+            .page__event
+              +news({theme: "cinnabar"})
+
+            .page__event
+              +news({
+                theme: "blue",
+                type: "events",
+                title: "This is the title",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                src: "../components/news/img/events.png"
+              })
+
+            .page__event
+              +news({theme: "cinnabar"})
+
+            .page__event
+              +news({
+                theme: "blue",
+                type: "events",
+                title: "This is the title",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                src: "../components/news/img/events.png"
+              })
+
+            .page__event
+              +news({theme: "cinnabar"})
+
+            .page__event
+              +news({
+                theme: "blue",
+                type: "events",
+                title: "This is the title",
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                src: "../components/news/img/events.png"
+              })
+
+        include ../blocks/sidebar/sidebar
+
+      include ../blocks/footer/footer
+
+      include ../blocks/overlay/overlay
+        .page__popup-messaging
+          +messaging({
+            theme: "blue",
+            username: "Encrypticus",
+            avatar: "../img/admin.jpg",
+            question: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+            answer: "Yeah that sounds great. See you then.",
+            fluid: true
+          })
+
+    script(src="news.js")
