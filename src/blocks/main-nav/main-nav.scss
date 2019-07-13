@@ -36,9 +36,10 @@
 
     text-transform: uppercase;
     text-align: center;
+    transition: background-color .3s;
 
     &:hover {
-      color: $cinnabar;
+      background-color: $fountain-blue--dark;
     }
   }
 }

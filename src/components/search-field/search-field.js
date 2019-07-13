@@ -1,4 +1,4 @@
-var searchForm = document.querySelector('.page-header__form'),
+var searchForm = document.querySelector('.search-form'),
     searchField = searchForm.querySelector('.search-field'),
     searchButton = searchForm.querySelector('.search-field__button');
 

@@ -269,45 +269,47 @@ block content
             +title("Form elements")
           .form-elements__inner
             .form-elements__left-col
-              .form-elements__text-field-wrapper
-                .form-elements__text-field
-                  +text-field({
-                    placeholder: "Your Name",
-                    name: "firstname"
+              .page__form(action="/")
+                .form-elements__text-field-wrapper
+                  .form-elements__text-field
+                    +text-field({
+                      placeholder: "Your Name",
+                      name: "firstname"
+                    })
+                  +form-tooltip("error")
+
+                .form-elements__text-field-wrapper
+                  .form-elements__text-field
+                    +text-field({
+                      placeholder: "Your Email",
+                      name: "email",
+                      type: "email"
+                    })
+                  +form-tooltip()
+
+                .form-elements__textarea
+                  +textarea({
+                    placeholder: "Your Message",
+                    name: "message"
                   })
-                +form-tooltip("error")
 
-              .form-elements__text-field-wrapper
-                .form-elements__text-field
-                  +text-field({
-                    placeholder: "Your Email",
-                    name: "email",
-                    type: "email"
-                  })
-                +form-tooltip()
-
-              .form-elements__textarea
-                +textarea({
-                  placeholder: "Your Message",
-                  name: "message"
-                })
-
-              .form-elements__button
-                +button({text: "Submit", viewType: "form", theme: "blue"})
+                .form-elements__button
+                  +button({text: "Submit", viewType: "form", theme: "blue"})
 
               .content__title.content__title_type_form
                 +title("Search / Drop down")
-              .form-elements__search-field
-                +search-field({placeholder: "Search"})
-              .form-elements__search-field
-                +search-field({placeholder: "Search", error: true})
+              form.search-form(action="/")
+                .form-elements__search-field
+                  +search-field({placeholder: "Search"})
+                .form-elements__search-field
+                  +search-field({placeholder: "Search", error: true})
 
-              .form-elements__drop-down
-                +drop-down({
-                  options: ["option1", "option2", "option3", "option4", "option5", "option6"],
-                  noOutline: true,
-                  theme: "blue"
-                })
+                .form-elements__drop-down
+                  +drop-down({
+                    options: ["option1", "option2", "option3", "option4", "option5", "option6"],
+                    noOutline: true,
+                    theme: "blue"
+                  })
 
             .form-elements__right-col
               .content__title
