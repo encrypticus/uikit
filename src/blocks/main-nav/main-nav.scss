@@ -18,6 +18,7 @@
 
   &__item {
     display: flex;
+    flex-grow: 1;
 
     @include for-tablet-landscape-down() {
       justify-content: center;
