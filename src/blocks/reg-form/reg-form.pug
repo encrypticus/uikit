@@ -1,0 +1,45 @@
+form.page__form.page__form_reg(action="/")
+  .page__textfield.page__textfield_reg
+    +text-field({
+      placeholder: "Your Name",
+      name: "firstname"
+    })
+    +form-tooltip
+
+  .page__textfield.page__textfield_reg
+    +text-field({
+      placeholder: "Your Email",
+      name: "email",
+      type: "email"
+    })
+    +form-tooltip
+
+  .page__textfield.page__textfield_reg
+    +text-field({
+      placeholder: "Your Password",
+      name: "password",
+      type: "password"
+    })
+    +form-tooltip
+
+  .page__textfield.page__textfield_reg
+    +text-field({
+      placeholder: "Forgot Your Password",
+      name: "password-forgot",
+      type: "password"
+    })
+    +form-tooltip
+
+  .page__drop-down
+    +drop-down({
+      theme: "blue",
+      title: "Chooser Your job",
+      options: ["Developer", "Designer", "Manager", "Programmer", "Killer"]
+    })
+
+  .page__toggle
+    span Receive news by mail
+    +toggle({theme: "blue", enabled: true})
+
+  .page__form-button.page__form-button_reg
+    +button({theme: "blue", text: "Submit"})

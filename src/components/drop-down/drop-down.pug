@@ -4,7 +4,9 @@ mixin drop-down(options)
 
   //- Принимает:
     //-   options.options        {<sring>array} - массив строк для текстового содержимого элементов options
+    //-   options.name           {string}       - атрибут name элемента select
     //-   options.theme          {string}       - цветовая тема компонента. Может принимать 2 значения: "blue" или "cinnabar"
+    //-   options.title          {string}       - заголовок внутри компонента
     //-   options.noOutline      {boolean}      - булево значение, от которого зависит, будет ли к элементу добавлен
                                                   класс-модификатор, убирающий дефолтный outline в активном состоянии
                                                   последнего
@@ -28,12 +30,16 @@ mixin drop-down(options)
     // Объект настроек по умолчанию
     settings = {
       options: [],
-      noOutline: false
+      noOutline: false,
+      title: "Choose An Option",
+      name: "drop-down"
     },
 
     options = options || settings,
     opts = options.options || settings.options,
     noOutline = options.noOutline || settings.noOutline,
+    title = options.title || settings.title,
+    name = options.name || settings.name,
     theme = options.theme;
 
     if (!isArray(opts)) opts = settings.options;
@@ -44,7 +50,7 @@ mixin drop-down(options)
       dropModifiers += ` drop-down_theme_${theme}`
 
   .drop-down(class=dropModifiers)&attributes(attributes)
-    select.drop-down__select(class=selectModifiers)
-      option.drop-down__option(disabled, selected) Choose An Option
+    select.drop-down__select(class=selectModifiers, name=name)
+      option.drop-down__option(disabled, selected)= title
       each option, i in opts
-        option.drop-down__option(value=`option${i+1}`)= option
+        option.drop-down__option(value=option)= option
