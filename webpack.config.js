@@ -29,11 +29,11 @@ module.exports = (env, args) => {
   // точки входа
   const config = merge({
         entry: {
-          'index': './src/index.js',
-          'uikit': './src/uikit.js',
-          'reviews': './src/reviews.js',
-          'news': './src/news.js',
-          'registration': './src/registration.js'
+          'index': './src/js/index.js',
+          'uikit': './src/js/uikit.js',
+          'reviews': './src/js/reviews.js',
+          'news': './src/js/news.js',
+          'registration': './src/js/registration.js'
         },
 
         output: { // точка выхода
