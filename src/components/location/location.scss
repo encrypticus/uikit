@@ -2,6 +2,7 @@
   position: relative;
   height: 272px;
   margin: 0 auto;
+  border-radius: 3px;
 
   &__panel {
     position: absolute;
@@ -15,6 +16,7 @@
     padding: 1.125rem 1.5625rem 1.125rem 1.6875rem;
 
     box-sizing: border-box;
+    border-radius: 0 0 3px 3px;
     background-color: $gray--dark;
 
     @media (max-width: 800px) {
@@ -68,7 +70,7 @@
 
   &__placemarks {
     min-width: 67px;
-    margin-left: 35.7150084317032%;
+    margin-left: 34%;
 
     @include for-tablet-landscape-down() {
       margin-left: 0;

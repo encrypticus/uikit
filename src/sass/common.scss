@@ -77,8 +77,8 @@ body {
 .left-col {
   width: 80%;
   max-width: 876px;
-  height: 100%;
   box-sizing: border-box;
+  align-self: stretch;
 
   padding: 1rem;
   border: 1px solid $gray;
