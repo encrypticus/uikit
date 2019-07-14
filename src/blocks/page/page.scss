@@ -117,9 +117,13 @@
   }
 
   &__toggle {
-    margin-top: 1rem;
     font-family: Lato, Arial, sans-serif;
     color: $gray--darken;
+    margin-top: 1rem;
+
+    span {
+      margin-right: 1rem;
+    }
   }
 
   &__textarea {
