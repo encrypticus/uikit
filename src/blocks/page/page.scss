@@ -42,6 +42,7 @@
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 
     @media (max-width: 980px) {
       justify-content: flex-start;
@@ -201,6 +202,14 @@
 
     .title {
       text-align: left;
+    }
+
+    &_centered {
+      margin-bottom: 1rem;
+
+      .title {
+        text-align: center;
+      }
     }
   }
 

@@ -1,0 +1,77 @@
+extends ../components/layout/layout.pug
+include includes
+
+block keywords
+  meta(name="keywords", content="")
+
+block description
+  meta(name="description", content="content")
+
+block title
+  title About us
+
+block content
+  body.page
+    .wrapper
+      include ../blocks/header/header
+
+      main.page__content.page__content_reviews
+        section.left-col
+          .page__title.page__title_centered
+            +title("Our team:")
+
+          .page__reviews
+            .review
+              +user-profile({
+                name: "Encrypticus",
+                job: "developer",
+                theme: "blue",
+                avatar: "../img/admin.jpg"
+              })
+            .review
+              +user-profile({
+                name: "Encrypticus",
+                job: "designer",
+                theme: "blue",
+                avatar: "../img/admin2.jpg"
+              })
+            .review
+              +user-profile({
+                name: "Encrypticus",
+                job: "programmer",
+                theme: "cinnabar",
+                avatar: "../img/admin3.jpg"
+              })
+            .review
+              +user-profile({
+                name: "Encrypticus",
+                job: "manager",
+                avatar: "../img/admin4.jpg"
+              })
+
+          .page__title.page__title_centered
+            +title("How to find us:")
+
+          .about-location
+            +location({
+              slogan: "Hi there!",
+              address: "1259  CALIFORNIA ST San Francisco, CA",
+              theme: "cinnabar"
+            })
+
+        include ../blocks/sidebar/sidebar
+
+      include ../blocks/footer/footer
+        include ../blocks/overlay/overlay
+          .page__popup-messaging
+            +messaging({
+              theme: "blue",
+              username: "Encrypticus",
+              avatar: "../img/admin.jpg",
+              question: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+              answer: "Yeah that sounds great. See you then.",
+              fluid: true
+            })
+
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
+    script(src="about.js")

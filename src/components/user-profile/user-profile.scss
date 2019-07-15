@@ -49,12 +49,13 @@
 
   &__info {
     width: 10.1875rem;
+    text-align: center;
+    border-radius: 7px;
     padding-top: 10px;
+
     padding-top: .625rem;
     padding-bottom: .9375rem;
-
     background-color: $gray;
-    border-radius: 7px;
     box-sizing: border-box;
 
 
