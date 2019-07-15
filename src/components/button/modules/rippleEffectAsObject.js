@@ -1,7 +1,7 @@
-/** Создает и "вешает" ripple-effect на кнопки */
+/** Создает и 'вешает' ripple-effect на кнопки */
 
 export default function rippleEffect () {
-  var buttons = document.querySelectorAll(".button"),
+  var buttons = document.querySelectorAll('.button'),
 
       /**
        * Находит максимальное значение от ширины и высоты кнопки
@@ -37,23 +37,23 @@ export default function rippleEffect () {
        * @param {number} posY y-координата курсора мыши во время клика
        */
       setEffect = function (button, posX, posY) {
-        var ripple = document.createElement("div"),
+        var ripple = document.createElement('div'),
             style = ripple.style;
 
-        style.width = style.height = getButtonSize(button) + "px";
-        style.left = posX - getBoundingRect(button).left - getButtonSize(button) / 2 + "px";
-        style.top = posY - getBoundingRect(button).top - getButtonSize(button) / 2 + "px";
+        style.width = style.height = getButtonSize(button) + 'px';
+        style.left = posX - getBoundingRect(button).left - getButtonSize(button) / 2 + 'px';
+        style.top = posY - getBoundingRect(button).top - getButtonSize(button) / 2 + 'px';
 
-        ripple.classList.add("button__ripple");
+        ripple.classList.add('button__ripple');
         appendRipple(ripple, button);
       },
 
-      /** "Вешает" ripple-effect на кнопки */
+      /** 'Вешает' ripple-effect на кнопки */
       init = function () {
         var that = this;
 
         Array.prototype.forEach.call(buttons, function (button) {
-          button.addEventListener("click", function (event) {
+          button.addEventListener('click', function (event) {
             setEffect(this, event.clientX, event.clientY);
           }, false);
         });

@@ -1,3 +1,3 @@
-import RippleEffect from "./modules/RippleEffect";
+import RippleEffect from './modules/RippleEffect';
 
-new RippleEffect(".arrow-button_ripple");
+new RippleEffect('.arrow-button_ripple');

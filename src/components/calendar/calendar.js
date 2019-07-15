@@ -1,4 +1,4 @@
-import "./datepicker";
+import './datepicker';
 
 $.fn.datepicker.language['en'] =  {
   days: ['Sunday','Mondey','Tuesday','Wednesday','Thursday','Friday','Saturday'],
