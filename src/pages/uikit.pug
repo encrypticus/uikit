@@ -12,6 +12,7 @@ block title
 
 block content
   body
+    include ../blocks/header/header
     main.content
       section.page-block
         .content__title
@@ -429,5 +430,17 @@ block content
         +air-videoplayer({theme: "blue", width: "84.85714285714286%"})
         +air-videoplayer({theme: "cinnabar", width: "84.85714285714286%"})
 
+    include ../blocks/footer/footer
+      include ../blocks/overlay/overlay
+
+      .page__popup-messaging
+        +messaging({
+          theme: "blue",
+          username: "Encrypticus",
+          avatar: "../img/admin.jpg",
+          question: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+          answer: "Yeah that sounds great. See you then.",
+          fluid: true
+        })
     script(src="https://api-maps.yandex.ru/2.1/?apikey=2ac75161-4165-4271-8540-e821eb701ba3&lang=en_US", type="text/javascript")
     script(src="uikit.js")
