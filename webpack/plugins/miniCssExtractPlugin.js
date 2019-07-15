@@ -1,5 +1,5 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");// обрабатывает css
-let options = {filename: "styles.css", chunkFilename: "[id].css"};
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');// обрабатывает css
+let options = {filename: 'styles.css', chunkFilename: '[id].css'};
 
 /**
  * Плагин извлекает CSS в отдельные файлы. Он создает файл CSS для каждого файла JS, который содержит CSS.

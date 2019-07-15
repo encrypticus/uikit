@@ -1,5 +1,5 @@
-var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // минификатор css
-var terserWebpackPlugin = require("terser-webpack-plugin"); // минификатор js
+var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // минификатор css
+var terserWebpackPlugin = require('terser-webpack-plugin'); // минификатор js
 
 /**
  * Сжимает css- и js-файлы

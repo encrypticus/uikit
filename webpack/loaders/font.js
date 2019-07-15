@@ -1,6 +1,6 @@
 let reg = /\.(woff|woff2|eot|ttf|otf|svg)$/,
     exc = [/img/],
-    opt = {name: "./fonts/[name].[ext]"};
+    opt = {name: './fonts/[name].[ext]'};
 
 /**
  * Обрабатывает файлы шрифтов
@@ -22,7 +22,7 @@ module.exports = function (regexp = reg, exclude = exc, options = opt) {
           exclude: exclude,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: options
             }
           ]

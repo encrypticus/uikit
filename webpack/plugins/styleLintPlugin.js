@@ -1,4 +1,4 @@
-const styleLintPlugin = require("stylelint-webpack-plugin"); // линтер стилевых файлов
+const styleLintPlugin = require('stylelint-webpack-plugin'); // линтер стилевых файлов
 
 const options = {
   // configFile: '.stylelintrc',

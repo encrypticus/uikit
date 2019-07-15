@@ -1,6 +1,6 @@
 let reg = /\.(png|gif|jpg|jpeg|svg)$/,
     exc = [/fonts/],
-    opt = {name: "./img/[name][hash:7].[ext]"};
+    opt = {name: './img/[name][hash:7].[ext]'};
 
 /**
  * Обрабатывает файлы изображений
@@ -22,7 +22,7 @@ module.exports = function (regexp = reg, exclude = exc, options = opt) {
           exclude: exclude,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: options
             }
           ]

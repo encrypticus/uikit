@@ -1,5 +1,5 @@
 let reg = /\.(avi|mkv|webm|3gp|mp4)$/,
-    opt = {name: "./media/[name][hash:7].[ext]"};
+    opt = {name: './media/[name][hash:7].[ext]'};
 
 /**
  * Обрабатывает видеофайлы
@@ -20,7 +20,7 @@ module.exports = function (regexp = reg, options = opt) {
           test: regexp,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: options
             }
           ]

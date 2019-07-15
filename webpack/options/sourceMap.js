@@ -5,7 +5,7 @@
  * Возможные значения приведены по ссылке https://webpack.js.org/configuration/devtool/
  * @returns {{devtool: string}} конфиг лоадера
  */
-module.exports = function (mapStyle = "source-map") {
+module.exports = function (mapStyle = 'source-map') {
   return {
     devtool: mapStyle
   }

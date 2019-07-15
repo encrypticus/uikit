@@ -1,9 +1,9 @@
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const options = {
-  host: "localhost",
+  host: 'localhost',
   port: 3000,
-  server: { baseDir: ["dist"]}
+  server: { baseDir: ['dist']}
 };
 
 /**

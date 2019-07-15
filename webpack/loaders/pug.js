@@ -17,13 +17,13 @@ module.exports = function (pretty = true) {
           test: /\.pug$/,
           use: [
             {
-              loader: "html-loader",
+              loader: 'html-loader',
               options: {
                 attrs: ['img:src', 'video:poster', 'video:src']
               }
             },
             {
-              loader: "pug-html-loader",
+              loader: 'pug-html-loader',
               options: {
                 pretty: pretty ? true: false,
                 exports: false
