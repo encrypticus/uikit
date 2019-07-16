@@ -24,6 +24,25 @@ module.exports = function (regexp = reg, exclude = exc, options = opt) {
             {
               loader: 'file-loader',
               options: options
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                  quality: 70,
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4,
+                },
+                gifsicle: {
+                  interlaced: false,
+                },
+              },
             }
           ]
         }
