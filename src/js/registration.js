@@ -6,3 +6,5 @@ import '../components/calendar/calendar';
 import '../components/button/button';
 import '../components/toggle/toggle';
 import '../blocks/footer/footer';
+var hideElement = require('./nojs');
+hideElement('.page-header__main-nav-wrapper');

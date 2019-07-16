@@ -21,6 +21,12 @@
       margin-left: 0;
     }
 
+    &.js-visible {
+      @include for-tablet-landscape-down() {
+        display: block;
+      }
+    }
+
     &.js-hidden {
       display: none;
     }

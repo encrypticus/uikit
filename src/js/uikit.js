@@ -10,3 +10,5 @@ import '../components/calendar/calendar';
 import '../components/air-videoplayer/air-videoplayer';
 import '../blocks/menu-toggler/menu-toggler';
 import '../blocks/footer/footer';
+var hideElement = require('./nojs');
+hideElement('.page-header__main-nav-wrapper');
