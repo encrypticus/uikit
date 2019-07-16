@@ -14,7 +14,8 @@ const path = require('path'),
     jquery = require('./webpack/plugins/jquery'), // плагин, добавляющий jquery в проект
     css = require('./webpack/loaders/css'), // модуль обработки css-файлов
     image = require('./webpack/loaders/image'), // модуль обработки файлов изображений
-    video = require('./webpack/loaders/video'); // модуль обработки видеофайлов
+    video = require('./webpack/loaders/video'), // модуль обработки видеофайлов
+    copyWebpackPlugin = require('./webpack/plugins/copyWebpackPlugin'); // плагин копирования файлов
 
 // функция вторым аргументом принимает args.mode от прописанных в package.json скриптов: args.mode = development или args.mode = production
 module.exports = (env, args) => {
@@ -62,6 +63,7 @@ module.exports = (env, args) => {
       video(),
       pug(isDev),
       sass(isDev),
+      copyWebpackPlugin([{from: 'src/favicons', to: 'favicons'}]),
       htmlWebpackPlugin({filename: 'uikit.html', template: 'src/pages/uikit.pug', inject: false}),
       htmlWebpackPlugin({filename: 'index.html', template: 'src/pages/index.pug', inject: false}),
       htmlWebpackPlugin({filename: 'reviews.html', template: 'src/pages/reviews.pug', inject: false}),
