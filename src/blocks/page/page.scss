@@ -242,7 +242,6 @@
     z-index: 20;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s, visibility .5s;
 
     &_visible {
       visibility: visible;
