@@ -1,5 +1,10 @@
 .text-field {
-  min-width: 13rem;
+
+  //padding-top: .3125rem;
+  //padding-bottom: .3125rem;
+  //padding-left: .875rem;
+  //padding-right: 1rem;
+  padding: .3125rem 1rem .3125rem .875rem;
   font-size: .875rem;
   font-family: 'Source Sans Pro', Arial, sans-serif;
 
@@ -7,10 +12,7 @@
   color: $gray--darken;
   border: none;
   border-radius: 3px;
-
-  padding-top: .3125rem;
-  padding-bottom: .3125rem;
-  padding-left: .875rem;
+  min-width: 13rem;
   background-color: $gray;
 
   font-weight: 400;
