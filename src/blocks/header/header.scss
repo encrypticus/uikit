@@ -21,15 +21,13 @@
       margin-left: 0;
     }
 
-    &.js-visible {
-      @include for-tablet-landscape-down() {
-        display: block;
-      }
-    }
-
     &.js-hidden {
       display: none;
     }
+  }
+
+  .nojs &__main-nav-wrapper {
+    display: block;
   }
 
   &__main-nav {

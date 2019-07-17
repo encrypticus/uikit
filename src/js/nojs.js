@@ -1,6 +1,6 @@
-function hideElement(elem) {
-  var element = document.querySelector(elem);
-  element.classList.remove('js-visible');
+function removeClass() {
+  var html = document.querySelector('html');
+  html.classList.remove('nojs');
 }
 
-module.exports = hideElement;
+module.exports = removeClass;

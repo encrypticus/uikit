@@ -6,5 +6,5 @@ import '../components/calendar/calendar';
 import '../components/location/location';
 import '../components/button/button';
 import '../blocks/footer/footer';
-var hideElement = require('./nojs');
-hideElement('.page-header__main-nav-wrapper');
+import removeClass from './nojs';
+removeClass();
