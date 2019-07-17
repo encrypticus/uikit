@@ -9,7 +9,10 @@
     p.rotator__description-text
       | Scroll buttons is a simple but functional extension.
     .rotator__button
-      +button({text: 'More', theme: 'blue'})(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp")
+      +button({
+        text: 'More',
+        theme: 'blue'
+      })(href="https://chrome.google.com/webstore/detail/scroll-buttons/blkcalljbilnpflcagdojnldcdifnndp", target="_blank", rel="noopener noreferrer")
     .rotator__arrow-button
       +arrow-button({theme: 'blue', size: 'sm'})
     .rotator__arrow-button.rotator__arrow-button_direction_right
