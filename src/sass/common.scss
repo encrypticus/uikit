@@ -11,9 +11,10 @@
 @include load-font($src: './fonts/Andika', $family: 'Andika');
 
 html {
-  //height: 100%;
   font-size: 16px;
   font-family: Lato, Arial, sans-serif;
+  background-color: #fff;
+  color: $black--light;
 
   @include for-phone-only() {
     font-size: 14px;
