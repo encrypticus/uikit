@@ -1,2 +1,4 @@
 import RippleEffect from './modules/RippleEffect';
-new RippleEffect();
+
+const ripple = new RippleEffect();
+ripple.init();

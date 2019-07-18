@@ -8,7 +8,6 @@ export default class RippleEffect {
    */
   constructor(button = '.button') {
     this.buttons = document.querySelectorAll(button);
-    this.init();
   }
 
   /**
@@ -16,7 +15,7 @@ export default class RippleEffect {
    * @param {object} button объект кнопки
    * @returns {number} максимальное значение от ширины и высоты кнопки
    */
-  getButtonSize(button) {
+  static getButtonSize(button) {
     return Math.max(button.clientWidth, button.clientHeight);
   }
 
@@ -25,7 +24,7 @@ export default class RippleEffect {
    * @param {object} button объект кнопки
    * @returns {object} объект TextRectangle
    */
-  getBoundingRect(button) {
+  static getBoundingRect(button) {
     return button.getBoundingClientRect();
   }
 
@@ -34,7 +33,7 @@ export default class RippleEffect {
    * @param {object} ripple элемент ripple-effect'а
    * @param {object} button объект кнопки
    */
-  appendRipple(ripple, button) {
+  static appendRipple(ripple, button) {
     button.appendChild(ripple);
   }
 
@@ -44,28 +43,27 @@ export default class RippleEffect {
    * @param {number} posX x-координата курсора мыши во время клика
    * @param {number} posY y-координата курсора мыши во время клика
    */
-  setEffect(button, posX, posY) {
-    var ripple = document.createElement('div'),
-        style = ripple.style;
+  static setEffect(button, posX, posY) {
+    const ripple = document.createElement('div');
+    const { style } = ripple;
 
-    style.width = style.height = this.getButtonSize(button) + 'px';
-    style.left = posX - this.getBoundingRect(button).left - this.getButtonSize(button) / 2 + 'px';
-    style.top = posY - this.getBoundingRect(button).top - this.getButtonSize(button) / 2 + 'px';
+    style.width = `${RippleEffect.getButtonSize(button)}px`;
+    style.height = `${RippleEffect.getButtonSize(button)}px`;
+    style.left = `${posX - RippleEffect.getBoundingRect(button).left - RippleEffect.getButtonSize(button) / 2}px`;
+    style.top = `${posY - RippleEffect.getBoundingRect(button).top - RippleEffect.getButtonSize(button) / 2}px`;
     style.zIndex = 100;
 
     ripple.classList.add('button__ripple');
-    this.appendRipple(ripple, button);
+    RippleEffect.appendRipple(ripple, button);
   }
 
   /**
    *  'Вешает' ripple-effect на кнопки
    */
   init() {
-    var that = this;
-
-    Array.prototype.forEach.call(this.buttons, function (button) {
-      button.addEventListener('click', function (event) {
-        that.setEffect(this, event.clientX, event.clientY);
+    Array.prototype.forEach.call(this.buttons, (button) => {
+      button.addEventListener('click', (event) => {
+        RippleEffect.setEffect(button, event.clientX, event.clientY);
       }, false);
     });
   }
