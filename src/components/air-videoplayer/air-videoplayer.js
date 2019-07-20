@@ -1,1 +1,1 @@
-import "./ckin";
+import './ckin';

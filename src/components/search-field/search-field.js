@@ -1,24 +1,23 @@
-var searchForm = document.querySelector('.search-form'),
-    searchField = searchForm.querySelector('.search-field'),
-    searchButton = searchForm.querySelector('.search-field__button');
+const searchForm = document.querySelector('.search-form');
+const searchField = searchForm.querySelector('.search-field');
 
-searchField.addEventListener('blur', function () {
+searchField.addEventListener('blur', (event) => {
+  const field = event.currentTarget;
 
-  if (this.value.trim() === '') {
-    this.classList.add('search-field_error');
-    this.value = 'I’ve not found what I’m looking for...';
+  if (field.value.trim() === '') {
+    field.classList.add('search-field_error');
+    field.value = 'I’ve not found what I’m looking for...';
   } else {
-    this.classList.remove('search-field_error');
+    field.classList.remove('search-field_error');
   }
 }, false);
 
-searchForm.addEventListener('submit', function (event) {
-
+searchForm.addEventListener('submit', (event) => {
   if (searchField.value.trim() === '') {
     searchField.classList.add('search-field_error');
     searchField.value = 'I’ve not found what I’m looking for...';
     event.preventDefault();
-  }  else {
+  } else {
     searchField.classList.remove('search-field_error');
   }
 }, false);

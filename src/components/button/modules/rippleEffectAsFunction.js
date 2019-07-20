@@ -1,5 +1,5 @@
 /** Создает и 'вешает' ripple-effect на кнопки */
-export default function rippleEffect() {
+const effect = function rippleEffect() {
   const buttons = document.querySelectorAll('.button');
 
   /**
@@ -7,10 +7,11 @@ export default function rippleEffect() {
    * @param {object} event объект события
    */
   function addRipple(event) {
+    const button = event.currentTarget;
     const ripple = document.createElement('div');
-    const buttonSize = Math.max(this.clientWidth, this.clientHeight);
+    const buttonSize = Math.max(button.clientWidth, button.clientHeight);
     const { style } = ripple;
-    const rect = this.getBoundingClientRect();
+    const rect = button.getBoundingClientRect();
 
     style.width = `${buttonSize}px`;
     style.height = `${buttonSize}px`;
@@ -18,11 +19,13 @@ export default function rippleEffect() {
     style.top = `${event.clientY - rect.top - buttonSize / 2}px`;
 
     ripple.classList.add('button__ripple');
-    this.appendChild(ripple);
+    button.appendChild(ripple);
   }
 
   /** 'Вешает' ripple-effect на кнопки */
   Array.prototype.forEach.call(buttons, (button) => {
     button.addEventListener('click', addRipple);
   });
-}
+};
+
+export default effect;

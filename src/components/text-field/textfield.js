@@ -1,15 +1,14 @@
-var forms = document.querySelectorAll('.page__form');
+const forms = document.querySelectorAll('.page__form');
 
-Array.prototype.forEach.call(forms, function (form) {
-  var textFields = form.querySelectorAll('.text-field'),
-      tooltips = form.querySelectorAll('.form-tooltip'),
-      tooltipsText = form.querySelectorAll('.form-tooltip__inner');
+Array.prototype.forEach.call(forms, (form) => {
+  const textFields = form.querySelectorAll('.text-field');
+  const tooltips = form.querySelectorAll('.form-tooltip');
+  const tooltipsText = form.querySelectorAll('.form-tooltip__inner');
 
-  form.addEventListener('submit', function (event) {
-
-    Array.prototype.forEach.call(textFields, function (textField, count) {
-      var tooltip = tooltips[count],
-          tooltipText = tooltipsText[count];
+  form.addEventListener('submit', (event) => {
+    Array.prototype.forEach.call(textFields, (textField, count) => {
+      const tooltip = tooltips[count];
+      const tooltipText = tooltipsText[count];
 
       if (tooltip !== undefined) {
         tooltip.classList.remove('form-tooltip_hidden');
@@ -28,15 +27,16 @@ Array.prototype.forEach.call(forms, function (form) {
     });
   }, false);
 
-  Array.prototype.forEach.call(textFields, function (textField, count) {
-    var tooltip = tooltips[count],
-        tooltipText = tooltipsText[count];
+  Array.prototype.forEach.call(textFields, (textField, count) => {
+    const tooltip = tooltips[count];
+    const tooltipText = tooltipsText[count];
 
     if (tooltip !== undefined) {
-      textField.addEventListener('blur', function () {
+      textField.addEventListener('blur', (event) => {
+        const field = event.currentTarget;
         tooltip.classList.remove('form-tooltip_hidden');
 
-        if (this.value.trim() === '') {
+        if (field.value.trim() === '') {
           tooltip.classList.remove('form-tooltip_type_success');
           tooltip.classList.add('form-tooltip_type_error');
           tooltipText.textContent = 'Error';

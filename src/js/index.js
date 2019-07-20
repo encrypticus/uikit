@@ -7,4 +7,5 @@ import '../blocks/rotator/rotator';
 import '../components/air-videoplayer/air-videoplayer';
 import '../blocks/footer/footer';
 import removeClass from './nojs';
+
 removeClass();

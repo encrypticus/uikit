@@ -7,4 +7,5 @@ import '../components/location/location';
 import '../components/button/button';
 import '../blocks/footer/footer';
 import removeClass from './nojs';
+
 removeClass();

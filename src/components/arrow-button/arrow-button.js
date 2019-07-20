@@ -1,3 +1,5 @@
 import RippleEffect from './modules/RippleEffect';
 
-new RippleEffect('.arrow-button_ripple');
+const rippleEffect = new RippleEffect('.arrow-button_ripple');
+
+rippleEffect.init();

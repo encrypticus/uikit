@@ -49,12 +49,21 @@ const rippleEffect = {
     this.appendRipple(ripple, button);
   },
 
+  /**
+   * Возвращает функцию-обработчик для кнопки
+   * @param button button объект кнопки
+   * @returns {function(*)} функция-обработчик для кнопки
+   */
+  bindRippleEffect(button) {
+    return (event) => {
+      this.setEffect(button, event.clientX, event.clientY);
+    };
+  },
+
   /** 'Вешает' ripple-effect на кнопки */
   init() {
     Array.prototype.forEach.call(this.buttons, (button) => {
-      button.addEventListener('click', (event) => {
-        this.setEffect(button, event.clientX, event.clientY);
-      }, false);
+      button.addEventListener('click', this.bindRippleEffect(button), false);
     });
   },
 };

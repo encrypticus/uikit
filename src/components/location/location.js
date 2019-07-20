@@ -1,8 +1,6 @@
-ymaps.ready(init);
-
-function init() {
+const initialize = function init() {
   // Создание карты.
-  var myMap = new ymaps.Map('map', {
+  const myMap = new ymaps.Map('map', {
     // Координаты центра карты.
     // Порядок по умолчанию: «широта, долгота».
     // Чтобы не определять координаты центра карты вручную,
@@ -11,18 +9,20 @@ function init() {
     controls: [],
     // Уровень масштабирования. Допустимые значения:
     // от 0 (весь мир) до 19.
-    zoom: 14
+    zoom: 14,
   });
 
-  var placeMark = new ymaps.Placemark(
-      [37.791829, -122.413451],
-      {},
-      {
-        iconLayout: 'default#image',
-        iconImageHref: require('./img/marker.svg'),
-        iconImageSize: [59, 60]
-      }
+  const placeMark = new ymaps.Placemark(
+    [37.791829, -122.413451],
+    {},
+    {
+      iconLayout: 'default#image',
+      iconImageHref: require('./img/marker.svg'),
+      iconImageSize: [59, 60],
+    },
   );
 
   myMap.geoObjects.add(placeMark);
-}
+};
+
+ymaps.ready(initialize);

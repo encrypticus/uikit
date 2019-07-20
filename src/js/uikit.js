@@ -11,4 +11,5 @@ import '../components/air-videoplayer/air-videoplayer';
 import '../blocks/menu-toggler/menu-toggler';
 import '../blocks/footer/footer';
 import removeClass from './nojs';
+
 removeClass();

@@ -6,4 +6,5 @@ import '../components/calendar/calendar';
 import '../components/button/button';
 import '../blocks/footer/footer';
 import removeClass from './nojs';
+
 removeClass();

@@ -1,5 +1,5 @@
-function removeClass() {
-  var html = document.querySelector('html');
+const removeClass = function romoveNojsClass() {
+  const html = document.querySelector('html');
   html.classList.remove('nojs');
 }
 

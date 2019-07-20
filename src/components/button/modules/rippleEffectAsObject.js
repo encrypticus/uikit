@@ -1,6 +1,6 @@
 /** Создает и 'вешает' ripple-effect на кнопки */
 
-export default function rippleEffect() {
+const effect = function rippleEffect() {
   const buttons = document.querySelectorAll('.button');
 
   /**
@@ -49,18 +49,27 @@ export default function rippleEffect() {
     appendRipple(ripple, button);
   };
 
+  /**
+   * Возвращает функцию-обработчик для кнопки
+   * @param button button объект кнопки
+   * @returns {function(*)} функция-обработчик для кнопки
+   */
+  const bindRippleEffect = function (button) {
+    return (event) => {
+      setEffect(button, event.clientX, event.clientY);
+    };
+  };
+
   /** 'Вешает' ripple-effect на кнопки */
   const init = function () {
-    var that = this;
-
     Array.prototype.forEach.call(buttons, (button) => {
-      button.addEventListener('click', (event) => {
-        setEffect(button, event.clientX, event.clientY);
-      }, false);
+      button.addEventListener('click', bindRippleEffect(button), false);
     });
   };
 
   return {
     init,
   };
-}
+};
+
+export default effect;
