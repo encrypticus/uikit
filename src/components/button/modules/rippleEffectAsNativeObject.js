@@ -1,8 +1,6 @@
 /** Создает и 'вешает' ripple-effect на кнопки */
 
 const rippleEffect = {
-  buttons: document.querySelectorAll('.button'),
-
   /**
    * Находит максимальное значение от ширины и высоты кнопки
    * @param {object} button объект кнопки
@@ -60,11 +58,12 @@ const rippleEffect = {
     };
   },
 
-  /** 'Вешает' ripple-effect на кнопки */
-  init() {
-    Array.prototype.forEach.call(this.buttons, (button) => {
-      button.addEventListener('click', this.bindRippleEffect(button), false);
-    });
+  /**
+   * 'Вешает' ripple-effect на кнопки
+   * @param button dom-элемент кнопки
+   */
+  init(button) {
+    button.addEventListener('click', this.bindRippleEffect(button), false);
   },
 };
 

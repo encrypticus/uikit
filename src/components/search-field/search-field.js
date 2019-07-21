@@ -1,7 +1,7 @@
 const searchForm = document.querySelector('.search-form');
 const searchField = searchForm.querySelector('.search-field');
 
-const toggleSearchFieldClass = function (event) {
+const toggleFieldClass = function toggleSearchFieldClass(event) {
   const field = event.currentTarget;
 
   if (field.value.trim() === '') {
@@ -12,7 +12,7 @@ const toggleSearchFieldClass = function (event) {
   }
 };
 
-const toggleSearchFormClass = function (event) {
+const toggleFormClass = function toggleSearchFormClass(event) {
   const searchFieldValue = searchField.value.trim();
 
   if (searchFieldValue === '') {
@@ -24,5 +24,5 @@ const toggleSearchFormClass = function (event) {
   }
 };
 
-searchField.addEventListener('blur', toggleSearchFieldClass, false);
-searchForm.addEventListener('submit', toggleSearchFormClass, false);
+searchField.addEventListener('blur', toggleFieldClass, false);
+searchForm.addEventListener('submit', toggleFormClass, false);

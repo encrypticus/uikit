@@ -5,7 +5,7 @@ const { style } = slides;
 
 style.marginLeft = 0;
 
-arrowLeft.addEventListener('click', () => {
+const toLeft = function moveLeft() {
   const marginLeft = parseInt(style.marginLeft, 10);
 
   if (marginLeft === 0) {
@@ -13,9 +13,9 @@ arrowLeft.addEventListener('click', () => {
   } else {
     style.marginLeft = `${marginLeft + 100}%`;
   }
-}, false);
+};
 
-arrowRight.addEventListener('click', () => {
+const toRight = function moveRight() {
   const marginLeft = parseInt(style.marginLeft, 10);
 
   if (marginLeft === -400) {
@@ -23,4 +23,8 @@ arrowRight.addEventListener('click', () => {
   } else {
     style.marginLeft = `${marginLeft - 100}%`;
   }
-}, false);
+};
+
+arrowLeft.addEventListener('click', toLeft, false);
+
+arrowRight.addEventListener('click', toRight, false);
