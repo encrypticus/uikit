@@ -1,7 +1,7 @@
 const searchForm = document.querySelector('.search-form');
 const searchField = searchForm.querySelector('.search-field');
 
-searchField.addEventListener('blur', (event) => {
+const toggleSearchFieldClass = function (event) {
   const field = event.currentTarget;
 
   if (field.value.trim() === '') {
@@ -10,14 +10,19 @@ searchField.addEventListener('blur', (event) => {
   } else {
     field.classList.remove('search-field_error');
   }
-}, false);
+};
 
-searchForm.addEventListener('submit', (event) => {
-  if (searchField.value.trim() === '') {
+const toggleSearchFormClass = function (event) {
+  const searchFieldValue = searchField.value.trim();
+
+  if (searchFieldValue === '') {
     searchField.classList.add('search-field_error');
     searchField.value = 'I’ve not found what I’m looking for...';
     event.preventDefault();
   } else {
     searchField.classList.remove('search-field_error');
   }
-}, false);
+};
+
+searchField.addEventListener('blur', toggleSearchFieldClass, false);
+searchForm.addEventListener('submit', toggleSearchFormClass, false);

@@ -6,7 +6,7 @@ const effect = function rippleEffect() {
    * Создает и добавляет ripple-effect к кнопке
    * @param {object} event объект события
    */
-  function addRipple(event) {
+  const addRippleEffect = function addRipple(event) {
     const button = event.currentTarget;
     const ripple = document.createElement('div');
     const buttonSize = Math.max(button.clientWidth, button.clientHeight);
@@ -24,7 +24,7 @@ const effect = function rippleEffect() {
 
   /** 'Вешает' ripple-effect на кнопки */
   Array.prototype.forEach.call(buttons, (button) => {
-    button.addEventListener('click', addRipple);
+    button.addEventListener('click', addRippleEffect);
   });
 };
 

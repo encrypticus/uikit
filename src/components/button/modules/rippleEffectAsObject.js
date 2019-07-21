@@ -8,7 +8,7 @@ const effect = function rippleEffect() {
    * @param {object} button объект кнопки
    * @returns {number} максимальное значение от ширины и высоты кнопки
    */
-  const getButtonSize = function (button) {
+  const getSize = function getButtonSize(button) {
     return Math.max(button.clientWidth, button.clientHeight);
   };
 
@@ -17,7 +17,7 @@ const effect = function rippleEffect() {
    * @param {object} button объект кнопки
    * @returns {object} объект TextRectangle
    */
-  const getBoundingRect = function (button) {
+  const getBounding = function getBoundingRect(button) {
     return button.getBoundingClientRect();
   };
 
@@ -26,7 +26,7 @@ const effect = function rippleEffect() {
    * @param {object} ripple элемент ripple-effect'а
    * @param {object} button объект кнопки
    */
-  const appendRipple = function (ripple, button) {
+  const appendRipple = function addRipple(ripple, button) {
     button.appendChild(ripple);
   };
 
@@ -36,14 +36,14 @@ const effect = function rippleEffect() {
    * @param {number} posX x-координата курсора мыши во время клика
    * @param {number} posY y-координата курсора мыши во время клика
    */
-  const setEffect = function (button, posX, posY) {
+  const setEffect = function setRippleEffect(button, posX, posY) {
     const ripple = document.createElement('div');
     const { style } = ripple;
 
-    style.width = `${getButtonSize(button)}px`;
-    style.height = `${getButtonSize(button)}px`;
-    style.left = `${posX - getBoundingRect(button).left - getButtonSize(button) / 2}px`;
-    style.top = `${posY - getBoundingRect(button).top - getButtonSize(button) / 2}px`;
+    style.width = `${getSize(button)}px`;
+    style.height = `${getSize(button)}px`;
+    style.left = `${posX - getBounding(button).left - getSize(button) / 2}px`;
+    style.top = `${posY - getBounding(button).top - getSize(button) / 2}px`;
 
     ripple.classList.add('button__ripple');
     appendRipple(ripple, button);
@@ -54,7 +54,7 @@ const effect = function rippleEffect() {
    * @param button button объект кнопки
    * @returns {function(*)} функция-обработчик для кнопки
    */
-  const bindRippleEffect = function (button) {
+  const bindRippleEffect = function addRippleEffect(button) {
     return (event) => {
       setEffect(button, event.clientX, event.clientY);
     };
